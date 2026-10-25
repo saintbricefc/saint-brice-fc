@@ -376,13 +376,12 @@ td.m.us{color:var(--forest)}
       <div class="kit">
         <div class="kit-pics">
           <img class="kit-face" src="photo-seniors1.webp" alt="Les Seniors 1 du Saint-Brice FC portant le maillot officiel" width="520" height="336" loading="lazy">
-          <img class="kit-det" src="maillot-details.webp" alt="Détails du maillot : rues de Saint-Brice imprimées sur le devant et noms des présidents du club sur le col" width="610" height="404" loading="lazy">
         </div>
         <div class="kit-txt">
           <span class="kit-tag">Maillot collector · Saison 2026/2027 · Offre limitée</span>
           <h3>Notre histoire, notre ville, notre maillot</h3>
           <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
-          <div class="kit-price"><b>59 €</b><span>Maillot · toutes tailles</span></div>
+          <div class="kit-price"><b>49 €</b><span>Maillot · toutes tailles</span></div>
           <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
           <a class="cta" href="#commande">Commander</a>
         </div>
@@ -401,7 +400,7 @@ td.m.us{color:var(--forest)}
           <label>Téléphone<input id="o-tel" type="tel" autocomplete="tel" required></label>
           <label>E-mail<input id="o-mail" type="email" autocomplete="email"></label>
         </fieldset>
-        <div class="o-foot"><div class="o-total">Total : <b id="o-total">59 €</b></div><button type="submit" class="cta">Envoyer la commande</button></div>
+        <div class="o-foot"><div class="o-total">Total : <b id="o-total">49 €</b></div><button type="submit" class="cta">Envoyer la commande</button></div>
         <p class="o-msg" id="o-msg" role="status" hidden></p>
       </form>
     </div>
@@ -541,9 +540,9 @@ function render(k){
   var SIZES=["6 ans","8 ans","10 ans","12 ans","14 ans","XS","S","M","L","XL","XXL","3XL"],FL={"":["Sans flocage",0],"num":["Numéro",10],"nom":["Nom",10],"nomnum":["Nom et numéro",15]};
   var box=document.getElementById("o-lines"),n=0;
   function line(){n++;var d=document.createElement("div");d.className="o-line";
-    d.innerHTML='<label>Taille<select class="o-size">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join("")+'</select></label><label>Flocage<select class="o-fl">'+Object.keys(FL).map(function(k){return '<option value="'+k+'">'+FL[k][0]+(FL[k][1]?' (+'+FL[k][1]+' €)':'')+'</option>';}).join("")+'</select></label><label class="o-txt">Nom / numéro à floquer<input class="o-flt" placeholder="ex. DUPONT 10" disabled></label><label>Qté<input class="o-q" type="number" min="1" max="20" value="1" inputmode="numeric"></label><div class="o-price">59 €</div><button type="button" class="o-del" aria-label="Retirer ce maillot">×</button>';
+    d.innerHTML='<label>Taille<select class="o-size">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join("")+'</select></label><label>Flocage<select class="o-fl">'+Object.keys(FL).map(function(k){return '<option value="'+k+'">'+FL[k][0]+(FL[k][1]?' (+'+FL[k][1]+' €)':'')+'</option>';}).join("")+'</select></label><label class="o-txt">Nom / numéro à floquer<input class="o-flt" placeholder="ex. DUPONT 10" disabled></label><label>Qté<input class="o-q" type="number" min="1" max="20" value="1" inputmode="numeric"></label><div class="o-price">49 €</div><button type="button" class="o-del" aria-label="Retirer ce maillot">×</button>';
     box.appendChild(d);calc();}
-  function calc(){var t=0;[].forEach.call(box.children,function(d){var f=FL[d.querySelector(".o-fl").value],q=Math.max(1,parseInt(d.querySelector(".o-q").value,10)||1),p=(59+f[1])*q;d.querySelector(".o-flt").disabled=!f[1];d.querySelector(".o-price").textContent=p+" €";d.querySelector(".o-del").hidden=box.children.length<2;t+=p;});document.getElementById("o-total").textContent=t+" €";return t;}
+  function calc(){var t=0;[].forEach.call(box.children,function(d){var f=FL[d.querySelector(".o-fl").value],q=Math.max(1,parseInt(d.querySelector(".o-q").value,10)||1),p=(49+f[1])*q;d.querySelector(".o-flt").disabled=!f[1];d.querySelector(".o-price").textContent=p+" €";d.querySelector(".o-del").hidden=box.children.length<2;t+=p;});document.getElementById("o-total").textContent=t+" €";return t;}
   box.addEventListener("input",calc);box.addEventListener("change",calc);
   box.addEventListener("click",function(e){var b=e.target.closest(".o-del");if(b){b.parentNode.remove();calc();}});
   document.getElementById("o-add").addEventListener("click",line);

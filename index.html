@@ -187,6 +187,35 @@ footer span:last-child{font-family:var(--display);font-weight:400;letter-spacing
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:90px 28px}.hero .next{width:auto}}
 @media (max-width:560px){.hero-main{flex-direction:column;align-items:flex-start;gap:12px}.hero .crest{width:80px}.tourney{grid-template-columns:1fr}.t-info,.t-go{grid-column:1;grid-row:auto}}
 
+/* Maillot */
+.kit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+.kit-pics{display:grid;grid-template-columns:1fr;gap:10px}
+.kit-pics img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:22px;box-shadow:0 10px 24px rgba(11,61,34,.25)}
+.kit-tag{display:inline-block;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;background:var(--pine);color:#d4ec5a;padding:5px 12px;border-radius:999px}
+.kit-txt h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.02;margin:12px 0 8px;color:var(--pine)}
+.kit-txt p{margin:0 0 14px}
+.kit-price{display:flex;align-items:baseline;gap:12px}
+.kit-price b{font-family:var(--display);font-weight:400;font-size:3rem;color:var(--green);line-height:1}
+.kit-price span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.kit-opts{list-style:none;padding:0;margin:10px 0 16px;display:grid;gap:4px;max-width:300px;font-family:var(--cond);font-weight:600;font-size:1.08rem}
+.kit-opts li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:3px 0}
+.order{margin-top:30px;color:var(--ink);background:#fff;border-radius:28px;padding:24px;box-shadow:0 8px 22px rgba(11,61,34,.12)}
+.order h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.9rem;margin:0 0 4px;color:var(--pine)}
+.o-lines{display:grid;gap:10px;margin:16px 0 10px}
+.o-line{display:grid;grid-template-columns:110px 180px minmax(0,1fr) 80px 90px 44px;gap:10px;align-items:end;background:var(--cream);border-radius:18px;padding:12px}
+.order label{display:grid;gap:4px;font-family:var(--cond);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+.order input,.order select{font:inherit;font-family:var(--body);font-size:1rem;text-transform:none;letter-spacing:0;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);min-height:44px;box-sizing:border-box;width:100%}
+.o-price{font-family:var(--display);font-size:1.4rem;color:var(--green);text-align:right;padding-bottom:8px}
+.o-del{min-height:44px;border:0;border-radius:12px;background:#f3d6d6;color:#8e0e14;font-size:1.3rem;cursor:pointer}
+.o-add{border:2px dashed var(--green);background:transparent;color:var(--green);font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:10px 16px;border-radius:999px;cursor:pointer;min-height:44px}
+.o-who{border:0;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.o-who legend{font-family:var(--display);text-transform:uppercase;font-size:1.3rem;color:var(--pine);margin-bottom:8px}
+.o-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px}
+.o-total{font-family:var(--cond);font-weight:700;font-size:1.3rem;text-transform:uppercase}
+.o-total b{font-family:var(--display);font-weight:400;font-size:2rem;color:var(--green);margin-left:6px}
+.o-msg{margin:12px 0 0;font-weight:600;color:var(--forest)}
+@media (max-width:860px){.kit{grid-template-columns:1fr}.o-line{grid-template-columns:1fr 1fr}.o-line .o-txt{grid-column:1/-1}}
+
 /* Résultats */
 .chips{display:grid;gap:10px;margin-bottom:22px}
 .chips-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -245,6 +274,7 @@ td.m.us{color:var(--forest)}
     <nav aria-label="Navigation principale">
       <a href="#resultats">Résultats</a>
       <a href="#club">Le club</a>
+      <a href="#maillot">Maillot</a>
       <a href="#bandeira">Bandeira Cup</a>
       <a href="#actus">Actualités</a>
       <a href="#inscriptions">Inscriptions</a>
@@ -336,6 +366,43 @@ td.m.us{color:var(--forest)}
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="maillot">
+    <div class="wrap">
+      <div class="sec-head"><h2>Notre maillot</h2></div>
+      <div class="kit">
+        <div class="kit-pics">
+          <img class="kit-face" src="photo-seniors1.webp" alt="Les Seniors 1 du Saint-Brice FC portant le maillot officiel" width="520" height="336" loading="lazy">
+          <img class="kit-det" src="maillot-details.webp" alt="Détails du maillot : rues de Saint-Brice imprimées sur le devant et noms des présidents du club sur le col" width="610" height="404" loading="lazy">
+        </div>
+        <div class="kit-txt">
+          <span class="kit-tag">Maillot collector · Saison 2026/2027 · Offre limitée</span>
+          <h3>Notre histoire, notre ville, notre maillot</h3>
+          <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
+          <div class="kit-price"><b>59 €</b><span>Maillot · toutes tailles</span></div>
+          <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
+          <a class="cta" href="#commande">Commander</a>
+        </div>
+      </div>
+
+      <form class="order" id="commande" novalidate>
+        <h3>Commander en ligne</h3>
+        <p class="note">Remplissez la commande : elle est envoyée au club par e-mail, qui vous recontacte pour le paiement et le retrait. Pour les tailles, aidez-vous du pack remis par le club à l'inscription.</p>
+        <div class="o-lines" id="o-lines"></div>
+        <button type="button" class="o-add" id="o-add">+ Ajouter un maillot</button>
+        <fieldset class="o-who">
+          <legend>Vos coordonnées</legend>
+          <label>Nom et prénom du parent (ou du licencié majeur)<input id="o-parent" autocomplete="name" required></label>
+          <label>Nom et prénom du licencié<input id="o-lic"></label>
+          <label>Catégorie (U6, U7… Seniors)<input id="o-cat"></label>
+          <label>Téléphone<input id="o-tel" type="tel" autocomplete="tel" required></label>
+          <label>E-mail<input id="o-mail" type="email" autocomplete="email"></label>
+        </fieldset>
+        <div class="o-foot"><div class="o-total">Total : <b id="o-total">59 €</b></div><button type="submit" class="cta">Envoyer la commande</button></div>
+        <p class="o-msg" id="o-msg" role="status" hidden></p>
+      </form>
     </div>
   </section>
 
@@ -467,6 +534,25 @@ function render(k){
   document.getElementById("wk").innerHTML=wk.map(function(x){var m=x.m,home=us(m.h),mine=home?m.hs:m.as_,th=home?m.as_:m.hs,r=mine>th?"V":(mine<th?"D":"N");if(/tirs au but/.test(m.n||""))r="V";var opp=home?m.a:m.h;
     return '<button type="button" class="wk-card '+r+'" data-k="'+x.t.k+'"><b>'+esc(x.t.name)+'</b><span class="sc">'+mine+' – '+th+'</span><small>'+(home?"vs ":"à ")+esc(opp)+'</small><small>'+esc(m.c)+'</small></button>';}).join("")||'<p class="note">Pas de match joué récemment.</p>';
   document.getElementById("wk").addEventListener("click",function(e){var c=e.target.closest(".wk-card");if(c){render(c.dataset.k);document.getElementById("resultats").scrollIntoView({behavior:"smooth"});}});
+})();
+
+(function(){
+  var SIZES=["6 ans","8 ans","10 ans","12 ans","14 ans","XS","S","M","L","XL","XXL","3XL"],FL={"":["Sans flocage",0],"num":["Numéro",10],"nom":["Nom",10],"nomnum":["Nom et numéro",15]};
+  var box=document.getElementById("o-lines"),n=0;
+  function line(){n++;var d=document.createElement("div");d.className="o-line";
+    d.innerHTML='<label>Taille<select class="o-size">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join("")+'</select></label><label>Flocage<select class="o-fl">'+Object.keys(FL).map(function(k){return '<option value="'+k+'">'+FL[k][0]+(FL[k][1]?' (+'+FL[k][1]+' €)':'')+'</option>';}).join("")+'</select></label><label class="o-txt">Nom / numéro à floquer<input class="o-flt" placeholder="ex. DUPONT 10" disabled></label><label>Qté<input class="o-q" type="number" min="1" max="20" value="1" inputmode="numeric"></label><div class="o-price">59 €</div><button type="button" class="o-del" aria-label="Retirer ce maillot">×</button>';
+    box.appendChild(d);calc();}
+  function calc(){var t=0;[].forEach.call(box.children,function(d){var f=FL[d.querySelector(".o-fl").value],q=Math.max(1,parseInt(d.querySelector(".o-q").value,10)||1),p=(59+f[1])*q;d.querySelector(".o-flt").disabled=!f[1];d.querySelector(".o-price").textContent=p+" €";d.querySelector(".o-del").hidden=box.children.length<2;t+=p;});document.getElementById("o-total").textContent=t+" €";return t;}
+  box.addEventListener("input",calc);box.addEventListener("change",calc);
+  box.addEventListener("click",function(e){var b=e.target.closest(".o-del");if(b){b.parentNode.remove();calc();}});
+  document.getElementById("o-add").addEventListener("click",line);
+  document.getElementById("commande").addEventListener("submit",function(e){e.preventDefault();var msg=document.getElementById("o-msg"),p=document.getElementById("o-parent").value.trim(),tel=document.getElementById("o-tel").value.trim();
+    if(!p||!tel){msg.textContent="Indiquez au moins votre nom et votre téléphone.";msg.hidden=false;return;}
+    var rows=[].map.call(box.children,function(d,i){var f=FL[d.querySelector(".o-fl").value],q=parseInt(d.querySelector(".o-q").value,10)||1;return "- "+q+" x maillot taille "+d.querySelector(".o-size").value+" | flocage : "+f[0]+(f[1]?" ("+d.querySelector(".o-flt").value.trim()+")":"")+" | "+d.querySelector(".o-price").textContent;});
+    var body="Bonjour,\n\nJe souhaite commander le maillot collector 2026/2027 :\n"+rows.join("\n")+"\n\nTotal : "+calc()+" €\n\nParent / acheteur : "+p+"\nLicencié : "+document.getElementById("o-lic").value.trim()+"\nCatégorie : "+document.getElementById("o-cat").value.trim()+"\nTéléphone : "+tel+"\nE-mail : "+document.getElementById("o-mail").value.trim()+"\n\nMerci !";
+    location.href="mailto:527269@lpiff.fr?subject="+encodeURIComponent("Commande maillot collector – "+p)+"&body="+encodeURIComponent(body);
+    msg.textContent="Votre messagerie s'ouvre avec la commande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à 527269@lpiff.fr.";msg.hidden=false;});
+  line();
 })();
 document.getElementById('f').addEventListener('submit',function(e){
   e.preventDefault();

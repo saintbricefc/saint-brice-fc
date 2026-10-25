@@ -154,6 +154,39 @@ footer span:last-child{font-family:var(--display);font-weight:400;letter-spacing
 
 
 
+/* Hero photo terrain */
+.hero{background:linear-gradient(0deg,rgba(6,38,20,.92) 0%,rgba(6,38,20,.55) 45%,rgba(6,38,20,.15) 100%),url(photo-terrain.webp) center 62%/cover no-repeat;color:#fff}
+.hero .wrap{grid-template-columns:1fr auto;align-items:end;padding-block:120px 40px;min-height:min(72vh,620px)}
+.hero-main{display:flex;gap:22px;align-items:flex-end}
+.hero .crest{width:112px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
+.hero h1{color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45);font-size:clamp(2.8rem,7vw,5.4rem);margin:0}
+.hero h1 span{color:var(--lime);display:block}
+.hero .facts-line{max-width:none;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;color:#d9efdd;margin:10px 0 0}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.hero .cta{background:#fff;color:var(--forest)}
+.hero .cta.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.85)}
+.hero .next{width:320px;background:rgba(6,38,20,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25)}
+.hero .badge{display:none}
+.weekend{padding-block:26px 6px}
+.wk-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.wk-head h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.4rem);text-transform:uppercase;margin:0;color:var(--pine)}
+.wk-head span{font-family:var(--cond);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.wk-head a{margin-left:auto;font-family:var(--cond);font-weight:700;color:var(--green);text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
+.wk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.wk-card{width:100%;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;background:#fff;border-radius:18px;padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:0 4px 12px rgba(11,61,34,.10);border-left:6px solid var(--muted);cursor:pointer;font:inherit;text-align:left;border-top:0;border-right:0;border-bottom:0}
+.wk-card.V{border-left-color:var(--green)}.wk-card.D{border-left-color:var(--red)}.wk-card.N{border-left-color:#9a9a8a}
+.wk-card b{font-family:var(--display);font-weight:400;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em}
+.wk-card .sc{font-family:var(--display);font-size:1.5rem;grid-row:span 2}
+.wk-card small{text-transform:none;letter-spacing:0;font-family:var(--body);color:var(--muted);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wk-card:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(11,61,34,.16)}
+.tourney{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 18px;margin:18px 0 8px;padding:20px 26px;border-radius:28px;text-decoration:none;color:#0b0b0b;background:linear-gradient(120deg,#f4d877 0%,#e3be55 50%,#c99a2e 100%);box-shadow:0 10px 24px rgba(120,90,10,.28)}
+.t-tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;background:#0b0b0b;color:#f4d877;padding:4px 12px;border-radius:999px}
+.t-name{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase;line-height:1}
+.t-info{grid-column:2;font-family:var(--cond);font-weight:600;font-size:1.05rem}
+.t-go{grid-row:1/span 2;grid-column:3;font-family:var(--display);font-size:1.2rem;text-transform:uppercase}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:90px 28px}.hero .next{width:auto}}
+@media (max-width:560px){.hero-main{flex-direction:column;align-items:flex-start;gap:12px}.hero .crest{width:80px}.tourney{grid-template-columns:1fr}.t-info,.t-go{grid-column:1;grid-row:auto}}
+
 /* Résultats */
 .chips{display:grid;gap:10px;margin-bottom:22px}
 .chips-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -221,25 +254,33 @@ td.m.us{color:var(--forest)}
 
 <main id="accueil">
   <div class="hero">
-    <span class="badge">Depuis 1973</span>
     <div class="wrap">
-      <img class="crest" src="crest.webp" alt="Blason du Saint-Brice Football Club" width="214" height="256">
-      <div>
-        <div class="eyebrow">Club associatif · Val-d'Oise · Saison 2026‑2027</div>
-        <h1>Saint-Brice <span>Football Club</span></h1>
-        <p>Plus de 1 000 licenciés et 20 équipes en compétition, de l'école de foot à l'équipe fanion en Régional 1. On joue, on progresse et on se retrouve chaque week-end au stade Léon Graffin.</p>
-        <a class="cta" href="#inscriptions">Rejoindre le club</a>
+      <div class="hero-main">
+        <img class="crest" src="crest.webp" alt="Blason du Saint-Brice Football Club" width="214" height="256">
+        <div>
+          <h1>Saint-Brice <span>Football Club</span></h1>
+          <p class="facts-line">Depuis 1973 · 1 000 licenciés · 20 équipes · Régional 1</p>
+          <div class="hero-btns"><a class="cta" href="#resultats">Tous les résultats</a><a class="cta ghost" href="#bandeira">Bandeira Cup</a></div>
+        </div>
       </div>
-      <aside class="next" aria-label="Prochain match">
-        <div class="eyebrow">Prochain match de championnat · Seniors 1</div>
-        <div class="vs"><span>Mureaux OFC</span><span>vs</span><span>Saint-Brice FC</span></div>
-        <dl>
-          <dt>Date</dt><dd>Sam. 31 octobre, 18h00</dd>
-          <dt>Lieu</dt><dd>Les Mureaux (extérieur)</dd>
-          <dt>Compét.</dt><dd>Régional 1 · Poule A · 4e</dd>
-        </dl>
-      </aside>
+      <aside class="next" aria-label="Prochain match" id="hero-next"></aside>
     </div>
+  </div>
+
+  <section class="weekend" aria-labelledby="wk-title">
+    <div class="wrap">
+      <div class="wk-head"><h2 id="wk-title">Résultats du week-end</h2><span id="wk-date"></span><a href="#resultats">Toutes les équipes →</a></div>
+      <div class="wk-grid" id="wk"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <a class="tourney" href="#bandeira">
+      <span class="t-tag">Nos tournois</span>
+      <span class="t-name">José Bandeira Cup</span>
+      <span class="t-info">Tournoi international U11 · 42 équipes · 8 pays · 21 académies pros</span>
+      <span class="t-go">Découvrir →</span>
+    </a>
   </div>
 
   <div class="wrap" style="padding-block:8px 0">
@@ -411,6 +452,21 @@ function render(k){
   gal.innerHTML=TEAMS.filter(function(t){return PHOTOS[t.k];}).map(function(t){return '<a class="team-photo" href="#resultats" data-k="'+t.k+'"><img src="'+PHOTOS[t.k]+'" alt="L\u2019équipe '+esc(t.name)+' du Saint-Brice FC" loading="lazy"><span class="cap"><b>'+esc(t.name)+'</b><small>'+esc(t.lvl.replace(/^U\d+F? /,""))+'</small></span></a>';}).join("");
   gal.addEventListener("click",function(e){var a=e.target.closest(".team-photo");if(a)render(a.dataset.k);});
   render(saved||"seniors1");
+})();
+
+(function(){
+  var s1=TEAMS.filter(function(x){return x.k==="seniors1";})[0];
+  var nx=s1&&s1.m.filter(function(m){return m.t;})[0], tb=s1&&s1.tab.filter(function(r){return us(r[1]);})[0];
+  var hn=document.getElementById("hero-next");
+  if(nx){hn.innerHTML='<div class="eyebrow">Prochain match · Seniors 1</div><div class="vs"><span>'+esc(nx.h)+'</span><span>vs</span><span>'+esc(nx.a)+'</span></div><dl><dt>Date</dt><dd>'+fd(nx.d)+' · '+esc(nx.t)+'</dd><dt>Compét.</dt><dd>'+esc(nx.c)+(tb?' · '+tb[0]+'e':'')+'</dd></dl>';}else{hn.remove();}
+  var all=[];TEAMS.forEach(function(t){t.m.forEach(function(m){if(m.hs!==undefined)all.push({t:t,m:m});});});
+  var last=all.reduce(function(a,x){return x.m.d>a?x.m.d:a;},"");
+  var lim=new Date(last);lim.setDate(lim.getDate()-2);var ls=lim.toISOString().slice(0,10);
+  var wk=all.filter(function(x){return x.m.d>=ls;}).sort(function(a,b){return TEAMS.indexOf(a.t)-TEAMS.indexOf(b.t);});
+  document.getElementById("wk-date").textContent=wk.length?"Mis à jour le "+fd(last):"";
+  document.getElementById("wk").innerHTML=wk.map(function(x){var m=x.m,home=us(m.h),mine=home?m.hs:m.as_,th=home?m.as_:m.hs,r=mine>th?"V":(mine<th?"D":"N");if(/tirs au but/.test(m.n||""))r="V";var opp=home?m.a:m.h;
+    return '<button type="button" class="wk-card '+r+'" data-k="'+x.t.k+'"><b>'+esc(x.t.name)+'</b><span class="sc">'+mine+' – '+th+'</span><small>'+(home?"vs ":"à ")+esc(opp)+'</small><small>'+esc(m.c)+'</small></button>';}).join("")||'<p class="note">Pas de match joué récemment.</p>';
+  document.getElementById("wk").addEventListener("click",function(e){var c=e.target.closest(".wk-card");if(c){render(c.dataset.k);document.getElementById("resultats").scrollIntoView({behavior:"smooth"});}});
 })();
 document.getElementById('f').addEventListener('submit',function(e){
   e.preventDefault();

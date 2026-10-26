@@ -189,37 +189,39 @@ footer span:last-child{font-family:var(--display);font-weight:400;letter-spacing
 
 nav{scrollbar-width:none}nav::-webkit-scrollbar{display:none}
 /* À la une */
-.une{padding-block:22px 4px}
-.une-card{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);background:linear-gradient(135deg,#0b3d22 0%,#1d6037 45%,#0a9a48 100%);color:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 28px rgba(11,61,34,.3)}
-.une-pic{position:relative;min-height:100%}
-.une-pic img{width:100%;height:100%;object-fit:cover;display:block;min-height:320px}
-.une-tag{position:absolute;top:16px;left:16px;background:var(--red);color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1.1rem;padding:6px 14px;border-radius:12px;transform:rotate(-3deg);box-shadow:0 6px 14px rgba(142,14,20,.35)}
-.une-txt{padding:26px 28px;display:grid;gap:12px;align-content:start}
-.une-kicker{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;color:#bfe8c9}
-.une-txt h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.9rem,4.4vw,2.8rem);line-height:1;margin:0}
-.une-lead{margin:0;color:#e4f1e6}
-.une-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.une-stats div{background:rgba(255,255,255,.12);border-radius:16px;padding:10px 8px;text-align:center}
-.une-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1}
-.une-stats span{font-family:var(--cond);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:#cdeed6}
-.une-path{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.une-path li{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:10px;align-items:center;background:rgba(0,0,0,.16);border-radius:12px;padding:7px 10px;font-size:.95rem}
-.une-path .d{font-family:var(--cond);font-weight:700;color:#bfe8c9;text-transform:uppercase;font-size:.85rem}
+.une{padding-block:24px 6px}
+.une-card{background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 28px rgba(11,61,34,.16)}
+.une-head{padding:28px 32px 8px;display:grid;gap:8px;justify-items:start}
+.une-tag{background:var(--red);color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1rem;padding:5px 14px;border-radius:10px;transform:rotate(-2deg)}
+.une-kicker{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;color:var(--green)}
+.une-head h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:.98;margin:0;color:var(--pine)}
+.une-lead{margin:0;font-size:1.12rem;max-width:62ch;color:var(--ink)}
+.une-itw{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:28px;padding:20px 32px 28px;align-items:start}
+.q-pic{margin:0}.q-pic img{width:100%;height:auto;display:block;border-radius:22px}
+.q-pic figcaption{display:flex;justify-content:space-around;margin-top:8px;font-family:var(--cond);font-weight:600;font-size:1.05rem;color:var(--muted)}.q-pic b{color:var(--pine);font-weight:700}
+.q-body p{margin:0 0 10px}
+.q-big{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.05;color:var(--green);border-left:6px solid var(--lime);padding-left:14px}
+.q-sign{font-family:var(--cond);font-weight:600;font-size:1.05rem;color:var(--muted)}.q-sign b{color:var(--pine)}
+.une-team{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);background:var(--cream);color:var(--ink)}
+.une-team img{width:100%;height:100%;max-height:440px;object-fit:cover;display:block}
+.une-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:24px;align-content:center}
+.une-stats div{padding:18px 10px;text-align:center;background:#fff;border-radius:20px;box-shadow:0 4px 12px rgba(11,61,34,.10);border-top:5px solid var(--green)}
+.une-stats b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--pine)}
+.une-stats span{font-family:var(--cond);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.une-foot{background:linear-gradient(135deg,#0b3d22 0%,#1d6037 50%,#0a9a48 100%);color:#fff;padding:22px 32px 26px;display:grid;gap:14px}
+.une-foot h3{margin:0;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem}
+.une-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.une-path li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;background:rgba(0,0,0,.18);border-radius:14px;padding:9px 12px;font-size:.95rem;border-left:5px solid #d9dccb}
+.une-path li.V{border-left-color:var(--lime)}.une-path li.D{border-left-color:var(--red)}
+.une-path .d{grid-column:1/-1;font-family:var(--cond);font-weight:700;color:#bfe8c9;text-transform:uppercase;font-size:.8rem;letter-spacing:.06em}
 .une-path .m small{display:block;color:#cdeed6;font-size:.78rem}
-.une-path .s{font-family:var(--display);font-size:1.15rem;white-space:nowrap}
-.une-path .s i{font-style:normal;display:inline-block;width:22px;height:22px;line-height:22px;border-radius:50%;text-align:center;font-family:var(--cond);font-weight:700;font-size:.75rem;margin-left:6px;vertical-align:2px}
-.une-path .V i{background:var(--lime);color:#0b3d22}.une-path .N i{background:#d9dccb;color:#0b3d22}.une-path .D i{background:var(--red);color:#fff}
-.une-next{margin:0;font-family:var(--cond);font-weight:700;font-size:1.05rem}
-.une-staff{margin:0;color:#e4f1e6}.une-staff b{font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;color:#bfe8c9;font-size:.85rem}
-.une .cta{justify-self:start;background:#fff;color:var(--forest)}
-@media (max-width:860px){.une-card{grid-template-columns:1fr}.une-pic img{min-height:0;aspect-ratio:4/3}.une-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.une-path .s{font-family:var(--display);font-size:1.3rem;white-space:nowrap}
+.une-path .s i{display:none}
+.une-end{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.une-next{margin:0;font-family:var(--cond);font-weight:700;font-size:1.1rem}
+.une .cta{background:#fff;color:var(--forest)}
+@media (max-width:860px){.une-head,.une-itw,.une-foot{padding-inline:20px}.une-itw{grid-template-columns:1fr}.une-team{grid-template-columns:1fr}.une-team img{max-height:none;height:auto}}
 
-.bandeira-hero .b-cta{background:#0b0b0b;color:#f4d877;margin-top:4px;text-decoration:none}
-.bandeira-hero .b-recap{font-size:1rem;font-weight:500;opacity:.9}
-.une-quote{margin-top:14px;background:#fff;border-radius:28px;padding:24px 28px;box-shadow:0 8px 22px rgba(11,61,34,.12);display:grid;gap:10px}
-.q-big{margin:0;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.05;color:var(--green)}
-.q-txt p{margin:0 0 10px;color:var(--ink)}
-.q-sign{margin:0;font-family:var(--cond);font-weight:600;font-size:1.05rem;color:var(--muted)}.q-sign b{color:var(--pine)}
 /* Maillot */
 .kit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
 .kit-pics{display:grid;grid-template-columns:1fr;gap:10px}
@@ -340,28 +342,36 @@ td.m.us{color:var(--forest)}
   <section class="une" id="une" aria-labelledby="une-title">
     <div class="wrap">
       <article class="une-card">
-        <div class="une-pic"><img src="photo-u18.webp" alt="L'équipe U18 R3 du Saint-Brice FC" width="520" height="440" loading="lazy"><span class="une-tag">À la une</span></div>
-        <div class="une-txt">
+        <div class="une-head">
+          <span class="une-tag">À la une</span>
           <span class="une-kicker">U18 · Régional 3 · Poule C</span>
           <h2 id="une-title">Les U18 R3 invaincus et sur le podium</h2>
           <p class="une-lead">Deuxièmes de leur poule, toujours invaincus en championnat et allés jusqu'au 4e tour de la Coupe Gambardella : les U18 d'Adrien et de son adjoint Paki signent un très beau début de saison.</p>
+        </div>
+
+        <div class="une-itw">
+          <figure class="q-pic"><img src="photo-coachs-u18.webp" alt="Paki, coach adjoint, et Adrien, coach des U18 R3 du Saint-Brice FC" width="480" height="389" loading="lazy"><figcaption><span><b>Paki</b> · adjoint</span><span><b>Adrien</b> · coach</span></figcaption></figure>
+          <div class="q-body">
+            <p class="q-big">« Tant qu'ils en voudront, on en voudra aussi. »</p>
+            <p>C'est un groupe qui vient de se créer au Saint-Brice FC, avec beaucoup de nouveaux joueurs. Après de nombreux départs, nous avons construit avec Paki un groupe qui s'entend bien : des bons gars, avec une bonne mentalité, pour avoir une vraie dynamique de travail.</p>
+            <p>Le bon début de saison s'explique par la cohésion qui s'est créée rapidement entre les coachs et les joueurs. Notre discours a été bien reçu et les garçons ne trichent pas, à chaque match.</p>
+            <p>L'objectif, c'est de construire une équipe performante, avec de la rigueur et beaucoup de discipline, pour les préparer au monde senior. En championnat, on leur répète de donner le meilleur d'eux-mêmes en match, et ils auront ce qu'ils veulent. Avec Paki, tant qu'ils en voudront, on en voudra aussi, et on les suivra pour aller chercher un maximum de victoires.</p>
+            <p>On a la chance d'avoir les éducateurs du club et les dirigeants qui viennent nous soutenir à domicile et même à l'extérieur, ainsi que les amis et les parents des joueurs. Ça nous donne encore plus envie de performer et de continuer à partager des émotions avec les supporters !</p>
+            <p class="q-sign">— <b>Adrien</b>, coach des U18 R3</p>
+          </div>
+        </div>
+
+        <div class="une-team">
+          <img src="photo-u18.webp" alt="L'équipe U18 R3 du Saint-Brice FC" width="520" height="440" loading="lazy">
           <div class="une-stats" id="une-stats"></div>
+        </div>
+
+        <div class="une-foot">
+          <h3>Le parcours</h3>
           <ol class="une-path" id="une-path"></ol>
-          <p class="une-next" id="une-next"></p>
-          <p class="une-staff"><b>Coach</b> Adrien · <b>Adjoint</b> Paki</p>
-          <a class="cta" href="#resultats" id="une-go">Résultats &amp; classement des U18</a>
+          <div class="une-end"><p class="une-next" id="une-next"></p><a class="cta" href="#resultats" id="une-go">Résultats &amp; classement</a></div>
         </div>
       </article>
-      <aside class="une-quote" aria-label="Le mot du coach">
-        <p class="q-big">« Tant qu'ils en voudront, on en voudra aussi. »</p>
-        <div class="q-txt">
-          <p>C'est un groupe qui vient de se créer au Saint-Brice FC, avec beaucoup de nouveaux joueurs. Après de nombreux départs, nous avons construit avec Paki un groupe qui s'entend bien : des bons gars, avec une bonne mentalité, pour avoir une vraie dynamique de travail.</p>
-          <p>Le bon début de saison s'explique par la cohésion qui s'est créée rapidement entre les coachs et les joueurs. Notre discours a été bien reçu et les garçons ne trichent pas, à chaque match.</p>
-          <p>L'objectif, c'est de construire une équipe performante, avec de la rigueur et beaucoup de discipline, pour les préparer au monde senior. En championnat, on leur répète de donner le meilleur d'eux-mêmes en match, et ils auront ce qu'ils veulent. Avec Paki, tant qu'ils en voudront, on en voudra aussi, et on les suivra pour aller chercher un maximum de victoires.</p>
-          <p>On a la chance d'avoir les éducateurs du club et les dirigeants qui viennent nous soutenir à domicile et même à l'extérieur, ainsi que les amis et les parents des joueurs. Ça nous donne encore plus envie de performer et de continuer à partager des émotions avec les supporters !</p>
-        </div>
-        <p class="q-sign"><b>Adrien</b>, coach des U18 R3, avec son adjoint Paki</p>
-      </aside>
     </div>
   </section>
 

@@ -563,8 +563,8 @@ function render(k){
     if(!p||!tel){msg.textContent="Indiquez au moins votre nom et votre téléphone.";msg.hidden=false;return;}
     var rows=[].map.call(box.children,function(d,i){var f=FL[d.querySelector(".o-fl").value],q=parseInt(d.querySelector(".o-q").value,10)||1;return "- "+q+" x maillot taille "+d.querySelector(".o-size").value+" | flocage : "+f[0]+(f[1]?" ("+d.querySelector(".o-flt").value.trim()+")":"")+" | "+d.querySelector(".o-price").textContent;});
     var body="Bonjour,\n\nJe souhaite commander le maillot collector 2026/2027 :\n"+rows.join("\n")+"\n\nTotal : "+calc()+" €\n\nParent / acheteur : "+p+"\nLicencié : "+document.getElementById("o-lic").value.trim()+"\nCatégorie : "+document.getElementById("o-cat").value.trim()+"\nTéléphone : "+tel+"\nE-mail : "+document.getElementById("o-mail").value.trim()+"\n\nMerci !";
-    location.href="mailto:527269@lpiff.fr?subject="+encodeURIComponent("Commande maillot collector – "+p)+"&body="+encodeURIComponent(body);
-    msg.textContent="Votre messagerie s'ouvre avec la commande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à 527269@lpiff.fr.";msg.hidden=false;});
+    location.href="mailto:contact@saintbricefc.fr?subject="+encodeURIComponent("Commande maillot collector – "+p)+"&body="+encodeURIComponent(body);
+    msg.textContent="Votre messagerie s'ouvre avec la commande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à contact@saintbricefc.fr.";msg.hidden=false;});
   line();
 })();
 
@@ -583,7 +583,7 @@ document.getElementById('f')&&document.getElementById('f').addEventListener('sub
   e.preventDefault();
   var ok=document.getElementById('ok'),nom=document.getElementById('nom'),mail=document.getElementById('mail');
   if(!nom.value.trim()||!mail.value.trim()||!mail.checkValidity()){ok.textContent="Indiquez votre nom et une adresse email valide.";ok.hidden=false;return;}
-  ok.textContent="Merci "+nom.value.trim().split(" ")[0]+" ! Ce formulaire n'est pas encore relié au club : écrivez-nous directement à 527269@lpiff.fr.";
+  ok.textContent="Merci "+nom.value.trim().split(" ")[0]+" ! Ce formulaire n'est pas encore relié au club : écrivez-nous directement à contact@saintbricefc.fr.";
   ok.hidden=false;
 });
 (function(){var id=location.hash.slice(1);if(!id)return;function go(){var t=document.getElementById(id);if(t){var hd=document.querySelector('header');scrollTo(0,t.getBoundingClientRect().top+scrollY-(hd?hd.offsetHeight:0)-8);}}go();addEventListener('load',function(){go();setTimeout(go,500);});})();

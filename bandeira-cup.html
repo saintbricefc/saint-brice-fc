@@ -277,6 +277,24 @@ td.m.us{color:var(--forest)}
 .res-note{display:block;font-size:.78rem;color:var(--green);font-family:var(--cond);font-weight:600}
 .empty{color:var(--muted);font-size:.95rem;padding:8px 0}
 .src{margin-top:14px;font-size:.85rem;color:var(--muted)}
+.squad{margin-top:26px;background:#fff;border-radius:24px;padding:22px 24px;box-shadow:0 6px 18px rgba(11,61,34,.10)}
+.squad h3{margin:0 0 14px;color:var(--forest)}
+.sq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.sq-grid h4{margin:0 0 8px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;color:#fff;background:var(--pill);border-radius:999px;padding:4px 12px;display:inline-block}
+.sq-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sq-grid li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:4px 0}
+.sq-grid li b{font-weight:600;color:var(--ink)}
+.sq-p{all:unset;cursor:pointer;font-weight:600;color:var(--ink);border-bottom:1.5px dotted var(--green)}
+.sq-p:hover,.sq-p:focus-visible{color:var(--green)}
+.sq-p::after{content:" 📷";font-size:.8em;opacity:.7}
+.sq-dlg{position:fixed;inset:0;z-index:1000;background:rgba(6,30,17,.72);display:grid;place-items:center;padding:16px}
+.sq-dlg[hidden]{display:none}
+.sq-dlg figure{margin:0;background:#fff;border-radius:24px;padding:14px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4);max-width:300px}
+.sq-dlg img{display:block;width:100%;height:auto;border-radius:16px;background:var(--cream)}
+.sq-dlg figcaption{display:grid;gap:2px;margin-top:10px}
+.sq-dlg figcaption b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.4rem;color:var(--forest)}
+.sq-dlg figcaption span{font-size:.8rem;color:var(--muted)}
+.sq-grid li small{color:var(--muted);font-family:var(--cond);font-weight:600;text-align:right}
 
 .team-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:8px}
 .team-photo{margin:0;position:relative;display:block;border-radius:28px;overflow:hidden;box-shadow:0 10px 24px rgba(11,61,34,.25);aspect-ratio:4/3;max-width:100%;background:var(--leaf);min-width:0;text-decoration:none;color:#fff}
@@ -370,6 +388,16 @@ var MONTHS=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.",
 function fd(d){var p=d.split("-");return parseInt(p[2],10)+" "+MONTHS[parseInt(p[1],10)-1];}
 function us(n){return /^Saint-Brice/.test(n);}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+var SQUAD={seniors1:{staff:[["Mohamed Hamma","Entraîneur"],["Benjamin Magnin Feysot","Entraîneur adjoint"],["Mikael Almeida","Entraîneur des gardiens"],["Manuel Maio Sampaio","Dirigeant"]],
+ g:[["Gardiens",[["Allan Momege","","joueur-momege.webp"],["Théo Guy","","joueur-guy.webp"]]],
+    ["Défenseurs",[["Abdoulaye Sy","Axe","joueur-sy.webp"],["Ismaël Kumbi Lema","Axe","joueur-kumbi.webp"],["Mohammed Sangaré","Axe","joueur-sangare.webp"],["Billy Da Cruz Rocha","Axe","joueur-da-cruz.webp"],["Sofiane Boukhedimi","Gauche","joueur-boukhedimi.webp"],["Souleymane Fofana","Droit","joueur-fofana.webp"],["Siyar Lordini","Droit","joueur-lordini.webp"],["Sirina Doucouré","Droit","joueur-doucoure.webp"],["Nawfel Oummeddah","","joueur-oummeddah.webp"]]],
+    ["Milieux",[["Emmanuel Mendes","Défensif","joueur-mendes.webp"],["Keryann Hocq","Défensif","joueur-hocq.webp"],["Luca Spurio","Central","joueur-spurio.webp"],["Arnaud Buisson","","joueur-buisson.webp"],["Kaïs Hamzaoui",""]]],
+    ["Attaquants",[["Sofiane Dris","Ailier"],["Yassine Skira","Ailier"],["Alpha Traoré","Ailier","joueur-traore-alpha.webp"],["Massil Ouali","Pointe","joueur-ouali.webp"],["Gilles Lepoittevin","Pointe","joueur-lepoittevin.webp"]]]]}};
+function squad(k){var el=document.getElementById("squad");if(!el)return;var s=SQUAD[k];if(!s){el.hidden=true;el.innerHTML="";return;}
+  var col=function(t,l,r){return '<div><h4>'+t+'</h4><ul>'+l.map(function(p){var nm=p[2]?'<button type="button" class="sq-p" data-ph="'+p[2]+'">'+esc(p[0])+'</button>':'<b>'+esc(p[0])+'</b>';return '<li>'+nm+(r?'<small>'+esc(p[1])+'</small>':'')+'</li>';}).join("")+'</ul></div>';};
+  el.innerHTML='<h3>Effectif 2026/2027</h3><div class="sq-grid">'+s.g.map(function(g){return col(g[0],g[1]);}).join("")+col("Staff",s.staff,1)+'</div>';el.hidden=false;
+  if(!el.dataset.on){el.dataset.on=1;el.addEventListener("click",function(e){var x=e.target.closest(".sq-p");if(!x)return;var d=document.getElementById("sq-dlg");d.querySelector("img").src=x.dataset.ph;d.querySelector("img").alt=x.textContent;d.querySelector("b").textContent=x.textContent;d.hidden=false;});
+  var d=document.getElementById("sq-dlg");document.body.appendChild(d);d.addEventListener("click",function(){d.hidden=true;});document.addEventListener("keydown",function(e){if(e.key==="Escape")d.hidden=true;});}}
 function render(k){
   var t=TEAMS.filter(function(x){return x.k===k;})[0]||TEAMS[0];
   document.getElementById("t-name").textContent=t.name;
@@ -387,6 +415,7 @@ function render(k){
   document.getElementById("t-res").innerHTML=rows||'<tr><td class="empty">Pas encore de match joué cette saison.</td></tr>';
   var tab=t.tab.length?'<tr><th>#</th><th>Équipe</th><th>J</th><th>Diff.</th><th>Pts</th></tr>'+t.tab.map(function(r){var d=r[7]-r[8];return '<tr'+(us(r[1])?' class="us"':'')+'><td>'+r[0]+'</td><td>'+esc(r[1])+'</td><td>'+r[3]+'</td><td>'+(d>0?"+"+d:d<0?"−"+Math.abs(d):"0")+'</td><td>'+r[2]+'</td></tr>';}).join(""):'<tr><td class="empty">Pas de classement publié pour cette compétition.</td></tr>';
   document.getElementById("t-tab").innerHTML=tab;
+  squad(t.k);
   try{localStorage.setItem("sbfc-team",t.k);}catch(e){}
 }
 (function(){

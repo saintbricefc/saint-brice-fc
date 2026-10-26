@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Le maillot officiel du Saint-Brice FC : 49 €, flocage nom et numéro, commande en ligne.">
+<link rel="icon" href="crest.webp">
+<title>Le maillot · Saint-Brice FC</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: charte des affiches Bandeira Cup — fond crème qui vire au vert pelouse, bandeaux-titres en pilule verte, panneaux blancs arrondis, pastille rouge ; un seul thème clair assumé, comme l'imprimé */
+:root{
+  --cream:#f2f2e3; --sage:#e2e3ce; --leaf:#cfddb9; --meadow:#9cc89a;
+  --pine:#0b3d22; --forest:#1d6037; --green:#0a9a48; --lime:#3dbe5f;
+  --ink:#231f20; --muted:#5a5c4c; --line:rgba(29,96,55,.18);
+  --red:#e31e24; --red-deep:#8e0e14;
+  --win:#0a9a48; --loss:#c8231f; --draw:#b08a12;
+  --pill:linear-gradient(90deg,#0b3d22 0%,#1d6037 30%,#0a9a48 70%,#3dbe5f 100%);
+  --panel:linear-gradient(180deg,#ffffff 0%,#eef0dd 55%,#d6dbbf 100%);
+  --display:"Anton","Arial Narrow",Impact,sans-serif;
+  --cond:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--cream)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:linear-gradient(180deg,var(--cream) 0%,var(--sage) 45%,var(--leaf) 80%,var(--meadow) 100%);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--pine)}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;text-wrap:balance;margin:0;text-transform:uppercase;letter-spacing:.02em}
+a{color:var(--forest)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--pill);color:#fff;box-shadow:0 4px 14px rgba(11,61,34,.3)}
+header .wrap{display:flex;align-items:center;gap:16px;padding-block:8px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-family:var(--display);font-size:1.35rem;letter-spacing:.04em;text-transform:uppercase}
+.brand img{width:auto;height:40px;flex:none;filter:drop-shadow(0 0 0 #fff) drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;max-width:100%}
+nav a{text-decoration:none;color:#fff;font-family:var(--cond);font-weight:700;font-size:1.02rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap}
+nav a:hover{background:rgba(255,255,255,.16)}
+nav a:last-child{background:#fff;color:var(--forest)}
+
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 50% 10%,rgba(255,255,255,.8) 0%,rgba(255,255,255,0) 70%)}
+.hero .wrap{position:relative;padding-block:44px 48px;display:grid;grid-template-columns:auto 1.2fr 1fr;gap:32px;align-items:center}
+.crest{width:150px;height:auto;filter:drop-shadow(0 10px 18px rgba(11,61,34,.28))}
+.badge{position:absolute;top:22px;right:max(16px,env(safe-area-inset-right,0px));background:linear-gradient(135deg,#ff6a5c 0%,var(--red) 45%,var(--red-deep) 100%);color:#fff;font-family:var(--display);font-size:1.25rem;letter-spacing:.04em;padding:6px 16px;border-radius:16px;transform:rotate(4deg);box-shadow:0 6px 14px rgba(142,14,20,.35)}
+.eyebrow{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:1rem;color:var(--forest)}
+.hero h1{font-size:clamp(3rem,8.5vw,5.8rem);margin-top:6px;color:var(--ink)}
+.hero h1 span{color:var(--green)}
+.hero p{max-width:42ch;font-size:1.08rem;color:var(--muted)}
+.cta{display:inline-block;margin-top:14px;background:var(--pill);color:#fff;text-decoration:none;font-family:var(--display);font-size:1.25rem;letter-spacing:.05em;text-transform:uppercase;padding:10px 26px;border-radius:999px;box-shadow:0 6px 14px rgba(11,61,34,.3)}
+.next{background:linear-gradient(135deg,#0b3d22 0%,#1d6037 35%,#0a9a48 75%,#3dbe5f 100%);color:#fff;border-radius:32px;padding:22px 24px;min-width:0;box-shadow:0 10px 24px rgba(11,61,34,.35)}
+.next .eyebrow{color:#cdeed6;font-size:.85rem}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:12px 0;font-family:var(--display);font-size:1.55rem;text-transform:uppercase;text-align:center;line-height:1.05}
+.vs span:nth-child(2){font-size:1.1rem;color:#a6e0b6}
+.next dl{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:0;font-size:1rem;font-family:var(--cond);font-weight:600;border-top:1px solid rgba(255,255,255,.25);padding-top:10px}
+.next dt{color:#cdeed6;font-weight:500}.next dd{margin:0}
+
+section{padding-block:52px}
+section[style]{background:transparent!important}
+.sec-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin-bottom:10px}
+.sec-head::before,.sec-head::after{content:"";height:5px;border-radius:5px;background:linear-gradient(90deg,rgba(29,96,55,0),var(--green))}
+.sec-head::after{background:linear-gradient(90deg,var(--green),rgba(29,96,55,0))}
+.sec-head h2{grid-column:2;grid-row:1;font-size:clamp(1.5rem,4vw,2.3rem);color:#fff;background:var(--pill);padding:6px 32px;border-radius:999px;box-shadow:0 4px 12px rgba(11,61,34,.3);white-space:nowrap}
+.sec-head::after{grid-column:3;grid-row:1}
+.sec-head::before{grid-column:1;grid-row:1}
+.sec-head .note{grid-column:1/-1;grid-row:2;text-align:center}
+.sec-head + *{margin-top:22px}
+.note{font-size:.88rem;color:var(--muted);font-family:var(--cond);font-weight:500;letter-spacing:.03em}
+.tag{display:inline-block;font-family:var(--cond);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--green)}
+
+.cal{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cal > div{min-width:0;background:var(--panel);border-radius:32px;padding:20px 24px;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.cal h3{font-size:1.45rem;margin-bottom:8px;color:var(--forest)}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td{padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+td.d{white-space:nowrap;color:var(--green);font-family:var(--cond);font-weight:700;font-size:1rem;width:1%}
+td.m{font-family:var(--cond);font-weight:700;font-size:1.08rem}
+td.m small{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.82rem}
+td.s{text-align:right;white-space:nowrap;font-family:var(--display);font-size:1.45rem}
+.pill{display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;font-family:var(--cond);font-size:.8rem;font-weight:700;color:#fff;margin-left:8px;vertical-align:4px}
+.std th{font-family:var(--cond);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:6px;border-bottom:2px solid var(--green);font-weight:700}
+.std td{padding:7px 6px;font-family:var(--cond);font-weight:600;font-size:1.02rem}
+.std td:nth-child(n+3),.std th:nth-child(n+3){text-align:right;width:1%;white-space:nowrap}
+.std td:last-child{font-family:var(--display);font-weight:400;font-size:1.2rem}
+.std tr.us td{background:var(--pill);color:#fff}
+.std tr.us td:first-child{border-radius:999px 0 0 999px;padding-left:12px}
+.std tr.us td:last-child{border-radius:0 999px 999px 0;padding-right:12px}
+.V{background:var(--win)}.D{background:var(--loss)}.N{background:var(--draw)}
+
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.team{background:var(--panel);border-radius:28px;padding:18px 22px;display:grid;gap:4px;align-content:start;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.team h3{font-size:1.65rem;color:var(--forest)}
+.team p{margin:0;color:var(--muted);font-size:.95rem}
+.team .meta{font-family:var(--cond);font-weight:600;font-size:1rem;display:grid;grid-template-columns:auto 1fr;gap:0 10px;margin-top:6px;padding-top:8px;border-top:1px solid var(--line)}
+.team .meta span:nth-child(odd){color:var(--muted);font-weight:500}
+
+.news{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.news article{display:grid;gap:8px;align-content:start;min-width:0;background:var(--panel);border-radius:28px;padding:22px;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.news article:first-child{background:linear-gradient(135deg,#0b3d22 0%,#1d6037 35%,#0a9a48 75%,#3dbe5f 100%);color:#fff}
+.news article:first-child .tag,.news article:first-child time{color:#cdeed6}
+.news h3{font-size:1.5rem}
+.news article:first-child h3{font-size:2.3rem}
+.news p{margin:0}
+.news time{font-family:var(--cond);font-weight:600;font-size:.92rem;color:var(--muted)}
+
+.join{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.join > div{min-width:0;background:var(--panel);border-radius:32px;padding:24px;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.steps{display:grid;gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:1.3rem;width:40px;height:40px;background:var(--pill);color:#fff;border-radius:50%;display:grid;place-items:center}
+.steps b{display:block;font-family:var(--cond);font-size:1.1rem;font-weight:700}
+.contact{margin-top:22px;border-top:1px solid var(--line);padding-top:16px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:.98rem}
+.contact span:nth-child(odd){color:var(--muted);font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.9rem}
+form{background:linear-gradient(135deg,#0b3d22 0%,#1d6037 35%,#0a9a48 75%,#3dbe5f 100%);color:#fff;border-radius:32px;padding:26px;display:grid;gap:14px;box-shadow:0 10px 24px rgba(11,61,34,.3)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:5px;font-family:var(--cond);font-weight:700;letter-spacing:.04em;font-size:1rem;min-width:0}
+input,select,textarea{font:inherit;font-family:var(--body);font-weight:400;letter-spacing:0;padding:11px 14px;border:0;border-radius:14px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid #a6e0b6}
+button{font-family:var(--display);font-size:1.2rem;letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(135deg,#ff6a5c 0%,var(--red) 45%,var(--red-deep) 100%);color:#fff;border:0;border-radius:999px;padding:10px 26px;cursor:pointer;justify-self:start;box-shadow:0 6px 14px rgba(142,14,20,.35)}
+button:hover{filter:brightness(1.08)}
+.ok{background:#fff;color:var(--ink);border-radius:14px;padding:10px 14px;font-size:.95rem}
+
+footer{padding-block:0 20px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:linear-gradient(135deg,#0b3d22 0%,#1d6037 35%,#0a9a48 75%,#3dbe5f 100%);color:#fff;border-radius:32px;padding-block:20px;font-family:var(--cond);font-weight:600;font-size:1.02rem;box-shadow:0 10px 24px rgba(11,61,34,.35);max-width:calc(1100px - 32px);width:calc(100% - 32px)}
+footer span:last-child{font-family:var(--display);font-weight:400;letter-spacing:.05em;text-transform:uppercase}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:auto 1fr}
+  .hero .next{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .cal,.join,.news{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  nav{margin-left:0;width:100%}
+  section{padding-block:36px}
+  .hero .wrap{grid-template-columns:1fr;padding-block:56px 36px}
+  .crest{width:104px}
+  .sec-head h2{white-space:normal;padding:6px 22px;text-align:center}
+  .sec-head{gap:8px}
+}
+
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+
+
+
+
+
+
+
+
+
+/* Hero photo terrain */
+.hero{background:linear-gradient(0deg,rgba(6,38,20,.92) 0%,rgba(6,38,20,.55) 45%,rgba(6,38,20,.15) 100%),url(photo-terrain.webp) center 62%/cover no-repeat;color:#fff}
+.hero .wrap{grid-template-columns:1fr auto;align-items:end;padding-block:120px 40px;min-height:min(72vh,620px)}
+.hero-main{display:flex;gap:22px;align-items:flex-end}
+.hero .crest{width:112px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
+.hero h1{color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.45);font-size:clamp(2.8rem,7vw,5.4rem);margin:0}
+.hero h1 span{color:var(--lime);display:block}
+.hero .facts-line{max-width:none;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;color:#d9efdd;margin:10px 0 0}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.hero .cta{background:#fff;color:var(--forest)}
+.hero .cta.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.85)}
+.hero .next{width:320px;background:rgba(6,38,20,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25)}
+.hero .badge{display:none}
+.weekend{padding-block:26px 6px}
+.wk-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.wk-head h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.4rem);text-transform:uppercase;margin:0;color:var(--pine)}
+.wk-head span{font-family:var(--cond);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.wk-head a{margin-left:auto;font-family:var(--cond);font-weight:700;color:var(--green);text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
+.wk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.wk-card{width:100%;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;background:#fff;border-radius:18px;padding:12px 14px;text-decoration:none;color:var(--ink);box-shadow:0 4px 12px rgba(11,61,34,.10);border-left:6px solid var(--muted);cursor:pointer;font:inherit;text-align:left;border-top:0;border-right:0;border-bottom:0}
+.wk-card.V{border-left-color:var(--green)}.wk-card.D{border-left-color:var(--red)}.wk-card.N{border-left-color:#9a9a8a}
+.wk-card b{font-family:var(--display);font-weight:400;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em}
+.wk-card .sc{font-family:var(--display);font-size:1.5rem;grid-row:span 2}
+.wk-card small{text-transform:none;letter-spacing:0;font-family:var(--body);color:var(--muted);font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wk-card:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(11,61,34,.16)}
+.tourney{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 18px;margin:18px 0 8px;padding:20px 26px;border-radius:28px;text-decoration:none;color:#0b0b0b;background:linear-gradient(120deg,#f4d877 0%,#e3be55 50%,#c99a2e 100%);box-shadow:0 10px 24px rgba(120,90,10,.28)}
+.t-tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;background:#0b0b0b;color:#f4d877;padding:4px 12px;border-radius:999px}
+.t-name{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase;line-height:1}
+.t-info{grid-column:2;font-family:var(--cond);font-weight:600;font-size:1.05rem}
+.t-go{grid-row:1/span 2;grid-column:3;font-family:var(--display);font-size:1.2rem;text-transform:uppercase}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:90px 28px}.hero .next{width:auto}}
+@media (max-width:560px){.hero-main{flex-direction:column;align-items:flex-start;gap:12px}.hero .crest{width:80px}.tourney{grid-template-columns:1fr}.t-info,.t-go{grid-column:1;grid-row:auto}}
+
+nav{scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav a[aria-current]{background:rgba(255,255,255,.22);box-shadow:inset 0 -3px 0 var(--lime)}
+nav a:last-child[aria-current]{box-shadow:inset 0 -3px 0 var(--green)}
+main.page{min-height:60vh;padding-top:8px}
+.une-teaser{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);text-decoration:none;color:inherit;align-items:center}
+.une-teaser img{width:100%;height:100%;object-fit:cover;display:block}
+.une-teaser .une-head{padding:28px 32px}
+.une .une-teaser .cta{background:var(--pill);color:#fff;margin-top:6px}
+.une-teaser:hover h2{text-decoration:underline}
+@media (max-width:860px){.une-teaser{grid-template-columns:1fr}.une-teaser .une-head{padding:20px}}
+/* À la une */
+.une{padding-block:24px 6px}
+.une-card{background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 28px rgba(11,61,34,.16)}
+.une-head{padding:28px 32px 8px;display:grid;gap:8px;justify-items:start}
+.une-tag{background:var(--red);color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1rem;padding:5px 14px;border-radius:10px;transform:rotate(-2deg)}
+.une-kicker{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;color:var(--green)}
+.une-head h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:.98;margin:0;color:var(--pine)}
+.une-lead{margin:0;font-size:1.12rem;max-width:62ch;color:var(--ink)}
+.une-itw{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:28px;padding:20px 32px 28px;align-items:start}
+.q-pic{margin:0}.q-pic img{width:100%;height:auto;display:block;border-radius:22px}
+.q-pic figcaption{display:flex;justify-content:space-around;margin-top:8px;font-family:var(--cond);font-weight:600;font-size:1.05rem;color:var(--muted)}.q-pic b{color:var(--pine);font-weight:700}
+.q-body p{margin:0 0 10px}
+.q-big{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.05;color:var(--green);border-left:6px solid var(--lime);padding-left:14px}
+.q-sign{font-family:var(--cond);font-weight:600;font-size:1.05rem;color:var(--muted)}.q-sign b{color:var(--pine)}
+.une-team{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);background:var(--cream);color:var(--ink)}
+.une-team img{width:100%;height:100%;max-height:440px;object-fit:cover;display:block}
+.une-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:24px;align-content:center}
+.une-stats div{padding:18px 10px;text-align:center;background:#fff;border-radius:20px;box-shadow:0 4px 12px rgba(11,61,34,.10);border-top:5px solid var(--green)}
+.une-stats b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1;color:var(--pine)}
+.une-stats span{font-family:var(--cond);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.une-foot{background:linear-gradient(135deg,#0b3d22 0%,#1d6037 50%,#0a9a48 100%);color:#fff;padding:22px 32px 26px;display:grid;gap:14px}
+.une-foot h3{margin:0;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem}
+.une-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.une-path li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;background:rgba(0,0,0,.18);border-radius:14px;padding:9px 12px;font-size:.95rem;border-left:5px solid #d9dccb}
+.une-path li.V{border-left-color:var(--lime)}.une-path li.D{border-left-color:var(--red)}
+.une-path .d{grid-column:1/-1;font-family:var(--cond);font-weight:700;color:#bfe8c9;text-transform:uppercase;font-size:.8rem;letter-spacing:.06em}
+.une-path .m small{display:block;color:#cdeed6;font-size:.78rem}
+.une-path .s{font-family:var(--display);font-size:1.3rem;white-space:nowrap}
+.une-path .s i{display:none}
+.une-end{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.une-next{margin:0;font-family:var(--cond);font-weight:700;font-size:1.1rem}
+.une .cta{background:#fff;color:var(--forest)}
+@media (max-width:860px){.une-head,.une-itw,.une-foot{padding-inline:20px}.une-itw{grid-template-columns:1fr}.une-team{grid-template-columns:1fr}.une-team img{max-height:none;height:auto}}
+
+/* Maillot */
+.kit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+.kit-pics{display:grid;grid-template-columns:1fr;gap:10px}
+.kit-pics img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:22px;box-shadow:0 10px 24px rgba(11,61,34,.25)}
+.kit-tag{display:inline-block;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;background:var(--pine);color:#d4ec5a;padding:5px 12px;border-radius:999px}
+.kit-txt h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.02;margin:12px 0 8px;color:var(--pine)}
+.kit-txt p{margin:0 0 14px}
+.kit-price{display:flex;align-items:baseline;gap:12px}
+.kit-price b{font-family:var(--display);font-weight:400;font-size:3rem;color:var(--green);line-height:1}
+.kit-price span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.kit-opts{list-style:none;padding:0;margin:10px 0 16px;display:grid;gap:4px;max-width:300px;font-family:var(--cond);font-weight:600;font-size:1.08rem}
+.kit-opts li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:3px 0}
+.order{margin-top:30px;color:var(--ink);background:#fff;border-radius:28px;padding:24px;box-shadow:0 8px 22px rgba(11,61,34,.12)}
+.order h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.9rem;margin:0 0 4px;color:var(--pine)}
+.o-lines{display:grid;gap:10px;margin:16px 0 10px}
+.o-line{display:grid;grid-template-columns:110px 180px minmax(0,1fr) 80px 90px 44px;gap:10px;align-items:end;background:var(--cream);border-radius:18px;padding:12px}
+.order label{display:grid;gap:4px;font-family:var(--cond);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;color:var(--forest)}
+.order input,.order select{font:inherit;font-family:var(--body);font-size:1rem;text-transform:none;letter-spacing:0;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);min-height:44px;box-sizing:border-box;width:100%}
+.o-price{font-family:var(--display);font-size:1.4rem;color:var(--green);text-align:right;padding-bottom:8px}
+.o-del{min-height:44px;border:0;border-radius:12px;background:#f3d6d6;color:#8e0e14;font-size:1.3rem;cursor:pointer}
+.o-add{border:2px dashed var(--green);background:transparent;color:var(--green);font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:10px 16px;border-radius:999px;cursor:pointer;min-height:44px}
+.o-who{border:0;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.o-who legend{font-family:var(--display);text-transform:uppercase;font-size:1.3rem;color:var(--pine);margin-bottom:8px}
+.o-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px}
+.o-total{font-family:var(--cond);font-weight:700;font-size:1.3rem;text-transform:uppercase}
+.o-total b{font-family:var(--display);font-weight:400;font-size:2rem;color:var(--green);margin-left:6px}
+.o-msg{margin:12px 0 0;font-weight:600;color:var(--forest)}
+@media (max-width:860px){.kit{grid-template-columns:1fr}.o-line{grid-template-columns:1fr 1fr}.o-line .o-txt{grid-column:1/-1}}
+
+/* Résultats */
+.chips{display:grid;gap:10px;margin-bottom:22px}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chips-row > span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--muted);min-width:84px}
+.chip{font-family:var(--cond);font-weight:700;font-size:1rem;letter-spacing:.03em;background:#fff;color:var(--forest);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;box-shadow:none;text-transform:none;justify-self:auto}
+.chip:hover{border-color:var(--green);filter:none}
+.chip[aria-pressed="true"]{background:var(--pill);color:#fff;border-color:transparent}
+.team-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
+.team-head h3{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--forest)}
+.team-head .lvl{font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.nextbox{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;background:var(--pill);color:#fff;border-radius:18px;padding:12px 18px;margin-bottom:14px}
+.nextbox b{font-family:var(--display);font-weight:400;font-size:1.2rem;letter-spacing:.03em;text-transform:uppercase}
+.nextbox span{font-family:var(--cond);font-weight:600;color:#cdeed6}
+td.m.us{color:var(--forest)}
+.res-note{display:block;font-size:.78rem;color:var(--green);font-family:var(--cond);font-weight:600}
+.empty{color:var(--muted);font-size:.95rem;padding:8px 0}
+.src{margin-top:14px;font-size:.85rem;color:var(--muted)}
+
+.team-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:8px}
+.team-photo{margin:0;position:relative;display:block;border-radius:28px;overflow:hidden;box-shadow:0 10px 24px rgba(11,61,34,.25);aspect-ratio:4/3;max-width:100%;background:var(--leaf);min-width:0;text-decoration:none;color:#fff}
+.team-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.team-photo:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.team-photo img{transition:none}}
+.team-photo span.cap{position:absolute;left:12px;bottom:12px;right:12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;background:var(--pill);border-radius:18px;padding:7px 16px;box-shadow:0 4px 12px rgba(11,61,34,.35);width:max-content;max-width:calc(100% - 24px)}
+.team-photo b{font-family:var(--display);font-weight:400;font-size:1.2rem;letter-spacing:.04em;text-transform:uppercase}
+.team-photo small{font-family:var(--cond);font-weight:600;font-size:.95rem;color:#cdeed6}
+.t-photo{display:block;width:100%;max-height:320px;object-fit:cover;border-radius:24px;margin-bottom:14px;box-shadow:0 6px 16px rgba(29,96,55,.2)}
+/* Le club / Bandeira */
+.palm th{font-family:var(--cond);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:6px;border-bottom:2px solid var(--green)}
+.palm td{padding:8px 6px;font-family:var(--cond);font-weight:600;font-size:1rem}
+.palm td:first-child{font-family:var(--display);font-weight:400;color:var(--green)}
+.palm td:nth-child(2){font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:18px}
+.fact{background:var(--panel);border-radius:24px;padding:16px 18px;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.fact b{display:block;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1;color:var(--green)}
+.fact span{font-family:var(--cond);font-weight:600;font-size:1rem}
+.prose{max-width:68ch;font-size:1.05rem}
+.prose p{margin:0 0 12px}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+.split > div{min-width:0}
+.panelbox{background:var(--panel);border-radius:32px;padding:22px 24px;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.panelbox h3{font-size:1.4rem;color:var(--forest);margin-bottom:8px}
+.clubs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
+.clubs li{font-family:var(--cond);font-weight:600;background:#fff;border-radius:999px;padding:3px 12px;font-size:.95rem;border:1px solid var(--line)}
+.bandeira-hero{background:linear-gradient(160deg,#f4d877 0%,#e3be55 45%,#c99a2e 100%);color:#0b0b0b;border-radius:32px;padding:26px 28px;display:grid;gap:8px;margin-bottom:22px;box-shadow:0 10px 24px rgba(120,90,10,.3)}
+.bandeira-hero .eyebrow{color:#2a2008}
+.bandeira-hero h3{font-size:clamp(2rem,6vw,3.4rem)}
+.bandeira-hero p{margin:0;font-family:var(--cond);font-weight:600;font-size:1.15rem;max-width:60ch}
+.bandeira-hero a{color:#0b0b0b;font-weight:700}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="crest.webp" alt="" width="34" height="40">Saint-Brice FC</a>
+    <nav aria-label="Navigation principale">
+      <a href="club.html">Le club</a>
+      <a href="resultats.html">Résultats</a>
+      <a href="maillot.html" aria-current="page">Maillot</a>
+      <a href="bandeira-cup.html">Bandeira Cup</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="inscriptions.html">Inscriptions</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">  <section id="maillot">
+    <div class="wrap">
+      <div class="sec-head"><h2>Notre maillot</h2></div>
+      <div class="kit">
+        <div class="kit-pics">
+          <img class="kit-face" src="photo-seniors1.webp" alt="Les Seniors R1 du Saint-Brice FC portant le maillot officiel" width="520" height="336" loading="lazy">
+        </div>
+        <div class="kit-txt">
+          <span class="kit-tag">Maillot collector · Saison 2026/2027 · Offre limitée</span>
+          <h3>Notre histoire, notre ville, notre maillot</h3>
+          <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
+          <div class="kit-price"><b>49 €</b><span>Maillot · toutes tailles</span></div>
+          <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
+          <a class="cta" href="#commande">Commander</a>
+        </div>
+      </div>
+
+      <form class="order" id="commande" novalidate>
+        <h3>Commander en ligne</h3>
+        <p class="note">Remplissez la commande : elle est envoyée au club par e-mail, qui vous recontacte pour le paiement et le retrait. Pour les tailles, aidez-vous du pack remis par le club à l'inscription.</p>
+        <div class="o-lines" id="o-lines"></div>
+        <button type="button" class="o-add" id="o-add">+ Ajouter un maillot</button>
+        <fieldset class="o-who">
+          <legend>Vos coordonnées</legend>
+          <label>Nom et prénom du parent (ou du licencié majeur)<input id="o-parent" autocomplete="name" required></label>
+          <label>Nom et prénom du licencié<input id="o-lic"></label>
+          <label>Catégorie (U6, U7… Seniors)<input id="o-cat"></label>
+          <label>Téléphone<input id="o-tel" type="tel" autocomplete="tel" required></label>
+          <label>E-mail<input id="o-mail" type="email" autocomplete="email"></label>
+        </fieldset>
+        <div class="o-foot"><div class="o-total">Total : <b id="o-total">49 €</b></div><button type="submit" class="cta">Envoyer la commande</button></div>
+        <p class="o-msg" id="o-msg" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Saint-Brice Football Club · Association loi 1901 · Affilié FFF n° 527269</span><span>Allez Saint-Brice !</span></div></footer>
+
+<script>
+var TEAMS=[{"k":"seniors1","name":"Seniors R1","g":"Seniors","lvl":"Régional 1 · Poule A","comp":"Seniors R1","m":[{"d":"2026-08-15","c":"Match amical","h":"AFC Compiègne","hs":1,"as_":0,"a":"Saint-Brice FC","n":""},{"d":"2026-09-05","c":"Régional 1 · J1","h":"Saint-Brice FC","hs":4,"as_":1,"a":"FC 93 Bobigny","n":""},{"d":"2026-09-13","c":"Coupe de France · 3e tour","h":"Buc Foot AO","hs":1,"as_":3,"a":"Saint-Brice FC","n":""},{"d":"2026-09-19","c":"Régional 1 · J2","h":"CO Ulis","hs":1,"as_":0,"a":"Saint-Brice FC","n":""},{"d":"2026-09-27","c":"Coupe de France · 4e tour","h":"VFFA 77","hs":0,"as_":5,"a":"Saint-Brice FC","n":""},{"d":"2026-10-03","c":"Régional 1 · J3","h":"Aulnaysienne Esp.","hs":0,"as_":1,"a":"Saint-Brice FC","n":""},{"d":"2026-10-10","c":"Coupe de France · 5e tour","h":"Saint-Brice FC","hs":0,"as_":1,"a":"FC Fleury 91","n":""},{"d":"2026-10-24","c":"Coupe de Paris IDF · 3e tour","h":"Gretz Tournan SC","hs":0,"as_":2,"a":"Saint-Brice FC","n":""},{"d":"2026-10-31","t":"18h00","c":"Régional 1","h":"Mureaux OFC","a":"Saint-Brice FC"}],"tab":[[1,"Le Mée Sports",10,4,3,1,0,10,5],[2,"Mitry Compans Goelly",9,4,3,0,1,6,3],[3,"CO Ulis",8,4,2,2,0,7,4],[4,"Saint-Brice FC",6,3,2,0,1,5,2],[5,"Montreuil FC",4,3,1,1,1,3,3],[6,"Mantois 78 FC",4,4,1,1,2,4,4],[7,"St Leu 95 FC",4,4,1,1,2,5,6],[8,"Paris 13 Atletico 2",4,4,1,1,2,3,5],[9,"FC 93 Bobigny",3,3,1,0,2,2,5],[10,"Montrouge FC 92",3,4,1,0,3,8,12],[11,"Mureaux OFC",3,3,0,3,0,2,2],[12,"Aulnaysienne Esp.",2,4,0,2,2,1,5]]},{"k":"seniors2","name":"Seniors D1","g":"Seniors","lvl":"Départemental 1","comp":"D1","m":[{"d":"2026-09-20","c":"D1","h":"Saint-Brice FC 2","hs":4,"as_":2,"a":"Marly-la-Ville ES","n":""},{"d":"2026-09-27","c":"Coupe du Comité · 1er tour","h":"FC2M 2","hs":1,"as_":7,"a":"Saint-Brice FC 2","n":""},{"d":"2026-10-04","c":"D1","h":"Saint-Brice FC 2","hs":1,"as_":4,"a":"Franconville FC","n":""},{"d":"2026-10-11","c":"D1","h":"Écouen FC","hs":1,"as_":4,"a":"Saint-Brice FC 2","n":""},{"d":"2026-10-25","c":"Coupe du Comité · 2e tour","h":"Saint-Brice FC 2","hs":1,"as_":1,"a":"St Leu 95 FC 2","n":"Qualifié aux tirs au but (4-3)"},{"d":"2026-11-01","t":"15h00","c":"D1","h":"Saint-Brice FC 2","a":"Groslay FC"}],"tab":[[1,"Vauréal FCM",8,4,2,2,0,4,0],[2,"Franconville FC",8,5,2,2,1,10,9],[3,"Bezons USO",8,4,2,2,0,9,2],[4,"Jouy-le-Moutier FC",8,5,2,2,1,5,4],[5,"Groslay FC",7,4,2,1,1,10,5],[6,"Osny FC",7,4,2,1,1,6,5],[7,"Saint-Brice FC 2",6,3,2,0,1,9,7],[8,"Villiers-le-Bel FC 2",4,4,1,1,2,4,10],[9,"St Leu 95 FC 2",3,4,1,0,3,2,6],[10,"Marly-la-Ville ES",2,4,0,2,2,5,8],[11,"Cosmo Taverny",2,3,0,2,1,4,5],[12,"Écouen FC",1,4,0,1,3,2,9]]},{"k":"seniors5","name":"Seniors CDM 1","g":"Seniors","lvl":"Coupe du dimanche matin · R2","comp":"CDM R2","m":[{"d":"2026-09-13","c":"CDM R2","h":"Arcop Nanterre 5","hs":3,"as_":1,"a":"Saint-Brice FC 5","n":""},{"d":"2026-09-20","c":"CDM R2","h":"Saint-Brice FC 5","hs":2,"as_":0,"a":"Porto La Portugaise 5","n":""},{"d":"2026-10-04","c":"CDM R2","h":"Sartrouville ES 5","hs":4,"as_":3,"a":"Saint-Brice FC 5","n":""},{"d":"2026-10-11","c":"CDM Coupe de Paris · 1/16e","h":"Presles-en-Brie RC 5","hs":5,"as_":1,"a":"Saint-Brice FC 5","n":""},{"d":"2026-10-18","c":"CDM R2","h":"Portugais Paix Vivre 5","hs":3,"as_":1,"a":"Saint-Brice FC 5","n":""},{"d":"2026-11-01","t":"09h30","c":"CDM R2","h":"Saint-Brice FC 5","a":"St Thibault FC 5"}],"tab":[[1,"Menucourt AS 5",10,4,3,1,0,12,6],[2,"Sartrouville ES 5",9,4,3,0,1,15,9],[3,"Adamois Ol. 5",9,4,3,0,1,12,6],[4,"Championnet S. Paris 5",9,4,3,0,1,9,7],[5,"Arcop Nanterre 5",7,4,2,1,1,13,12],[6,"Portugais Paix Vivre 5",7,4,2,1,1,7,6],[7,"Courbevoie Sports 5",4,4,1,1,2,6,8],[8,"Triel AC 5",4,4,1,1,2,8,6],[9,"Porto La Portugaise 5",4,4,1,1,2,3,8],[10,"Villiers Franco Port 5",3,4,1,0,3,11,15],[11,"Saint-Brice FC 5",3,4,1,0,3,7,10],[12,"St Thibault FC 5",0,4,0,0,4,5,15]]},{"k":"seniors6","name":"Seniors CDM 2","g":"Seniors","lvl":"Dimanche matin · D2","comp":"CDM D2","m":[{"d":"2026-10-25","c":"CDM D2","h":"ES Herblay 5","hs":3,"as_":3,"a":"Saint-Brice FC 6","n":""},{"d":"2026-11-01","t":"09h45","c":"CDM D2","h":"Saint-Brice FC 6","a":"SG AS 5"}],"tab":[[1,"SG AS 5",3,1,1,0,0,5,0],[2,"Pierrelaye FC 5",3,2,1,0,1,7,6],[3,"Eaubonne FC 5",3,1,1,0,0,5,1],[4,"St Leu 95 FC 5",3,1,1,0,0,4,1],[5,"Saint-Brice FC 6",1,1,0,1,0,3,3],[6,"ES Herblay 5",1,1,0,1,0,3,3],[7,"Pontoisienne JS 5",0,2,0,0,2,2,11],[8,"Cosmo Taverny 5",0,1,0,0,1,1,5]]},{"k":"anciens","name":"Anciens","g":"Seniors","lvl":"Anciens · D3","comp":"Anciens D3","m":[{"d":"2026-09-20","c":"Anciens D3","h":"Puiseux-Louvres 95 2","hs":4,"as_":4,"a":"Saint-Brice FC","n":""},{"d":"2026-09-27","c":"Coupe du Val-d'Oise · 1er tour","h":"Saint-Brice FC","hs":0,"as_":5,"a":"Magny-en-Vexin FC","n":""},{"d":"2026-10-04","c":"Anciens D3","h":"Saint-Brice FC","hs":18,"as_":2,"a":"Courdimanche AS","n":""},{"d":"2026-10-11","c":"Anciens D3","h":"Saint-Brice FC","hs":2,"as_":6,"a":"Ézanville-Écouen US 2","n":""},{"d":"2026-10-25","c":"Anciens D3","h":"Saint-Brice FC","hs":3,"as_":4,"a":"Champagne 95 SFC 2","n":""},{"d":"2026-11-01","t":"09h45","c":"Anciens D3","h":"Magny-en-Vexin FC 2","a":"Saint-Brice FC"}],"tab":[[1,"Champagne 95 SFC 2",12,4,4,0,0,12,7],[2,"Ézanville-Écouen US 2",10,4,3,1,0,17,3],[3,"Garges-Gonesse FCM",10,4,3,1,0,9,5],[4,"Académie Football CL",9,4,3,0,1,13,6],[5,"Puiseux-Louvres 95 2",7,3,2,1,0,12,7],[6,"Vexin AS",5,4,1,2,1,7,5],[7,"Saint-Brice FC",4,4,1,1,2,27,16],[8,"ES Herblay 2",4,4,1,1,2,7,10],[9,"Bruyères-Bernes USM",1,3,0,1,2,4,6],[10,"Magny-en-Vexin FC 2",0,3,0,0,3,4,8],[11,"Auvers-Ennery FC 2",0,4,0,0,4,3,14],[12,"Courdimanche AS",-1,3,0,0,2,2,30]]},{"k":"seniorsf","name":"Seniors féminines","g":"Féminines","lvl":"Départemental 1","comp":"D1 F","m":[{"d":"2026-09-19","c":"Coupe de France féminine · 2e tour","h":"Saint-Brice FC","hs":3,"as_":2,"a":"FC2M","n":""},{"d":"2026-10-03","c":"Coupe de France féminine · 3e tour","h":"Versailles 78 FC","hs":3,"as_":0,"a":"Saint-Brice FC","n":"Forfait"},{"d":"2026-10-10","c":"D1 féminine","h":"Cergy-Pontoise FC","hs":5,"as_":0,"a":"Saint-Brice FC","n":"Forfait"},{"d":"2026-11-07","t":"12h00","c":"D1 féminine","h":"St Ouen l'Aumône AS","a":"Saint-Brice FC"}],"tab":[[1,"Cergy-Pontoise FC",3,1,1,0,0,5,0],[2,"Méry-Mériel FC",3,1,1,0,0,5,1],[3,"Ent. GAFEPB-FCF",3,1,1,0,0,2,1],[4,"Groslay FC",0,1,0,0,1,1,2],[5,"St Ouen l'Aumône AS",0,1,0,0,1,1,5],[6,"Garges-Gonesse FCM",0,0,0,0,0,0,0],[7,"Ent. ESSG/FCSAM 2",0,0,0,0,0,0,0],[8,"Saint-Brice FC",-1,1,0,0,0,0,5]]},{"k":"u18","name":"U18","g":"Jeunes","lvl":"U18 Régional 3 · Poule C","comp":"U18 R3","m":[{"d":"2026-09-13","c":"U18 R3","h":"Paris Univers. Club","hs":2,"as_":2,"a":"Saint-Brice FC","n":""},{"d":"2026-09-20","c":"U18 R3","h":"Saint-Brice FC","hs":2,"as_":1,"a":"Lilas FC","n":""},{"d":"2026-09-27","c":"Coupe Gambardella · 2e tour","h":"Ville-d'Avray US","hs":2,"as_":3,"a":"Saint-Brice FC","n":""},{"d":"2026-10-04","c":"U18 R3","h":"Bussy-St-Georges FC","hs":1,"as_":4,"a":"Saint-Brice FC","n":""},{"d":"2026-10-11","c":"Coupe Gambardella · 3e tour","h":"Saint-Brice FC","hs":1,"as_":1,"a":"Villepinte Flamboyants","n":"Qualifié aux tirs au but (4-3)"},{"d":"2026-10-18","c":"U18 R3","h":"Houilles AC","hs":2,"as_":4,"a":"Saint-Brice FC","n":""},{"d":"2026-10-25","c":"Coupe Gambardella · 4e tour","h":"Saint-Brice FC","hs":1,"as_":3,"a":"JA Drancy","n":""},{"d":"2026-11-01","t":"13h00","c":"U18 R3","h":"Villemomble Sports","a":"Saint-Brice FC"}],"tab":[[1,"Meaux Academy CS",12,4,4,0,0,9,3],[2,"Saint-Brice FC",10,4,3,1,0,12,6],[3,"Paris Univers. Club",8,4,2,2,0,11,4],[4,"RC Argenteuil 2",7,4,2,1,1,10,4],[5,"Houilles AC",5,4,1,2,1,7,8],[6,"Villetaneuse CS",5,4,1,2,1,6,6],[7,"Lilas FC",4,4,1,1,2,5,4],[8,"Bussy-St-Georges FC",4,4,1,1,2,6,10],[9,"Villemomble Sports",4,4,1,1,2,6,7],[10,"Créteil F. 2",4,4,1,1,2,3,7],[11,"Cergy-Pontoise FC",1,4,0,1,3,2,10],[12,"Seizième ES",1,4,0,1,3,1,9]]},{"k":"u18b","name":"U18 (2)","g":"Jeunes","lvl":"U18 Départemental 2","comp":"U18 D2","m":[{"d":"2026-09-20","c":"U18 D2","h":"Soisy-Andilly-Margency","hs":2,"as_":3,"a":"Saint-Brice FC 2","n":""},{"d":"2026-10-04","c":"U18 D2","h":"Saint-Brice FC 2","hs":3,"as_":3,"a":"Méry-Mériel FC","n":""},{"d":"2026-10-11","c":"U18 D2","h":"Saint-Brice FC 2","hs":3,"as_":5,"a":"Menucourt AS","n":""},{"d":"2026-10-25","c":"U18 D2","h":"Champagne 95 SFC","hs":1,"as_":3,"a":"Saint-Brice FC 2","n":""},{"d":"2026-11-01","t":"13h00","c":"U18 D2","h":"Saint-Brice FC 2","a":"Gonesse RC"}],"tab":[[1,"Cergy-Pontoise FC 2",12,4,4,0,0,24,5],[2,"Beauchamp AS",9,4,3,0,1,20,8],[3,"Menucourt AS",7,4,2,1,1,13,18],[4,"Saint-Brice FC 2",7,4,2,1,1,12,11],[5,"Méry-Mériel FC",7,3,2,1,0,7,5],[6,"Courdimanche AS",6,4,2,0,2,17,16],[7,"Osny FC 2",4,4,1,1,2,17,21],[8,"Champagne 95 SFC",3,3,1,0,2,5,10],[9,"Soisy-Andilly-Margency",3,4,1,0,3,4,12],[10,"Olympique Adamois",3,4,1,0,3,10,15],[11,"Cosmo Taverny",1,3,0,1,2,8,13],[12,"Gonesse RC",1,3,0,1,2,5,8]]},{"k":"u18f","name":"U18 féminines","g":"Féminines","lvl":"U18F Départemental 1","comp":"U18F D1","m":[{"d":"2026-09-19","c":"Coupe Nike U18F · 1er tour","h":"Saint-Brice FC","hs":3,"as_":0,"a":"Noisy-le-Sec Banlieue","n":"Gagné par forfait"},{"d":"2026-10-03","c":"Coupe Nike U18F · 2e tour","h":"Ent. FCF/GAFEPB","hs":1,"as_":6,"a":"Saint-Brice FC","n":""},{"d":"2026-10-10","c":"U18F D1","h":"Gonesse RC","hs":0,"as_":2,"a":"Saint-Brice FC","n":""},{"d":"2026-10-17","c":"Coupe Nike U18F · 3e tour","h":"St Ouen l'Aumône AS","hs":8,"as_":1,"a":"Saint-Brice FC","n":""},{"d":"2026-11-07","t":"17h00","c":"U18F D1","h":"Saint-Brice FC","a":"Cergy-Pontoise FC 2"}],"tab":[[1,"Adamois Ol.",3,1,1,0,0,6,2],[2,"Saint-Brice FC",3,1,1,0,0,2,0],[3,"Cosmo Taverny",3,1,1,0,0,2,1],[4,"Cergy-Pontoise FC 2",0,1,0,0,1,2,6],[5,"Fosses FU",0,1,0,0,1,1,2],[6,"Gonesse RC",0,1,0,0,1,0,2]]},{"k":"u16","name":"U16","g":"Jeunes","lvl":"U16 Régional 2 · Poule B","comp":"U16 R2","m":[{"d":"2026-09-13","c":"U16 R2","h":"Cergy-Pontoise FC","hs":1,"as_":1,"a":"Saint-Brice FC","n":""},{"d":"2026-09-20","c":"U16 R2","h":"Saint-Brice FC","hs":0,"as_":1,"a":"Mantois 78 FC 2","n":""},{"d":"2026-09-27","c":"Coupe de Paris U16 · cadrage","h":"Saint-Brice FC","hs":2,"as_":1,"a":"Colombienne Foot ES","n":""},{"d":"2026-10-11","c":"Coupe de Paris U16 · 1/32e","h":"Garenne-Colombes AF","hs":1,"as_":0,"a":"Saint-Brice FC","n":""},{"d":"2026-10-24","c":"U16 R2","h":"Saint-Brice FC","hs":2,"as_":0,"a":"Bagneux Com","n":""},{"d":"2026-11-01","t":"13h30","c":"U16 R2","h":"Nanterre ES 2","a":"Saint-Brice FC"}],"tab":[[1,"Issy FC",10,4,3,1,0,9,3],[2,"Mantois 78 FC 2",10,4,3,1,0,6,2],[3,"Créteil F.",9,4,3,0,1,10,6],[4,"Nanterre ES 2",9,4,3,0,1,8,3],[5,"Montfermeil FC 2",6,4,2,0,2,7,6],[6,"Sarcelles AAS 3",6,4,2,0,2,6,6],[7,"Saint-Brice FC",4,3,1,1,1,3,2],[8,"Cergy-Pontoise FC",4,4,1,1,2,4,9],[9,"Épinay Académie",3,4,1,0,3,6,9],[10,"Grigny Football 91",3,4,1,0,3,5,9],[11,"Entente SSG",1,3,0,1,2,2,6],[12,"Bagneux Com",1,4,0,1,3,5,10]]},{"k":"u16b","name":"U16 (2)","g":"Jeunes","lvl":"U16 Départemental 1","comp":"U16 D1","m":[{"d":"2026-09-20","c":"U16 D1","h":"Argenteuil FC","hs":3,"as_":0,"a":"Saint-Brice FC 2","n":""},{"d":"2026-09-27","c":"Coupe du Comité U16 · 1er tour","h":"Goussainville FC 2","hs":2,"as_":5,"a":"Saint-Brice FC 2","n":""},{"d":"2026-10-04","c":"U16 D1","h":"Saint-Brice FC 2","hs":2,"as_":2,"a":"Garges-Gonesse FCM","n":""},{"d":"2026-10-11","c":"U16 D1","h":"Saint-Brice FC 2","hs":2,"as_":12,"a":"Sarcelles AAS 4","n":""},{"d":"2026-11-01","t":"13h00","c":"U16 D1","h":"Saint-Brice FC 2","a":"Goussainville FC"}],"tab":[[1,"Sarcelles AAS 4",9,4,3,0,1,25,7],[2,"St Leu 95 FC",8,4,2,2,0,14,3],[3,"Franconville FC",8,4,2,2,0,10,5],[4,"Cergy-Pontoise FC 2",7,4,2,1,1,11,10],[5,"Entente SSG 2",7,4,2,1,1,9,5],[6,"Osny FC",6,4,2,0,2,6,9],[7,"Écouen FC",4,4,1,1,2,11,9],[8,"Garges-Gonesse FCM",4,4,1,1,2,5,13],[9,"Argenteuil FC",4,4,1,1,2,4,8],[10,"St Ouen l'Aumône AS 2",3,3,1,0,2,8,15],[11,"Goussainville FC",3,4,1,0,3,6,12],[12,"Saint-Brice FC 2",1,3,0,1,2,4,17]]},{"k":"u16c","name":"U16 (3)","g":"Jeunes","lvl":"U16 Départemental 4","comp":"U16 D4","m":[{"d":"2026-10-04","c":"U16 D4","h":"Académie Football CL 2","hs":3,"as_":5,"a":"Saint-Brice FC 3","n":""},{"d":"2026-11-01","t":"13h00","c":"U16 D4","h":"Survilliers Avenir 2","a":"Saint-Brice FC 3"}],"tab":[[1,"Bouffémont ACF",6,2,2,0,0,24,2],[2,"Éragny FC",3,1,1,0,0,17,0],[3,"Saint-Brice FC 3",3,1,1,0,0,5,3],[4,"Écouen FC 3",3,2,1,0,1,5,20],[5,"Montsoult-Baillet US",3,2,1,0,1,6,5],[6,"Académie Football CL 2",3,2,1,0,1,9,9],[7,"Chaumontel-Luzarches",0,1,0,0,1,4,6],[8,"Survilliers Avenir 2",0,2,0,0,2,2,22],[9,"Magny-en-Vexin FC",-1,1,0,0,0,0,5]]},{"k":"u15","name":"U15","g":"Jeunes","lvl":"U15 Départemental 2","comp":"U15 D2","m":[{"d":"2026-09-19","c":"U15 D2","h":"Gonesse RC","hs":1,"as_":6,"a":"Saint-Brice FC","n":""},{"d":"2026-09-26","c":"U15 D2","h":"Saint-Brice FC","hs":4,"as_":2,"a":"Soisy-Andilly-Margency","n":""},{"d":"2026-10-03","c":"U15 D2","h":"Champagne 95 SFC","hs":0,"as_":5,"a":"Saint-Brice FC","n":"Gagné par forfait"},{"d":"2026-10-10","c":"U15 D2","h":"RC Argenteuil 3","hs":3,"as_":1,"a":"Saint-Brice FC","n":""},{"d":"2026-10-24","c":"Coupe du Val-d'Oise U15 · 1er tour","h":"Écouen FC","hs":3,"as_":0,"a":"Saint-Brice FC","n":""},{"d":"2026-11-07","t":"13h00","c":"U15 D2","h":"St Leu 95 FC","a":"Saint-Brice FC"}],"tab":[[1,"RC Argenteuil 3",12,4,4,0,0,26,1],[2,"St Leu 95 FC",12,4,4,0,0,19,1],[3,"Saint-Brice FC",9,4,3,0,1,16,6],[4,"AJED",9,3,3,0,0,10,2],[5,"Gonesse RC",6,4,2,0,2,27,12],[6,"Vauréal FCM",6,3,2,0,1,8,3],[7,"Cormeillais ACS",6,4,2,0,2,10,10],[8,"Soisy-Andilly-Margency",0,3,0,0,3,6,12],[9,"Persan US",0,4,0,0,4,3,22],[10,"Garges-Gonesse FCM",0,4,0,0,3,1,27],[11,"Champagne 95 SFC",0,3,0,0,1,1,31]]},{"k":"u14","name":"U14","g":"Jeunes","lvl":"U14 Régional 3 · Poule D","comp":"U14 R3","m":[{"d":"2026-09-19","c":"U14 R3","h":"Entente SSG","hs":1,"as_":5,"a":"Saint-Brice FC","n":""},{"d":"2026-09-26","c":"U14 R3","h":"Saint-Brice FC","hs":2,"as_":2,"a":"Aubervilliers Jeunes 2","n":""},{"d":"2026-10-03","c":"U14 R3","h":"Stains ES","hs":1,"as_":1,"a":"Saint-Brice FC","n":""},{"d":"2026-10-10","c":"U14 R3","h":"Saint-Brice FC","hs":1,"as_":2,"a":"Bondy AS","n":""},{"d":"2026-10-17","c":"Coupe de Paris U14 · cadrage","h":"Montrouge FC 92","hs":5,"as_":1,"a":"Saint-Brice FC","n":""},{"d":"2026-11-07","t":"16h00","c":"U14 R3","h":"St Leu 95 FC","a":"Saint-Brice FC"}],"tab":[[1,"Blanc-Mesnil SF",12,4,4,0,0,17,2],[2,"Stains ES",10,4,3,1,0,9,3],[3,"Bondy AS",9,4,3,0,1,11,5],[4,"Aubervilliers Jeunes 2",7,4,2,1,1,9,6],[5,"St Ouen l'Aumône AS",6,4,2,0,2,11,7],[6,"Sarcelles AAS 3",6,4,2,0,2,7,9],[7,"Saint-Brice FC",5,4,1,2,1,9,6],[8,"Colombienne Foot ES",3,4,1,0,3,11,9],[9,"St Leu 95 FC",0,4,0,0,4,5,27],[10,"Entente SSG",0,4,0,0,4,3,18]]},{"k":"u14b","name":"U14 (2)","g":"Jeunes","lvl":"U14 Départemental 2","comp":"U14 D2","m":[{"d":"2026-09-19","c":"U14 D2","h":"St Leu 95 FC 2","hs":0,"as_":10,"a":"Saint-Brice FC 2","n":""},{"d":"2026-09-26","c":"U14 D2","h":"Saint-Brice FC 2","hs":3,"as_":3,"a":"Garges-Gonesse FCM","n":""},{"d":"2026-10-03","c":"U14 D2","h":"Soisy-Andilly-Margency","hs":0,"as_":2,"a":"Saint-Brice FC 2","n":""},{"d":"2026-10-10","c":"U14 D2","h":"Saint-Brice FC 2","hs":4,"as_":1,"a":"Montigny FC 95","n":""},{"d":"2026-10-17","c":"Coupe du Comité U14 · 1er tour","h":"Osny FC 2","hs":1,"as_":2,"a":"Saint-Brice FC 2","n":""},{"d":"2026-11-07","t":"14h00","c":"U14 D2","h":"RC Argenteuil 3","a":"Saint-Brice FC 2"}],"tab":[[1,"Argenteuil FC",12,4,4,0,0,18,3],[2,"Garges-Gonesse FCM",10,4,3,1,0,24,5],[3,"Saint-Brice FC 2",10,4,3,1,0,19,4],[4,"Méry-Mériel FC",9,4,3,0,1,18,10],[5,"Roissy-en-France US",6,4,2,0,2,12,7],[6,"RC Argenteuil 3",4,4,1,1,2,8,10],[7,"Écouen FC 2",4,4,1,1,2,8,14],[8,"St Leu 95 FC 2",3,4,1,0,3,7,34],[9,"Montigny FC 95",0,4,0,0,4,4,14],[10,"Soisy-Andilly-Margency",0,4,0,0,4,3,20]]},{"k":"u14c","name":"U14 (3)","g":"Jeunes","lvl":"U14 Départemental 3","comp":"U14 D3","m":[{"d":"2026-09-19","c":"U14 D3","h":"Saint-Brice FC 3","hs":5,"as_":2,"a":"ES Herblay","n":""},{"d":"2026-09-26","c":"U14 D3","h":"St Leu 95 FC 3","hs":0,"as_":10,"a":"Saint-Brice FC 3","n":""},{"d":"2026-10-03","c":"U14 D3","h":"Saint-Brice FC 3","hs":3,"as_":3,"a":"Garges-Gonesse FCM 2","n":""},{"d":"2026-10-10","c":"U14 D3","h":"Gonesse RC 2","hs":4,"as_":0,"a":"Saint-Brice FC 3","n":""},{"d":"2026-10-24","c":"Coupe du Comité U14 · 1er tour","h":"Saint-Brice FC 3","hs":13,"as_":0,"a":"Soisy-Andilly-Margency 2","n":""},{"d":"2026-11-07","t":"14h00","c":"U14 D3","h":"Saint-Brice FC 3","a":"Ermont AS 3"}],"tab":[[1,"Montmorency FC",12,4,4,0,0,26,6],[2,"Ermont AS 3",9,4,3,0,1,23,7],[3,"Saint-Brice FC 3",7,4,2,1,1,18,9],[4,"Gonesse RC 2",6,3,2,0,1,10,4],[5,"Garges-Gonesse FCM 2",5,4,1,2,1,12,8],[6,"ES Herblay",4,4,1,1,2,6,11],[7,"Vauréal FCM 2",3,3,1,0,2,10,20],[8,"St Leu 95 FC 3",0,3,0,0,3,4,19],[9,"Marcouville City CP",0,3,0,0,3,1,26]]},{"k":"u14d","name":"U14 (4)","g":"Jeunes","lvl":"U14 Départemental 5","comp":"U14 D5","m":[{"d":"2026-09-19","c":"U14 D5","h":"Saint-Brice FC 4","hs":2,"as_":2,"a":"Ent. Beaumont Mours 2","n":""},{"d":"2026-09-26","c":"U14 D5","h":"Magny-en-Vexin FC 2","hs":1,"as_":4,"a":"Saint-Brice FC 4","n":""},{"d":"2026-10-03","c":"U14 D5","h":"Saint-Brice FC 4","hs":0,"as_":3,"a":"Eaubonne FC","n":""},{"d":"2026-10-10","c":"U14 D5","h":"Beauchamp AS 3","hs":4,"as_":6,"a":"Saint-Brice FC 4","n":""},{"d":"2026-10-24","c":"Coupe du Comité U14 · 1er tour","h":"Saint-Brice FC 4","hs":3,"as_":4,"a":"Cormeillais ACS 2","n":""},{"d":"2026-11-07","t":"15h30","c":"U14 D5","h":"Saint-Brice FC 4","a":"Vexin AS"}],"tab":[[1,"Eaubonne FC",12,4,4,0,0,41,0],[2,"Chaumontel-Luzarches",12,4,4,0,0,20,6],[3,"Franconville FC 3",10,4,3,1,0,22,5],[4,"Vexin AS",7,4,2,1,1,12,12],[5,"Sarcelles AAS 7",7,4,2,1,1,13,9],[6,"Saint-Brice FC 4",7,4,2,1,1,12,10],[7,"Beauchamp AS 3",6,4,2,0,2,25,15],[8,"Magny-en-Vexin FC 2",3,4,1,0,3,6,30],[9,"Parmain AC",3,4,1,0,3,4,27],[10,"Ent. Beaumont Mours 2",2,4,0,2,2,6,9],[11,"Auvers-Ennery FC",0,4,0,0,4,3,12],[12,"Belloy-St-Martin ASC",-1,4,0,0,3,3,32]]},{"k":"u15f","name":"U15 féminines","g":"Féminines","lvl":"U15F Départemental 1","comp":"U15F D1","m":[{"d":"2026-10-10","c":"U15F D1","h":"Ermont AS","hs":9,"as_":0,"a":"Saint-Brice FC","n":""},{"d":"2026-11-07","t":"15h30","c":"U15F D1","h":"Franconville FC","a":"Saint-Brice FC"}],"tab":[[1,"Montmorency FC",3,1,1,0,0,15,0],[2,"Ermont AS",3,1,1,0,0,9,0],[3,"Cergy-Pontoise FC 2",3,1,1,0,0,9,1],[4,"Franconville FC",0,1,0,0,1,1,9],[5,"Saint-Brice FC",0,1,0,0,1,0,9],[6,"Ent. Argenteuillaise",0,1,0,0,1,0,15]]},{"k":"u13","name":"U13","g":"Jeunes","lvl":"Critérium régional U12 Espoir P1","comp":"U13","m":[{"d":"2026-09-19","c":"Critérium U12 Espoir","h":"Clichy-sur-Seine US","hs":2,"as_":8,"a":"Saint-Brice FC","n":""},{"d":"2026-09-26","c":"Critérium U12 Espoir","h":"Saint-Brice FC","hs":2,"as_":4,"a":"Rueil-Malmaison FC","n":""},{"d":"2026-10-03","c":"Critérium U12 Espoir","h":"Entente SSG","hs":5,"as_":3,"a":"Saint-Brice FC","n":""},{"d":"2026-10-10","c":"Critérium U12 Espoir","h":"Saint-Brice FC","hs":0,"as_":5,"a":"St Leu 95 FC","n":""},{"d":"2026-11-07","t":"14h00","c":"Critérium U12 Espoir","h":"Écouen FC","a":"Saint-Brice FC"}],"tab":[]},{"k":"u13f","name":"U13 féminines","g":"Féminines","lvl":"Critérium U13F","comp":"U13F","m":[{"d":"2026-11-07","t":"11h00","c":"Critérium U13F","h":"Saint-Brice FC","a":"Olympique Adamois"},{"d":"2026-11-14","t":"11h00","c":"Critérium U13F","h":"Cosmo Taverny","a":"Saint-Brice FC"},{"d":"2026-11-28","t":"11h00","c":"Critérium U13F","h":"Saint-Brice FC","a":"Gonesse RC"}],"tab":[]}];
+var PHOTOS={"seniors1": "photo-seniors1.webp", "u14": "photo-u14.webp", "u16": "photo-u16.webp", "u18": "photo-u18.webp"};
+var MONTHS=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+function fd(d){var p=d.split("-");return parseInt(p[2],10)+" "+MONTHS[parseInt(p[1],10)-1];}
+function us(n){return /^Saint-Brice/.test(n);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function render(k){
+  var t=TEAMS.filter(function(x){return x.k===k;})[0]||TEAMS[0];
+  document.getElementById("t-name").textContent=t.name;
+  document.getElementById("t-lvl").textContent=t.lvl;
+  [].forEach.call(document.querySelectorAll(".chip"),function(b){b.setAttribute("aria-pressed",b.dataset.k===t.k?"true":"false");});
+  var played=t.m.filter(function(m){return m.hs!==undefined;}).reverse();
+  var next=t.m.filter(function(m){return m.t;})[0];
+  document.getElementById("t-next").innerHTML=next?'<div class="nextbox"><span>Prochain match · '+fd(next.d)+' · '+esc(next.t)+'</span><b>'+esc(next.h)+' – '+esc(next.a)+'</b><span>'+esc(next.c)+'</span></div>':"";
+  var rows=played.map(function(m){
+    var home=us(m.h), mine=home?m.hs:m.as_, theirs=home?m.as_:m.hs, r=mine>theirs?"V":(mine<theirs?"D":"N");
+    if(/tirs au but/.test(m.n||""))r="V";
+    var lbl={V:"Victoire",D:"Défaite",N:"Nul"}[r];
+    return '<tr><td class="d">'+fd(m.d)+'</td><td class="m">'+esc(m.h)+' – '+esc(m.a)+'<small>'+esc(m.c)+'</small>'+(m.n?'<span class="res-note">'+esc(m.n)+'</span>':'')+'</td><td class="s">'+m.hs+' – '+m.as_+'<span class="pill '+r+'" title="'+lbl+'">'+r+'</span></td></tr>';
+  }).join("");
+  document.getElementById("t-res").innerHTML=rows||'<tr><td class="empty">Pas encore de match joué cette saison.</td></tr>';
+  var tab=t.tab.length?'<tr><th>#</th><th>Équipe</th><th>J</th><th>Diff.</th><th>Pts</th></tr>'+t.tab.map(function(r){var d=r[7]-r[8];return '<tr'+(us(r[1])?' class="us"':'')+'><td>'+r[0]+'</td><td>'+esc(r[1])+'</td><td>'+r[3]+'</td><td>'+(d>0?"+"+d:d<0?"−"+Math.abs(d):"0")+'</td><td>'+r[2]+'</td></tr>';}).join(""):'<tr><td class="empty">Pas de classement publié pour cette compétition.</td></tr>';
+  document.getElementById("t-tab").innerHTML=tab;
+  try{localStorage.setItem("sbfc-team",t.k);}catch(e){}
+}
+(function(){
+  var gal=document.getElementById("gallery");
+  if(gal){gal.innerHTML=TEAMS.filter(function(t){return PHOTOS[t.k];}).map(function(t){return '<a class="team-photo" href="resultats.html?equipe='+t.k+'"><img src="'+PHOTOS[t.k]+'" alt="L\u2019équipe '+esc(t.name)+' du Saint-Brice FC" loading="lazy"><span class="cap"><b>'+esc(t.name)+'</b><small>'+esc(t.lvl.replace(/^U\d+F? /,""))+'</small></span></a>';}).join("");}
+  var groups=["Seniors","Jeunes","Féminines"], box=document.getElementById("chips");
+  if(!box)return;
+  box.innerHTML=groups.map(function(g){return '<div class="chips-row"><span>'+g+'</span>'+TEAMS.filter(function(t){return t.g===g;}).map(function(t){return '<button type="button" class="chip" data-k="'+t.k+'" aria-pressed="false">'+esc(t.name)+'</button>';}).join("")+'</div>';}).join("");
+  box.addEventListener("click",function(e){var b=e.target.closest(".chip");if(b)render(b.dataset.k);});
+  var saved=null;try{saved=localStorage.getItem("sbfc-team");}catch(e){}
+  var q=(location.search.match(/[?&]equipe=([\w-]+)/)||[])[1];
+  render(q||saved||"seniors1");
+})();
+
+(function(){
+  var s1=TEAMS.filter(function(x){return x.k==="seniors1";})[0];
+  var nx=s1&&s1.m.filter(function(m){return m.t;})[0], tb=s1&&s1.tab.filter(function(r){return us(r[1]);})[0];
+  var hn=document.getElementById("hero-next");
+  if(!hn)return;
+  if(nx){hn.innerHTML='<div class="eyebrow">Prochain match · Seniors R1</div><div class="vs"><span>'+esc(nx.h)+'</span><span>vs</span><span>'+esc(nx.a)+'</span></div><dl><dt>Date</dt><dd>'+fd(nx.d)+' · '+esc(nx.t)+'</dd><dt>Compét.</dt><dd>'+esc(nx.c)+(tb?' · '+tb[0]+'e':'')+'</dd></dl>';}else{hn.remove();}
+  var all=[];TEAMS.forEach(function(t){t.m.forEach(function(m){if(m.hs!==undefined)all.push({t:t,m:m});});});
+  var last=all.reduce(function(a,x){return x.m.d>a?x.m.d:a;},"");
+  var lim=new Date(last);lim.setDate(lim.getDate()-2);var ls=lim.toISOString().slice(0,10);
+  var wk=all.filter(function(x){return x.m.d>=ls;}).sort(function(a,b){return TEAMS.indexOf(a.t)-TEAMS.indexOf(b.t);});
+  document.getElementById("wk-date").textContent=wk.length?"Mis à jour le "+fd(last):"";
+  document.getElementById("wk").innerHTML=wk.map(function(x){var m=x.m,home=us(m.h),mine=home?m.hs:m.as_,th=home?m.as_:m.hs,r=mine>th?"V":(mine<th?"D":"N");if(/tirs au but/.test(m.n||""))r="V";var opp=home?m.a:m.h;
+    return '<button type="button" class="wk-card '+r+'" data-k="'+x.t.k+'"><b>'+esc(x.t.name)+'</b><span class="sc">'+mine+' – '+th+'</span><small>'+(home?"vs ":"à ")+esc(opp)+'</small><small>'+esc(m.c)+'</small></button>';}).join("")||'<p class="note">Pas de match joué récemment.</p>';
+  document.getElementById("wk").addEventListener("click",function(e){var c=e.target.closest(".wk-card");if(c){location.href="resultats.html?equipe="+c.dataset.k;}});
+})();
+
+(function(){
+  var SIZES=["6 ans","8 ans","10 ans","12 ans","14 ans","XS","S","M","L","XL","XXL","3XL"],FL={"":["Sans flocage",0],"num":["Numéro",10],"nom":["Nom",10],"nomnum":["Nom et numéro",15]};
+  var box=document.getElementById("o-lines"),n=0;
+  if(!box)return;
+  function line(){n++;var d=document.createElement("div");d.className="o-line";
+    d.innerHTML='<label>Taille<select class="o-size">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join("")+'</select></label><label>Flocage<select class="o-fl">'+Object.keys(FL).map(function(k){return '<option value="'+k+'">'+FL[k][0]+(FL[k][1]?' (+'+FL[k][1]+' €)':'')+'</option>';}).join("")+'</select></label><label class="o-txt">Nom / numéro à floquer<input class="o-flt" placeholder="ex. DUPONT 10" disabled></label><label>Qté<input class="o-q" type="number" min="1" max="20" value="1" inputmode="numeric"></label><div class="o-price">49 €</div><button type="button" class="o-del" aria-label="Retirer ce maillot">×</button>';
+    box.appendChild(d);calc();}
+  function calc(){var t=0;[].forEach.call(box.children,function(d){var f=FL[d.querySelector(".o-fl").value],q=Math.max(1,parseInt(d.querySelector(".o-q").value,10)||1),p=(49+f[1])*q;d.querySelector(".o-flt").disabled=!f[1];d.querySelector(".o-price").textContent=p+" €";d.querySelector(".o-del").hidden=box.children.length<2;t+=p;});document.getElementById("o-total").textContent=t+" €";return t;}
+  box.addEventListener("input",calc);box.addEventListener("change",calc);
+  box.addEventListener("click",function(e){var b=e.target.closest(".o-del");if(b){b.parentNode.remove();calc();}});
+  document.getElementById("o-add").addEventListener("click",line);
+  document.getElementById("commande").addEventListener("submit",function(e){e.preventDefault();var msg=document.getElementById("o-msg"),p=document.getElementById("o-parent").value.trim(),tel=document.getElementById("o-tel").value.trim();
+    if(!p||!tel){msg.textContent="Indiquez au moins votre nom et votre téléphone.";msg.hidden=false;return;}
+    var rows=[].map.call(box.children,function(d,i){var f=FL[d.querySelector(".o-fl").value],q=parseInt(d.querySelector(".o-q").value,10)||1;return "- "+q+" x maillot taille "+d.querySelector(".o-size").value+" | flocage : "+f[0]+(f[1]?" ("+d.querySelector(".o-flt").value.trim()+")":"")+" | "+d.querySelector(".o-price").textContent;});
+    var body="Bonjour,\n\nJe souhaite commander le maillot collector 2026/2027 :\n"+rows.join("\n")+"\n\nTotal : "+calc()+" €\n\nParent / acheteur : "+p+"\nLicencié : "+document.getElementById("o-lic").value.trim()+"\nCatégorie : "+document.getElementById("o-cat").value.trim()+"\nTéléphone : "+tel+"\nE-mail : "+document.getElementById("o-mail").value.trim()+"\n\nMerci !";
+    location.href="mailto:527269@lpiff.fr?subject="+encodeURIComponent("Commande maillot collector – "+p)+"&body="+encodeURIComponent(body);
+    msg.textContent="Votre messagerie s'ouvre avec la commande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à 527269@lpiff.fr.";msg.hidden=false;});
+  line();
+})();
+
+(function(){
+  var t=TEAMS.filter(function(x){return x.k==="u18";})[0]; if(!t||!document.getElementById("une-stats"))return;
+  var me=t.tab.filter(function(r){return us(r[1]);})[0];
+  var lg=t.m.filter(function(m){return m.hs!==undefined&&/R3/.test(m.c);});
+  var V=0,N=0,D=0;lg.forEach(function(m){var h=us(m.h),a=h?m.hs:m.as_,b=h?m.as_:m.hs;a>b?V++:a<b?D++:N++;});
+  document.getElementById("une-stats").innerHTML=[[me?me[0]+"e":"–","de la poule"],[me?me[2]:"–","points"],[V+"V "+N+"N",D?D+" défaite"+(D>1?"s":""):"0 défaite"],[me?(me[7]+"–"+me[8]):"–","buts pour–contre"]].map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>';}).join("");
+  document.getElementById("une-path").innerHTML=t.m.filter(function(m){return m.hs!==undefined;}).map(function(m){var h=us(m.h),a=h?m.hs:m.as_,b=h?m.as_:m.hs,r=a>b?"V":(a<b?"D":"N");if(/tirs au but/.test(m.n||""))r="V";
+    return '<li class="'+r+'"><span class="d">'+fd(m.d)+'</span><span class="m">'+(h?"vs ":"à ")+esc(h?m.a:m.h)+'<small>'+esc(m.c)+(m.n?' · '+esc(m.n):'')+'</small></span><span class="s">'+a+'–'+b+'<i>'+r+'</i></span></li>';}).join("");
+  var nx=t.m.filter(function(m){return m.t;})[0];
+  document.getElementById("une-next").textContent=nx?"Prochain match : "+fd(nx.d)+" à "+nx.t+", "+(us(nx.h)?"contre "+nx.a:"à "+nx.h)+" ("+nx.c+")":"";
+})();
+document.getElementById('f')&&document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var ok=document.getElementById('ok'),nom=document.getElementById('nom'),mail=document.getElementById('mail');
+  if(!nom.value.trim()||!mail.value.trim()||!mail.checkValidity()){ok.textContent="Indiquez votre nom et une adresse email valide.";ok.hidden=false;return;}
+  ok.textContent="Merci "+nom.value.trim().split(" ")[0]+" ! Ce formulaire n'est pas encore relié au club : écrivez-nous directement à 527269@lpiff.fr.";
+  ok.hidden=false;
+});
+(function(){var id=location.hash.slice(1);if(!id)return;function go(){var t=document.getElementById(id);if(t){var hd=document.querySelector('header');scrollTo(0,t.getBoundingClientRect().top+scrollY-(hd?hd.offsetHeight:0)-8);}}go();addEventListener('load',function(){go();setTimeout(go,500);});})();
+</script>
+
+</body>
+</html>

@@ -188,6 +188,15 @@ footer span:last-child{font-family:var(--display);font-weight:400;letter-spacing
 @media (max-width:560px){.hero-main{flex-direction:column;align-items:flex-start;gap:12px}.hero .crest{width:80px}.tourney{grid-template-columns:1fr}.t-info,.t-go{grid-column:1;grid-row:auto}}
 
 nav{scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav a[aria-current]{background:rgba(255,255,255,.22);box-shadow:inset 0 -3px 0 var(--lime)}
+nav a:last-child[aria-current]{box-shadow:inset 0 -3px 0 var(--green)}
+main.page{min-height:60vh;padding-top:8px}
+.une-teaser{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);text-decoration:none;color:inherit;align-items:center}
+.une-teaser img{width:100%;height:100%;object-fit:cover;display:block}
+.une-teaser .une-head{padding:28px 32px}
+.une .une-teaser .cta{background:var(--pill);color:#fff;margin-top:6px}
+.une-teaser:hover h2{text-decoration:underline}
+@media (max-width:860px){.une-teaser{grid-template-columns:1fr}.une-teaser .une-head{padding:20px}}
 /* À la une */
 .une{padding-block:24px 6px}
 .une-card{background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 28px rgba(11,61,34,.16)}
@@ -305,14 +314,14 @@ td.m.us{color:var(--forest)}
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#accueil"><img src="crest.webp" alt="" width="34" height="40">Saint-Brice FC</a>
+    <a class="brand" href="/"><img src="crest.webp" alt="" width="34" height="40">Saint-Brice FC</a>
     <nav aria-label="Navigation principale">
-      <a href="#resultats">Résultats</a>
-      <a href="#club">Le club</a>
-      <a href="#maillot">Maillot</a>
-      <a href="#bandeira">Bandeira Cup</a>
-      <a href="#actus">Actualités</a>
-      <a href="#inscriptions">Inscriptions</a>
+      <a href="club.html">Le club</a>
+      <a href="resultats.html">Résultats</a>
+      <a href="maillot.html">Maillot</a>
+      <a href="bandeira-cup.html">Bandeira Cup</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="inscriptions.html">Inscriptions</a>
     </nav>
   </div>
 </header>
@@ -325,7 +334,7 @@ td.m.us{color:var(--forest)}
         <div>
           <h1>Saint-Brice <span>Football Club</span></h1>
           <p class="facts-line">Depuis 1973 · 1 000 licenciés · 20 équipes · Régional 1</p>
-          <div class="hero-btns"><a class="cta" href="#resultats">Tous les résultats</a><a class="cta ghost" href="#bandeira">Bandeira Cup</a></div>
+          <div class="hero-btns"><a class="cta" href="resultats.html">Tous les résultats</a><a class="cta ghost" href="bandeira-cup.html">Bandeira Cup</a></div>
         </div>
       </div>
       <aside class="next" aria-label="Prochain match" id="hero-next"></aside>
@@ -334,49 +343,28 @@ td.m.us{color:var(--forest)}
 
   <section class="weekend" aria-labelledby="wk-title">
     <div class="wrap">
-      <div class="wk-head"><h2 id="wk-title">Résultats du week-end</h2><span id="wk-date"></span><a href="#resultats">Toutes les équipes →</a></div>
+      <div class="wk-head"><h2 id="wk-title">Résultats du week-end</h2><span id="wk-date"></span><a href="resultats.html">Toutes les équipes →</a></div>
       <div class="wk-grid" id="wk"></div>
     </div>
   </section>
 
-  <section class="une" id="une" aria-labelledby="une-title">
+  <section class="une" aria-labelledby="une-title">
     <div class="wrap">
-      <article class="une-card">
+      <a class="une-card une-teaser" href="actualites.html">
+        <img src="photo-coachs-u18.webp" alt="Paki et Adrien, coachs des U18 R3" width="480" height="389" loading="lazy">
         <div class="une-head">
           <span class="une-tag">À la une</span>
           <span class="une-kicker">U18 · Régional 3 · Poule C</span>
           <h2 id="une-title">Les U18 R3 invaincus et sur le podium</h2>
-          <p class="une-lead">Deuxièmes de leur poule, toujours invaincus en championnat et allés jusqu'au 4e tour de la Coupe Gambardella : les U18 d'Adrien et de son adjoint Paki signent un très beau début de saison.</p>
+          <p class="une-lead">Deuxièmes de leur poule et toujours invaincus en championnat : interview d'Adrien, leur coach, et parcours de la saison.</p>
+          <span class="cta">Lire l'article →</span>
         </div>
-
-        <div class="une-itw">
-          <figure class="q-pic"><img src="photo-coachs-u18.webp" alt="Paki, coach adjoint, et Adrien, coach des U18 R3 du Saint-Brice FC" width="480" height="389" loading="lazy"><figcaption><span><b>Paki</b> · adjoint</span><span><b>Adrien</b> · coach</span></figcaption></figure>
-          <div class="q-body">
-            <p class="q-big">« Tant qu'ils en voudront, on en voudra aussi. »</p>
-            <p>C'est un groupe qui vient de se créer au Saint-Brice FC, avec beaucoup de nouveaux joueurs. Après de nombreux départs, nous avons construit avec Paki un groupe qui s'entend bien : des bons gars, avec une bonne mentalité, pour avoir une vraie dynamique de travail.</p>
-            <p>Le bon début de saison s'explique par la cohésion qui s'est créée rapidement entre les coachs et les joueurs. Notre discours a été bien reçu et les garçons ne trichent pas, à chaque match.</p>
-            <p>L'objectif, c'est de construire une équipe performante, avec de la rigueur et beaucoup de discipline, pour les préparer au monde senior. En championnat, on leur répète de donner le meilleur d'eux-mêmes en match, et ils auront ce qu'ils veulent. Avec Paki, tant qu'ils en voudront, on en voudra aussi, et on les suivra pour aller chercher un maximum de victoires.</p>
-            <p>On a la chance d'avoir les éducateurs du club et les dirigeants qui viennent nous soutenir à domicile et même à l'extérieur, ainsi que les amis et les parents des joueurs. Ça nous donne encore plus envie de performer et de continuer à partager des émotions avec les supporters !</p>
-            <p class="q-sign">— <b>Adrien</b>, coach des U18 R3</p>
-          </div>
-        </div>
-
-        <div class="une-team">
-          <img src="photo-u18.webp" alt="L'équipe U18 R3 du Saint-Brice FC" width="520" height="440" loading="lazy">
-          <div class="une-stats" id="une-stats"></div>
-        </div>
-
-        <div class="une-foot">
-          <h3>Le parcours</h3>
-          <ol class="une-path" id="une-path"></ol>
-          <div class="une-end"><p class="une-next" id="une-next"></p><a class="cta" href="#resultats" id="une-go">Résultats &amp; classement</a></div>
-        </div>
-      </article>
+      </a>
     </div>
   </section>
 
   <div class="wrap">
-    <a class="tourney" href="#bandeira">
+    <a class="tourney" href="bandeira-cup.html">
       <span class="t-tag">Nos tournois</span>
       <span class="t-name">José Bandeira Cup</span>
       <span class="t-info">Tournoi international U11 · Édition 2027 : 23 &amp; 24 octobre · 42 équipes de 8 pays en 2026</span>
@@ -388,171 +376,6 @@ td.m.us{color:var(--forest)}
     <div class="team-gallery" id="gallery" aria-label="Nos équipes en photos"></div>
   </div>
 
-  <section id="resultats">
-    <div class="wrap">
-      <div class="sec-head"><h2>Résultats &amp; classements</h2><span class="note">Toutes nos équipes · mis à jour le 25 octobre 2026</span></div>
-      <div class="chips" id="chips" role="group" aria-label="Choisir une équipe"></div>
-      <div class="team-head"><h3 id="t-name">Seniors R1</h3><span class="lvl" id="t-lvl"></span></div>
-      <div id="t-next"></div>
-      <div class="cal">
-        <div>
-          <h3>Derniers résultats</h3>
-          <div class="tbl"><table id="t-res"></table></div>
-        </div>
-        <div>
-          <h3>Classement</h3>
-          <div class="tbl"><table class="std" id="t-tab"></table></div>
-        </div>
-      </div>
-      <p class="src">Source : résultats officiels de la FFF (epreuves.fff.fr). Classements sous réserve des procédures en cours. Les plateaux de l'école de foot (U6 à U11) ne donnent pas lieu à un classement.</p>
-    </div>
-  </section>
-
-  <section id="club">
-    <div class="wrap">
-      <div class="sec-head"><h2>Le club</h2></div>
-      <div class="prose">
-        <p>Fondé en 1973, le Saint-Brice Football Club est le club de football de Saint-Brice-sous-Forêt, dans le Val-d'Oise. Il est affilié à la Fédération Française de Football (n° 527269), au District du Val-d'Oise et à la Ligue de Paris Île-de-France.</p>
-        <p>Le club accueille garçons et filles dès l'école de foot, jusqu'aux seniors et aux anciens. Son équipe fanion évolue en Régional 1, le plus haut niveau de la Ligue de Paris Île-de-France. Chaque automne, le club organise aussi la Bandeira Cup, un tournoi international U11.</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><b>1973</b><span>Année de création</span></div>
-        <div class="fact"><b>1 000</b><span>Licenciés</span></div>
-        <div class="fact"><b>20</b><span>Équipes en compétition</span></div>
-        <div class="fact"><b>R1</b><span>Niveau de l'équipe fanion</span></div>
-        <div class="fact"><b>U6 → Anciens</b><span>Toutes les catégories, garçons et filles</span></div>
-      </div>
-      <div class="split" style="margin-top:24px">
-        <div class="panelbox">
-          <h3>Stade Léon Graffin</h3>
-          <p style="margin:0">2 rue de la Forêt<br>95350 Saint-Brice-sous-Forêt</p>
-          <p style="margin:10px 0 0;color:var(--muted)">Siège du club et terrain des matchs à domicile.</p>
-        </div>
-        <div class="panelbox">
-          <h3>Nos équipes engagées</h3>
-          <ul class="clubs">
-            <li>Seniors R1</li><li>Seniors D1</li><li>Seniors CDM 1 · R2</li><li>Seniors CDM 2 · D2</li><li>Anciens · D3</li><li>Seniors F · D1</li>
-            <li>U18 · R3</li><li>U18 (2) · D2</li><li>U18 F · D1</li><li>U16 · R2</li><li>U16 (2) · D1</li><li>U16 (3) · D4</li>
-            <li>U15 · D2</li><li>U14 · R3</li><li>U14 (2) · D2</li><li>U14 (3) · D3</li><li>U14 (4) · D5</li><li>U15 F · D1</li><li>U13 · Critérium régional</li><li>U13 F · Critérium</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="maillot">
-    <div class="wrap">
-      <div class="sec-head"><h2>Notre maillot</h2></div>
-      <div class="kit">
-        <div class="kit-pics">
-          <img class="kit-face" src="photo-seniors1.webp" alt="Les Seniors R1 du Saint-Brice FC portant le maillot officiel" width="520" height="336" loading="lazy">
-        </div>
-        <div class="kit-txt">
-          <span class="kit-tag">Maillot collector · Saison 2026/2027 · Offre limitée</span>
-          <h3>Notre histoire, notre ville, notre maillot</h3>
-          <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
-          <div class="kit-price"><b>49 €</b><span>Maillot · toutes tailles</span></div>
-          <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
-          <a class="cta" href="#commande">Commander</a>
-        </div>
-      </div>
-
-      <form class="order" id="commande" novalidate>
-        <h3>Commander en ligne</h3>
-        <p class="note">Remplissez la commande : elle est envoyée au club par e-mail, qui vous recontacte pour le paiement et le retrait. Pour les tailles, aidez-vous du pack remis par le club à l'inscription.</p>
-        <div class="o-lines" id="o-lines"></div>
-        <button type="button" class="o-add" id="o-add">+ Ajouter un maillot</button>
-        <fieldset class="o-who">
-          <legend>Vos coordonnées</legend>
-          <label>Nom et prénom du parent (ou du licencié majeur)<input id="o-parent" autocomplete="name" required></label>
-          <label>Nom et prénom du licencié<input id="o-lic"></label>
-          <label>Catégorie (U6, U7… Seniors)<input id="o-cat"></label>
-          <label>Téléphone<input id="o-tel" type="tel" autocomplete="tel" required></label>
-          <label>E-mail<input id="o-mail" type="email" autocomplete="email"></label>
-        </fieldset>
-        <div class="o-foot"><div class="o-total">Total : <b id="o-total">49 €</b></div><button type="submit" class="cta">Envoyer la commande</button></div>
-        <p class="o-msg" id="o-msg" role="status" hidden></p>
-      </form>
-    </div>
-  </section>
-
-  <section id="bandeira">
-    <div class="wrap">
-      <div class="sec-head"><h2>Bandeira Cup</h2></div>
-      <div class="bandeira-hero">
-        <div class="eyebrow">Tournoi international U11 · 6e édition</div>
-        <h3>23 &amp; 24 octobre 2027</h3>
-        <p>Le 1er week-end des vacances de la Toussaint, à l'Espace omnisport José Bandeira de Saint-Brice-sous-Forêt. Les inscriptions ouvriront prochainement : pré-inscrivez votre club pour être prévenu en premier.</p>
-        <p><a class="cta b-cta" href="https://bandeiracup.com/fr/reserver">Pré-inscription édition 2027</a></p>
-        <p class="b-recap">Une question sur la pré-inscription ? Écrivez-nous à <a href="mailto:527269@lpiff.fr?subject=Pr%C3%A9-inscription%20Bandeira%20Cup%202027">527269@lpiff.fr</a></p>
-        <p class="b-recap">La 5e édition s'est jouée les 17 et 18 octobre 2026 : 42 équipes de 8 pays, dont 21 académies professionnelles et 21 clubs amateurs, à l'Espace omnisport José Bandeira de Saint-Brice-sous-Forêt. Un tournoi organisé par le Saint-Brice FC et My Elevent Sport · <a href="https://bandeiracup.com/fr">bandeiracup.com</a></p>
-      </div>
-      <div class="split">
-        <div class="panelbox">
-          <h3>Palmarès</h3>
-          <div class="tbl"><table class="palm">
-            <tr><th>Année</th><th>Vainqueur</th><th>2e</th><th>3e</th></tr>
-            <tr><td>2026</td><td>Juventus FC</td><td>RSC Anderlecht</td><td>–</td></tr>
-            <tr><td>2025</td><td>Feyenoord Rotterdam</td><td>RSC Anderlecht</td><td>Club Brugge KV</td></tr>
-            <tr><td>2024</td><td>Olympique de Marseille</td><td>Olympique Lyonnais</td><td>OGC Nice</td></tr>
-            <tr><td>2023</td><td>OGC Nice</td><td>Juventus FC</td><td>Atlético de Madrid</td></tr>
-            <tr><td>2022</td><td>Valencia CF</td><td>Juventus FC</td><td>OGC Nice</td></tr>
-          </table></div>
-        </div>
-        <div class="panelbox">
-          <h3>Académies présentes en 2026</h3>
-          <ul class="clubs">
-            <li>Paris Saint-Germain</li><li>Manchester United</li><li>AC Milan</li><li>Juventus</li><li>Atlético de Madrid</li><li>Feyenoord</li><li>Olympique de Marseille</li><li>OGC Nice</li><li>RSC Anderlecht</li><li>Club Brugge</li><li>Olympique Lyonnais</li><li>KRC Genk</li><li>Charleroi</li><li>LOSC Lille</li><li>RC Lens</li><li>Derby County</li><li>Stade Rennais</li><li>Stade de Reims</li><li>FC Nantes</li><li>Toulouse FC</li><li>Paris FC</li>
-          </ul>
-          <p style="margin:14px 0 0;color:var(--muted)">Avec le soutien de la Ville de Saint-Brice-sous-Forêt et de Volkswagen Roissy, Anka Groupe, Cabinet Jacques Assurances, CityLink.fr, LCE France et Skita.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="actus">
-    <div class="wrap">
-      <div class="sec-head"><h2>Actualités</h2></div>
-      <div class="news">
-        <article><span class="tag">Seniors R1</span><h3>Qualifiés en Coupe de Paris</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Victoire 2-0 à Gretz-Tournan au 3e tour de la Coupe de Paris Île-de-France. En championnat, nos seniors sont 4es de Régional 1 avec un match en moins. Prochain rendez-vous samedi 31 octobre à 18h aux Mureaux.</p></article>
-        <article><span class="tag">U18</span><h3>Fin du parcours en Gambardella</h3><time datetime="2026-10-25">25 octobre 2026</time><p>Battus 3-1 par la JA Drancy au 4e tour. Nos U18 restent 2es de leur poule de R3.</p></article>
-        <article><span class="tag">U16</span><h3>Victoire 2-0 contre Bagneux</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Première victoire de la saison en Régional 2 pour nos U16, au stade Léon Graffin.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="inscriptions">
-    <div class="wrap">
-      <div class="sec-head"><h2>Inscriptions &amp; contact</h2></div>
-      <div class="join">
-        <div>
-          <ol class="steps">
-            <li><div><b>Contactez le club</b>Indiquez l'âge du joueur ou de la joueuse et son expérience : on vous oriente vers la bonne équipe.</div></li>
-            <li><div><b>Venez à une séance d'essai</b>Le club vous donne le jour et l'heure de l'entraînement de la catégorie.</div></li>
-            <li><div><b>Prenez votre licence</b>Le club vous indique les pièces à fournir et le montant de la cotisation.</div></li>
-          </ol>
-          <div class="contact">
-            <span>Stade</span><span>Stade Léon Graffin<br>2 rue de la Forêt, 95350 Saint-Brice-sous-Forêt</span>
-            <span>Email</span><span>527269@lpiff.fr</span>
-            <span>Licenciés</span><span>Plus de 1 000 en moyenne sur les 5 dernières saisons</span>
-          </div>
-        </div>
-        <form id="f" novalidate>
-          <div class="row">
-            <label for="nom">Nom et prénom<input id="nom" name="nom" required autocomplete="name"></label>
-            <label for="cat">Catégorie<select id="cat" name="cat"><option>École de foot (U6–U11)</option><option>U12 – U13</option><option>U14 – U15</option><option>U16 – U18</option><option>Féminines</option><option>Seniors</option><option>Anciens</option><option>Bénévole / dirigeant</option></select></label>
-          </div>
-          <div class="row">
-            <label for="mail">Email<input id="mail" name="mail" type="email" required autocomplete="email"></label>
-            <label for="tel">Téléphone<input id="tel" name="tel" type="tel" autocomplete="tel"></label>
-          </div>
-          <label for="msg">Message<textarea id="msg" name="msg" placeholder="Âge du joueur, expérience, questions…"></textarea></label>
-          <button type="submit">Demander une séance d'essai</button>
-          <div class="ok" id="ok" hidden></div>
-        </form>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer><div class="wrap"><span>© 2026 Saint-Brice Football Club · Association loi 1901 · Affilié FFF n° 527269</span><span>Allez Saint-Brice !</span></div></footer>
@@ -584,20 +407,22 @@ function render(k){
   try{localStorage.setItem("sbfc-team",t.k);}catch(e){}
 }
 (function(){
+  var gal=document.getElementById("gallery");
+  if(gal){gal.innerHTML=TEAMS.filter(function(t){return PHOTOS[t.k];}).map(function(t){return '<a class="team-photo" href="resultats.html?equipe='+t.k+'"><img src="'+PHOTOS[t.k]+'" alt="L\u2019équipe '+esc(t.name)+' du Saint-Brice FC" loading="lazy"><span class="cap"><b>'+esc(t.name)+'</b><small>'+esc(t.lvl.replace(/^U\d+F? /,""))+'</small></span></a>';}).join("");}
   var groups=["Seniors","Jeunes","Féminines"], box=document.getElementById("chips");
+  if(!box)return;
   box.innerHTML=groups.map(function(g){return '<div class="chips-row"><span>'+g+'</span>'+TEAMS.filter(function(t){return t.g===g;}).map(function(t){return '<button type="button" class="chip" data-k="'+t.k+'" aria-pressed="false">'+esc(t.name)+'</button>';}).join("")+'</div>';}).join("");
   box.addEventListener("click",function(e){var b=e.target.closest(".chip");if(b)render(b.dataset.k);});
   var saved=null;try{saved=localStorage.getItem("sbfc-team");}catch(e){}
-  var gal=document.getElementById("gallery");
-  gal.innerHTML=TEAMS.filter(function(t){return PHOTOS[t.k];}).map(function(t){return '<a class="team-photo" href="#resultats" data-k="'+t.k+'"><img src="'+PHOTOS[t.k]+'" alt="L\u2019équipe '+esc(t.name)+' du Saint-Brice FC" loading="lazy"><span class="cap"><b>'+esc(t.name)+'</b><small>'+esc(t.lvl.replace(/^U\d+F? /,""))+'</small></span></a>';}).join("");
-  gal.addEventListener("click",function(e){var a=e.target.closest(".team-photo");if(a)render(a.dataset.k);});
-  render(saved||"seniors1");
+  var q=(location.search.match(/[?&]equipe=([\w-]+)/)||[])[1];
+  render(q||saved||"seniors1");
 })();
 
 (function(){
   var s1=TEAMS.filter(function(x){return x.k==="seniors1";})[0];
   var nx=s1&&s1.m.filter(function(m){return m.t;})[0], tb=s1&&s1.tab.filter(function(r){return us(r[1]);})[0];
   var hn=document.getElementById("hero-next");
+  if(!hn)return;
   if(nx){hn.innerHTML='<div class="eyebrow">Prochain match · Seniors R1</div><div class="vs"><span>'+esc(nx.h)+'</span><span>vs</span><span>'+esc(nx.a)+'</span></div><dl><dt>Date</dt><dd>'+fd(nx.d)+' · '+esc(nx.t)+'</dd><dt>Compét.</dt><dd>'+esc(nx.c)+(tb?' · '+tb[0]+'e':'')+'</dd></dl>';}else{hn.remove();}
   var all=[];TEAMS.forEach(function(t){t.m.forEach(function(m){if(m.hs!==undefined)all.push({t:t,m:m});});});
   var last=all.reduce(function(a,x){return x.m.d>a?x.m.d:a;},"");
@@ -606,12 +431,13 @@ function render(k){
   document.getElementById("wk-date").textContent=wk.length?"Mis à jour le "+fd(last):"";
   document.getElementById("wk").innerHTML=wk.map(function(x){var m=x.m,home=us(m.h),mine=home?m.hs:m.as_,th=home?m.as_:m.hs,r=mine>th?"V":(mine<th?"D":"N");if(/tirs au but/.test(m.n||""))r="V";var opp=home?m.a:m.h;
     return '<button type="button" class="wk-card '+r+'" data-k="'+x.t.k+'"><b>'+esc(x.t.name)+'</b><span class="sc">'+mine+' – '+th+'</span><small>'+(home?"vs ":"à ")+esc(opp)+'</small><small>'+esc(m.c)+'</small></button>';}).join("")||'<p class="note">Pas de match joué récemment.</p>';
-  document.getElementById("wk").addEventListener("click",function(e){var c=e.target.closest(".wk-card");if(c){render(c.dataset.k);document.getElementById("resultats").scrollIntoView({behavior:"smooth"});}});
+  document.getElementById("wk").addEventListener("click",function(e){var c=e.target.closest(".wk-card");if(c){location.href="resultats.html?equipe="+c.dataset.k;}});
 })();
 
 (function(){
   var SIZES=["6 ans","8 ans","10 ans","12 ans","14 ans","XS","S","M","L","XL","XXL","3XL"],FL={"":["Sans flocage",0],"num":["Numéro",10],"nom":["Nom",10],"nomnum":["Nom et numéro",15]};
   var box=document.getElementById("o-lines"),n=0;
+  if(!box)return;
   function line(){n++;var d=document.createElement("div");d.className="o-line";
     d.innerHTML='<label>Taille<select class="o-size">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join("")+'</select></label><label>Flocage<select class="o-fl">'+Object.keys(FL).map(function(k){return '<option value="'+k+'">'+FL[k][0]+(FL[k][1]?' (+'+FL[k][1]+' €)':'')+'</option>';}).join("")+'</select></label><label class="o-txt">Nom / numéro à floquer<input class="o-flt" placeholder="ex. DUPONT 10" disabled></label><label>Qté<input class="o-q" type="number" min="1" max="20" value="1" inputmode="numeric"></label><div class="o-price">49 €</div><button type="button" class="o-del" aria-label="Retirer ce maillot">×</button>';
     box.appendChild(d);calc();}
@@ -629,7 +455,7 @@ function render(k){
 })();
 
 (function(){
-  var t=TEAMS.filter(function(x){return x.k==="u18";})[0]; if(!t)return;
+  var t=TEAMS.filter(function(x){return x.k==="u18";})[0]; if(!t||!document.getElementById("une-stats"))return;
   var me=t.tab.filter(function(r){return us(r[1]);})[0];
   var lg=t.m.filter(function(m){return m.hs!==undefined&&/R3/.test(m.c);});
   var V=0,N=0,D=0;lg.forEach(function(m){var h=us(m.h),a=h?m.hs:m.as_,b=h?m.as_:m.hs;a>b?V++:a<b?D++:N++;});
@@ -638,15 +464,15 @@ function render(k){
     return '<li class="'+r+'"><span class="d">'+fd(m.d)+'</span><span class="m">'+(h?"vs ":"à ")+esc(h?m.a:m.h)+'<small>'+esc(m.c)+(m.n?' · '+esc(m.n):'')+'</small></span><span class="s">'+a+'–'+b+'<i>'+r+'</i></span></li>';}).join("");
   var nx=t.m.filter(function(m){return m.t;})[0];
   document.getElementById("une-next").textContent=nx?"Prochain match : "+fd(nx.d)+" à "+nx.t+", "+(us(nx.h)?"contre "+nx.a:"à "+nx.h)+" ("+nx.c+")":"";
-  document.getElementById("une-go").addEventListener("click",function(){render("u18");});
 })();
-document.getElementById('f').addEventListener('submit',function(e){
+document.getElementById('f')&&document.getElementById('f').addEventListener('submit',function(e){
   e.preventDefault();
   var ok=document.getElementById('ok'),nom=document.getElementById('nom'),mail=document.getElementById('mail');
   if(!nom.value.trim()||!mail.value.trim()||!mail.checkValidity()){ok.textContent="Indiquez votre nom et une adresse email valide.";ok.hidden=false;return;}
   ok.textContent="Merci "+nom.value.trim().split(" ")[0]+" ! Ce formulaire n'est pas encore relié au club : écrivez-nous directement à 527269@lpiff.fr.";
   ok.hidden=false;
 });
+(function(){var id=location.hash.slice(1);if(!id)return;function go(){var t=document.getElementById(id);if(t){var hd=document.querySelector('header');scrollTo(0,t.getBoundingClientRect().top+scrollY-(hd?hd.offsetHeight:0)-8);}}go();addEventListener('load',function(){go();setTimeout(go,500);});})();
 </script>
 
 </body>

@@ -1,13 +1,22 @@
 {
+  "id": "/",
   "name": "Saint-Brice Football Club",
   "short_name": "Saint-Brice FC",
-  "start_url": "/",
+  "description": "L'appli du Saint-Brice FC : résultats, calendriers, classements et actualités de toutes les équipes.",
+  "start_url": "/?source=appli",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#f2f2e3",
   "theme_color": "#0b3d22",
   "lang": "fr",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
     {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+  ],
+  "shortcuts": [
+    {"name": "Résultats", "url": "/resultats", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]},
+    {"name": "Seniors R1", "url": "/equipe-seniors-r1", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]},
+    {"name": "Actualités", "url": "/actualites", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]}
   ]
 }

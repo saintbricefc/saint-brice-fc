@@ -423,6 +423,22 @@ td.d,.res-note,.palm td:first-child{color:var(--forest)}
 footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
 .wk-card{color:var(--ink)}
 .page-top{padding-bottom:0}
+.sq-acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sq-acc summary::-webkit-details-marker{display:none}
+.sq-acc summary h3{margin:0}
+.sq-more{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--pill);color:#fff;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.sq-more::after{content:"▾";transition:transform .2s}
+.sq-acc[open] .sq-more::after{transform:rotate(180deg)}
+.sq-acc[open] summary{margin-bottom:16px}
+.sq-acc[open] .sq-more{font-size:0;gap:0}.sq-acc[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}
+@media (prefers-reduced-motion:reduce){.sq-more::after{transition:none}}
+#cal .tbl{width:100%;display:block}.r1cal{width:100%;border-collapse:collapse;table-layout:auto}
+.sq-acc[open] .sq-more::after{font-size:1rem}
+.r1cal th{font-family:var(--cond);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:6px;border-bottom:2px solid var(--green)}
+.r1cal td{padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.r1cal td.m small{display:block;color:var(--muted);font-size:.85rem}
+.r1cal td.s{font-family:var(--display);font-size:1.2rem;white-space:nowrap;text-align:right}
+.r1cal tr.nx td{background:var(--cream)}.r1cal tr.nx td.d::after{content:"Prochain";display:block;font-size:.7rem;color:#b81f1b;text-transform:uppercase;letter-spacing:.05em}
 </style>
 
 <a class="skip" href="#contenu">Aller au contenu</a>

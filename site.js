@@ -22,11 +22,12 @@ function squad(k){var el=document.getElementById("squad");if(!el)return;var s=SQ
   el.innerHTML='<details class="sq-acc"><summary><h3>Effectif '+esc(s.t)+' 2026/2027</h3><span class="sq-more">Voir l\'effectif</span></summary><div class="sq-grid">'+s.g.map(function(g){return col(g[0],g[1]);}).join("")+col("Staff",s.staff,1)+'</div></details>';el.hidden=false;
   if(!el.dataset.on){el.dataset.on=1;el.addEventListener("click",function(e){var x=e.target.closest(".sq-p");if(!x)return;var d=document.getElementById("sq-dlg");d.querySelector("img").src=x.dataset.ph;d.querySelector("img").alt=x.textContent;d.querySelector("b").textContent=x.textContent;d.hidden=false;});
   var d=document.getElementById("sq-dlg");document.body.appendChild(d);d.addEventListener("click",function(){d.hidden=true;});document.addEventListener("keydown",function(e){if(e.key==="Escape")d.hidden=true;});}}
+var SLUG={seniors1:"seniors-r1",seniors2:"seniors-d1",seniors5:"seniors-cdm-1",seniors6:"seniors-cdm-2",anciens:"anciens",seniorsf:"seniors-feminines",u18:"u18",u18b:"u18-2",u18f:"u18-feminines",u16:"u16",u16b:"u16-2",u16c:"u16-3",u15:"u15",u14:"u14",u14b:"u14-2",u14c:"u14-3",u14d:"u14-4",u15f:"u15-feminines",u13:"u13",u13f:"u13-feminines"};function tpage(k){return "equipe-"+(SLUG[k]||k);}
 function render(k){
   var t=TEAMS.filter(function(x){return x.k===k;})[0]||TEAMS[0];
   document.getElementById("t-name").textContent=t.name;
   document.getElementById("t-lvl").textContent=t.lvl;
-  [].forEach.call(document.querySelectorAll(".chip"),function(b){b.setAttribute("aria-pressed",b.dataset.k===t.k?"true":"false");});
+  [].forEach.call(document.querySelectorAll("#team-sel option"),function(o){if(o.dataset.k===t.k){o.selected=true;o.setAttribute("selected","");}else o.removeAttribute("selected");});
   var played=t.m.filter(function(m){return m.hs!==undefined;}).reverse();
   var next=t.m.filter(function(m){return m.t;})[0];
   document.getElementById("t-next").innerHTML=next?'<div class="nextbox"><span>Prochain match · '+fd(next.d)+' · '+esc(next.t)+'</span><b>'+esc(next.h)+' – '+esc(next.a)+'</b><span>'+esc(next.c)+'</span></div>':"";
@@ -44,14 +45,14 @@ function render(k){
 }
 (function(){
   var gal=document.getElementById("gallery");
-  if(gal){gal.innerHTML=TEAMS.filter(function(t){return PHOTOS[t.k];}).map(function(t){return '<a class="team-photo" href="resultats?equipe='+t.k+'"><img src="'+PHOTOS[t.k]+'" width="520" height="390" alt="L\u2019équipe '+esc(t.name)+' du Saint-Brice FC" loading="lazy"><span class="cap"><b>'+esc(t.name)+'</b><small>'+esc(t.lvl.replace(/^U\d+F? /,""))+'</small></span></a>';}).join("");}
+  if(gal){gal.innerHTML=TEAMS.filter(function(t){return PHOTOS[t.k];}).map(function(t){return '<a class="team-photo" href="'+tpage(t.k)+'"><img src="'+PHOTOS[t.k]+'" width="520" height="390" alt="L\u2019équipe '+esc(t.name)+' du Saint-Brice FC" loading="lazy"><span class="cap"><b>'+esc(t.name)+'</b><small>'+esc(t.lvl.replace(/^U\d+F? /,""))+'</small></span></a>';}).join("");}
   var groups=["Seniors","Jeunes","Féminines"], box=document.getElementById("chips");
   if(!box)return;
-  box.innerHTML=groups.map(function(g){return '<div class="chips-row"><span>'+g+'</span>'+TEAMS.filter(function(t){return t.g===g;}).map(function(t){return '<button type="button" class="chip" data-k="'+t.k+'" aria-pressed="false">'+esc(t.name)+'</button>';}).join("")+'</div>';}).join("");
-  box.addEventListener("click",function(e){var b=e.target.closest(".chip");if(b)render(b.dataset.k);});
+  box.innerHTML='<label for="team-sel">Choisir une équipe</label><select id="team-sel">'+groups.map(function(g){return '<optgroup label="'+g+'">'+TEAMS.filter(function(t){return t.g===g;}).map(function(t){return '<option value="'+tpage(t.k)+'" data-k="'+t.k+'">'+esc(t.name)+'</option>';}).join("")+'</optgroup>';}).join("")+'</select>';
+  box.addEventListener("change",function(e){if(e.target.id==="team-sel")location.href=e.target.value;});
   var saved=null;try{saved=localStorage.getItem("sbfc-team");}catch(e){}
   var q=(location.search.match(/[?&]equipe=([\w-]+)/)||[])[1];
-  render(q||saved||"seniors1");
+  render(window.SB_TEAM||q||saved||"seniors1");
 })();
 
 (function(){

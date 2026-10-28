@@ -291,6 +291,20 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.news{grid-template-columns:1fr 1fr;align-items:start}
+.news article:first-child{background:var(--panel);color:inherit}
+.news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
+.news article:first-child h3{font-size:1.5rem}
+.news article p a{font-weight:700;color:var(--forest)}
+.news .art summary{list-style:none;cursor:pointer;display:grid;gap:8px;justify-items:start}
+.news .art summary::-webkit-details-marker{display:none}
+.news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
+.news .art-body{display:grid;gap:8px;margin-top:12px}
+.news article{scroll-margin-top:96px}
+.art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
+.news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
+@media(max-width:760px){.news{grid-template-columns:1fr}}
+.sc-link{color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px}.sc-art{display:block;font-size:.78rem;font-weight:700;color:var(--green);margin-top:2px}
 .team-news{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 20px;margin:0 0 22px}
 .team-news h2{font-family:var(--cond);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--forest);margin:0 0 8px}
 .team-news ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team-news li a{font-weight:700;color:var(--forest)}.team-news time{color:var(--muted);font-size:.9rem;margin-left:6px}
@@ -492,14 +506,14 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <p class="crumb"><a href="resultats">Résultats</a> › U16 R2</p>
       <div class="sec-head"><h1>U16 R2</h1><span class="note">U16 Régional 2 · Poule B · saison 2026/2027</span></div>
       <div class="team-intro has-ph"><img src="photo-u16.webp" alt="L’équipe U16 R2 du Saint-Brice FC" width="520" height="390"><p>L’équipe <b>U16 R2</b> du Saint-Brice FC joue en <b>U16 Régional 2 · Poule B</b> cette saison. Retrouvez ici ses derniers résultats, son prochain match, son calendrier complet et le classement, mis à jour d’après les résultats officiels de la FFF.</p></div>
-      <div class="team-news"><h2>Actualités U16 R2</h2><ul><li><a href="actualites#actu-u16-bagneux">Victoire 2-0 contre Bagneux</a><time datetime="2026-10-24">24 octobre</time></li></ul></div>
+      <div class="team-news"><h2>Actualités U16 R2</h2><ul><li><a href="actualites#actu-u16-bagneux">Victoire 2-0 contre Bagneux</a><time datetime="2026-10-25">25 octobre</time></li></ul></div>
       <div class="team-pick" id="chips"><label for="team-sel">Choisir une équipe</label><select id="team-sel"><optgroup label="Seniors"><option value="equipe-seniors-r1" data-k="seniors1">Seniors R1</option><option value="equipe-seniors-d1" data-k="seniors2">Seniors D1</option><option value="equipe-seniors-cdm-1" data-k="seniors5">CDM R2</option><option value="equipe-seniors-cdm-2" data-k="seniors6">CDM D2</option><option value="equipe-anciens" data-k="anciens">Anciens</option></optgroup><optgroup label="Jeunes"><option value="equipe-u18" data-k="u18">U18 R3</option><option value="equipe-u18-2" data-k="u18b">U18 D2</option><option value="equipe-u16" data-k="u16" selected="">U16 R2</option><option value="equipe-u16-2" data-k="u16b">U16 D1</option><option value="equipe-u16-3" data-k="u16c">U16 D4</option><option value="equipe-u15" data-k="u15">U15 D2</option><option value="equipe-u14" data-k="u14">U14 R3</option><option value="equipe-u14-2" data-k="u14b">U14 D2</option><option value="equipe-u14-3" data-k="u14c">U14 D3</option><option value="equipe-u14-4" data-k="u14d">U14 D5</option><option value="equipe-u13" data-k="u13">U13</option></optgroup><optgroup label="Féminines"><option value="equipe-seniors-feminines" data-k="seniorsf">Seniors féminines</option><option value="equipe-u18-feminines" data-k="u18f">U18 féminines</option><option value="equipe-u15-feminines" data-k="u15f">U15 féminines</option><option value="equipe-u13-feminines" data-k="u13f">U13 féminines</option></optgroup></select></div>
       <div class="team-head"><h3 id="t-name">Seniors R1</h3><span class="lvl" id="t-lvl">U16 Régional 2 · Poule B</span></div>
       <div id="t-next"><div class="nextbox"><span>Prochain match · 1 nov. · 13h30</span><b>Nanterre ES 2 – Saint-Brice FC</b><span>U16 R2</span></div></div>
       <div class="cal">
         <details class="sq-acc">
           <summary><h3>Derniers résultats</h3><span class="sq-more">Voir les résultats</span></summary>
-          <div class="tbl"><table id="t-res"><caption class="sr">Résultats U16 R2</caption><tbody><tr><td class="d">24 oct.</td><td class="m">Saint-Brice FC – Bagneux Com<small>U16 R2</small></td><td class="s">2 – 0<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">11 oct.</td><td class="m">Garenne-Colombes AF – Saint-Brice FC<small>Coupe de Paris U16 · 1/32e</small></td><td class="s">1 – 0<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">27 sept.</td><td class="m">Saint-Brice FC – Colombienne Foot ES<small>Coupe de Paris U16 · cadrage</small></td><td class="s">2 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">20 sept.</td><td class="m">Saint-Brice FC – Mantois 78 FC 2<small>U16 R2</small></td><td class="s">0 – 1<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">13 sept.</td><td class="m">Cergy-Pontoise FC – Saint-Brice FC<small>U16 R2</small></td><td class="s">1 – 1<span class="pill N" title="Nul">N</span></td></tr></tbody></table></div>
+          <div class="tbl"><table id="t-res"><caption class="sr">Résultats U16 R2</caption><tbody><tr><td class="d">24 oct.</td><td class="m">Saint-Brice FC – Bagneux Com<small>U16 R2</small></td><td class="s"><a class="sc-link" href="actualites#actu-u16-bagneux" title="Lire l’article du match">2 – 0</a><span class="pill V" title="Victoire">V</span><a class="sc-art" href="actualites#actu-u16-bagneux">Article</a></td></tr><tr><td class="d">11 oct.</td><td class="m">Garenne-Colombes AF – Saint-Brice FC<small>Coupe de Paris U16 · 1/32e</small></td><td class="s">1 – 0<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">27 sept.</td><td class="m">Saint-Brice FC – Colombienne Foot ES<small>Coupe de Paris U16 · cadrage</small></td><td class="s">2 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">20 sept.</td><td class="m">Saint-Brice FC – Mantois 78 FC 2<small>U16 R2</small></td><td class="s">0 – 1<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">13 sept.</td><td class="m">Cergy-Pontoise FC – Saint-Brice FC<small>U16 R2</small></td><td class="s">1 – 1<span class="pill N" title="Nul">N</span></td></tr></tbody></table></div>
         </details>
         <details class="sq-acc">
           <summary><h3>Classement</h3><span class="sq-more">Voir le classement</span></summary>

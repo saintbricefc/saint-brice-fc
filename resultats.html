@@ -290,6 +290,20 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.news{grid-template-columns:1fr 1fr;align-items:start}
+.news article:first-child{background:var(--panel);color:inherit}
+.news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
+.news article:first-child h3{font-size:1.5rem}
+.news article p a{font-weight:700;color:var(--forest)}
+.news .art summary{list-style:none;cursor:pointer;display:grid;gap:8px;justify-items:start}
+.news .art summary::-webkit-details-marker{display:none}
+.news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
+.news .art-body{display:grid;gap:8px;margin-top:12px}
+.news article{scroll-margin-top:96px}
+.art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
+.news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
+@media(max-width:760px){.news{grid-template-columns:1fr}}
+.sc-link{color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px}.sc-art{display:block;font-size:.78rem;font-weight:700;color:var(--green);margin-top:2px}
 .team-news{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 20px;margin:0 0 22px}
 .team-news h2{font-family:var(--cond);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--forest);margin:0 0 8px}
 .team-news ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team-news li a{font-weight:700;color:var(--forest)}.team-news time{color:var(--muted);font-size:.9rem;margin-left:6px}
@@ -495,7 +509,7 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <div class="cal">
         <details class="sq-acc">
           <summary><h3>Derniers résultats</h3><span class="sq-more">Voir les résultats</span></summary>
-          <div class="tbl"><table id="t-res"><caption class="sr">Résultats Seniors R1</caption><tbody><tr><td class="d">24 oct.</td><td class="m">Gretz Tournan SC – Saint-Brice FC<small>Coupe de Paris IDF · 3e tour</small></td><td class="s">0 – 2<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">10 oct.</td><td class="m">Saint-Brice FC – FC Fleury 91<small>Coupe de France · 5e tour</small></td><td class="s">0 – 1<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">3 oct.</td><td class="m">Aulnaysienne Esp. – Saint-Brice FC<small>Régional 1 · J3</small></td><td class="s">0 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">27 sept.</td><td class="m">VFFA 77 – Saint-Brice FC<small>Coupe de France · 4e tour</small></td><td class="s">0 – 5<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">19 sept.</td><td class="m">CO Ulis – Saint-Brice FC<small>Régional 1 · J2</small></td><td class="s">1 – 0<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">13 sept.</td><td class="m">Buc Foot AO – Saint-Brice FC<small>Coupe de France · 3e tour</small></td><td class="s">1 – 3<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">5 sept.</td><td class="m">Saint-Brice FC – FC 93 Bobigny<small>Régional 1 · J1</small></td><td class="s">4 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">15 août</td><td class="m">AFC Compiègne – Saint-Brice FC<small>Match amical</small></td><td class="s">1 – 0<span class="pill D" title="Défaite">D</span></td></tr></tbody></table></div>
+          <div class="tbl"><table id="t-res"><caption class="sr">Résultats Seniors R1</caption><tbody><tr><td class="d">24 oct.</td><td class="m">Gretz Tournan SC – Saint-Brice FC<small>Coupe de Paris IDF · 3e tour</small></td><td class="s"><a class="sc-link" href="actualites#actu-r1-coupe-paris" title="Lire l’article du match">0 – 2</a><span class="pill V" title="Victoire">V</span><a class="sc-art" href="actualites#actu-r1-coupe-paris">Article</a></td></tr><tr><td class="d">10 oct.</td><td class="m">Saint-Brice FC – FC Fleury 91<small>Coupe de France · 5e tour</small></td><td class="s"><a class="sc-link" href="actualites#actu-r1-fleury" title="Lire l’article du match">0 – 1</a><span class="pill D" title="Défaite">D</span><a class="sc-art" href="actualites#actu-r1-fleury">Article</a></td></tr><tr><td class="d">3 oct.</td><td class="m">Aulnaysienne Esp. – Saint-Brice FC<small>Régional 1 · J3</small></td><td class="s">0 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">27 sept.</td><td class="m">VFFA 77 – Saint-Brice FC<small>Coupe de France · 4e tour</small></td><td class="s">0 – 5<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">19 sept.</td><td class="m">CO Ulis – Saint-Brice FC<small>Régional 1 · J2</small></td><td class="s">1 – 0<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">13 sept.</td><td class="m">Buc Foot AO – Saint-Brice FC<small>Coupe de France · 3e tour</small></td><td class="s">1 – 3<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">5 sept.</td><td class="m">Saint-Brice FC – FC 93 Bobigny<small>Régional 1 · J1</small></td><td class="s">4 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">15 août</td><td class="m">AFC Compiègne – Saint-Brice FC<small>Match amical</small></td><td class="s">1 – 0<span class="pill D" title="Défaite">D</span></td></tr></tbody></table></div>
         </details>
         <details class="sq-acc">
           <summary><h3>Classement</h3><span class="sq-more">Voir le classement</span></summary>

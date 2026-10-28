@@ -291,6 +291,20 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.news{grid-template-columns:1fr 1fr;align-items:start}
+.news article:first-child{background:var(--panel);color:inherit}
+.news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
+.news article:first-child h3{font-size:1.5rem}
+.news article p a{font-weight:700;color:var(--forest)}
+.news .art summary{list-style:none;cursor:pointer;display:grid;gap:8px;justify-items:start}
+.news .art summary::-webkit-details-marker{display:none}
+.news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
+.news .art-body{display:grid;gap:8px;margin-top:12px}
+.news article{scroll-margin-top:96px}
+.art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
+.news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
+@media(max-width:760px){.news{grid-template-columns:1fr}}
+.sc-link{color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px}.sc-art{display:block;font-size:.78rem;font-weight:700;color:var(--green);margin-top:2px}
 .team-news{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 20px;margin:0 0 22px}
 .team-news h2{font-family:var(--cond);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--forest);margin:0 0 8px}
 .team-news ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team-news li a{font-weight:700;color:var(--forest)}.team-news time{color:var(--muted);font-size:.9rem;margin-left:6px}
@@ -499,7 +513,7 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <div class="cal">
         <details class="sq-acc">
           <summary><h3>Derniers résultats</h3><span class="sq-more">Voir les résultats</span></summary>
-          <div class="tbl"><table id="t-res"><caption class="sr">Résultats U18 R3</caption><tbody><tr><td class="d">25 oct.</td><td class="m">Saint-Brice FC – JA Drancy<small>Coupe Gambardella · 4e tour</small></td><td class="s">1 – 3<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">18 oct.</td><td class="m">Houilles AC – Saint-Brice FC<small>U18 R3</small></td><td class="s">2 – 4<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">11 oct.</td><td class="m">Saint-Brice FC – Villepinte Flamboyants<small>Coupe Gambardella · 3e tour</small><span class="res-note">Qualifié aux tirs au but (4-3)</span></td><td class="s">1 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">4 oct.</td><td class="m">Bussy-St-Georges FC – Saint-Brice FC<small>U18 R3</small></td><td class="s">1 – 4<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">27 sept.</td><td class="m">Ville-d'Avray US – Saint-Brice FC<small>Coupe Gambardella · 2e tour</small></td><td class="s">2 – 3<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">20 sept.</td><td class="m">Saint-Brice FC – Lilas FC<small>U18 R3</small></td><td class="s">2 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">13 sept.</td><td class="m">Paris Univers. Club – Saint-Brice FC<small>U18 R3</small></td><td class="s">2 – 2<span class="pill N" title="Nul">N</span></td></tr></tbody></table></div>
+          <div class="tbl"><table id="t-res"><caption class="sr">Résultats U18 R3</caption><tbody><tr><td class="d">25 oct.</td><td class="m">Saint-Brice FC – JA Drancy<small>Coupe Gambardella · 4e tour</small></td><td class="s"><a class="sc-link" href="actualites#actu-u18-gambardella" title="Lire l’article du match">1 – 3</a><span class="pill D" title="Défaite">D</span><a class="sc-art" href="actualites#actu-u18-gambardella">Article</a></td></tr><tr><td class="d">18 oct.</td><td class="m">Houilles AC – Saint-Brice FC<small>U18 R3</small></td><td class="s">2 – 4<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">11 oct.</td><td class="m">Saint-Brice FC – Villepinte Flamboyants<small>Coupe Gambardella · 3e tour</small><span class="res-note">Qualifié aux tirs au but (4-3)</span></td><td class="s">1 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">4 oct.</td><td class="m">Bussy-St-Georges FC – Saint-Brice FC<small>U18 R3</small></td><td class="s">1 – 4<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">27 sept.</td><td class="m">Ville-d'Avray US – Saint-Brice FC<small>Coupe Gambardella · 2e tour</small></td><td class="s">2 – 3<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">20 sept.</td><td class="m">Saint-Brice FC – Lilas FC<small>U18 R3</small></td><td class="s">2 – 1<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">13 sept.</td><td class="m">Paris Univers. Club – Saint-Brice FC<small>U18 R3</small></td><td class="s">2 – 2<span class="pill N" title="Nul">N</span></td></tr></tbody></table></div>
         </details>
         <details class="sq-acc">
           <summary><h3>Classement</h3><span class="sq-more">Voir le classement</span></summary>

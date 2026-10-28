@@ -290,6 +290,20 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.news{grid-template-columns:1fr 1fr;align-items:start}
+.news article:first-child{background:var(--panel);color:inherit}
+.news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
+.news article:first-child h3{font-size:1.5rem}
+.news article p a{font-weight:700;color:var(--forest)}
+.news .art summary{list-style:none;cursor:pointer;display:grid;gap:8px;justify-items:start}
+.news .art summary::-webkit-details-marker{display:none}
+.news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
+.news .art-body{display:grid;gap:8px;margin-top:12px}
+.news article{scroll-margin-top:96px}
+.art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
+.news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
+@media(max-width:760px){.news{grid-template-columns:1fr}}
+.sc-link{color:inherit;text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px}.sc-art{display:block;font-size:.78rem;font-weight:700;color:var(--green);margin-top:2px}
 .team-news{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 20px;margin:0 0 22px}
 .team-news h2{font-family:var(--cond);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--forest);margin:0 0 8px}
 .team-news ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team-news li a{font-weight:700;color:var(--forest)}.team-news time{color:var(--muted);font-size:.9rem;margin-left:6px}
@@ -526,9 +540,10 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
   <section id="actus">
     <div class="wrap">
       <div class="news">
-        <article id="actu-r1-coupe-paris" data-team="seniors1"><span class="tag">Seniors R1</span><h3>Qualifiés en Coupe de Paris</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Victoire 2-0 à Gretz-Tournan au 3e tour de la Coupe de Paris Île-de-France. En championnat, nos seniors sont 4es de Régional 1 avec un match en moins. Prochain rendez-vous samedi 31 octobre à 18h aux Mureaux.</p><p><a href="equipe-seniors-r1">La page des Seniors R1 →</a></p></article>
-        <article id="actu-u18-gambardella" data-team="u18"><span class="tag">U18</span><h3>Fin du parcours en Gambardella</h3><time datetime="2026-10-25">25 octobre 2026</time><p>Au 4e tour de la Coupe Gambardella, nos U18 se sont inclinés 3-1 au stade Léon Graffin face à la JA Drancy, qui évolue deux divisions au-dessus.</p><p>Malgré l’écart, les garçons ont montré du caractère et se sont battus jusqu’au bout. Une prestation encourageante, dont il faudra garder le positif pour la suite.</p><p>Place maintenant au championnat de Régional 3, où nos U18 sont toujours invaincus et deuxièmes de leur poule. Prochain match dimanche 1er novembre à 13h à Villemomble.</p><p><a href="equipe-u18">La page des U18 →</a></p></article>
-        <article id="actu-u16-bagneux" data-team="u16"><span class="tag">U16</span><h3>Victoire 2-0 contre Bagneux</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Première victoire de la saison en Régional 2 pour nos U16, au stade Léon Graffin.</p><p><a href="equipe-u16">La page des U16 →</a></p></article>
+        <article id="actu-u18-gambardella" data-team="u18" data-match="2026-10-25"><details class="art"><summary><span class="tag">U18</span><h3>Fin du parcours en Gambardella</h3><time datetime="2026-10-25">Publié le 25 octobre 2026</time><span class="m-date">Match du 25 octobre</span><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Au 4e tour de la Coupe Gambardella, nos U18 se sont inclinés 3-1 au stade Léon Graffin face à la JA Drancy, qui évolue deux divisions au-dessus.</p><p>Malgré l’écart, les garçons ont montré du caractère et se sont battus jusqu’au bout. Une prestation encourageante, dont il faudra garder le positif pour la suite.</p><p>Place maintenant au championnat de Régional 3, où nos U18 sont toujours invaincus et deuxièmes de leur poule. Prochain match dimanche 1er novembre à 13h à Villemomble.</p><p><a href="equipe-u18">La page des U18 →</a></p></div></details></article>
+        <article id="actu-r1-coupe-paris" data-team="seniors1" data-match="2026-10-24"><details class="art"><summary><span class="tag">Seniors R1</span><h3>Qualifiés en Coupe de Paris</h3><time datetime="2026-10-25">Publié le 25 octobre 2026</time><span class="m-date">Match du 24 octobre</span><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Victoire 2-0 à Gretz-Tournan au 3e tour de la Coupe de Paris Île-de-France. En championnat, nos seniors sont 4es de Régional 1 avec un match en moins. Prochain rendez-vous samedi 31 octobre à 18h aux Mureaux.</p><p><a href="equipe-seniors-r1">La page des Seniors R1 →</a></p></div></details></article>
+        <article id="actu-u16-bagneux" data-team="u16" data-match="2026-10-24"><details class="art"><summary><span class="tag">U16</span><h3>Victoire 2-0 contre Bagneux</h3><time datetime="2026-10-25">Publié le 25 octobre 2026</time><span class="m-date">Match du 24 octobre</span><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Première victoire de la saison en Régional 2 pour nos U16, au stade Léon Graffin.</p><p><a href="equipe-u16">La page des U16 →</a></p></div></details></article>
+        <article id="actu-r1-fleury" data-team="seniors1" data-match="2026-10-10"><details class="art"><summary><span class="tag">Seniors R1 · Coupe de France</span><h3>La tête haute face à Fleury</h3><time datetime="2026-10-11">Publié le 11 octobre 2026</time><span class="m-date">Match du 10 octobre</span><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Pour le 5e tour de la Coupe de France, nos Seniors R1 recevaient au stade Léon Graffin le FC Fleury 91, club professionnel pensionnaire de Ligue 3. Ils s’inclinent 1-0 au terme d’un match équilibré, où les deux équipes se sont livré une belle bataille.</p><p>Nos joueurs ont fièrement défendu nos couleurs et tout donné jusqu’au bout, un match de bon augure pour la suite de la saison. Le parcours a été salué au-delà du club : la page Foot IQ a parlé d’« un formidable groupe, qui n’est pas passé loin de l’exploit ».</p><p>Un grand merci à tous les supporters venus très nombreux nous encourager. Photos du match : @akaleua.</p><p><a href="equipe-seniors-r1">La page des Seniors R1 →</a></p></div></details></article>
       </div>
     </div>
   </section>

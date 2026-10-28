@@ -290,6 +290,9 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.team-news{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 20px;margin:0 0 22px}
+.team-news h2{font-family:var(--cond);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--forest);margin:0 0 8px}
+.team-news ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team-news li a{font-weight:700;color:var(--forest)}.team-news time{color:var(--muted);font-size:.9rem;margin-left:6px}
 .team-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
 .team-head h3{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--forest)}
 .team-head .lvl{font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -375,6 +378,7 @@ td.m.us{color:var(--forest)}
 .panelbox h3{font-size:1.4rem;color:var(--forest);margin-bottom:8px}
 .clubs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
 .clubs li{font-family:var(--cond);font-weight:600;background:#fff;border-radius:999px;padding:3px 12px;font-size:.95rem;border:1px solid var(--line)}
+.clubs li a{color:var(--forest);text-decoration:none}.clubs li:has(a:hover){border-color:var(--green)}
 .bandeira-hero{background:linear-gradient(160deg,#f4d877 0%,#e3be55 45%,#c99a2e 100%);color:#0b0b0b;border-radius:32px;padding:26px 28px;display:grid;gap:8px;margin-bottom:22px;box-shadow:0 10px 24px rgba(120,90,10,.3)}
 .bandeira-hero .eyebrow{color:#2a2008}
 .bandeira-hero h3{font-size:clamp(2rem,6vw,3.4rem)}
@@ -505,9 +509,7 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
         <div class="panelbox">
           <h3>Nos équipes engagées</h3>
           <ul class="clubs">
-            <li>Seniors R1</li><li>Seniors D1</li><li>Seniors CDM 1 · R2</li><li>Seniors CDM 2 · D2</li><li>Anciens · D3</li><li>Seniors F · D1</li>
-            <li>U18 · R3</li><li>U18 (2) · D2</li><li>U18 F · D1</li><li>U16 · R2</li><li>U16 (2) · D1</li><li>U16 (3) · D4</li>
-            <li>U15 · D2</li><li>U14 · R3</li><li>U14 (2) · D2</li><li>U14 (3) · D3</li><li>U14 (4) · D5</li><li>U15 F · D1</li><li>U13 · Critérium régional</li><li>U13 F · Critérium</li>
+            <li><a href="equipe-seniors-r1">Seniors R1</a></li><li><a href="equipe-seniors-d1">Seniors D1</a></li><li><a href="equipe-seniors-cdm-1">CDM R2</a></li><li><a href="equipe-seniors-cdm-2">CDM D2</a></li><li><a href="equipe-anciens">Anciens · D3</a></li><li><a href="equipe-seniors-feminines">Seniors F · D1</a></li><li><a href="equipe-u18">U18 R3</a></li><li><a href="equipe-u18-2">U18 D2</a></li><li><a href="equipe-u18-feminines">U18 F · D1</a></li><li><a href="equipe-u16">U16 R2</a></li><li><a href="equipe-u16-2">U16 D1</a></li><li><a href="equipe-u16-3">U16 D4</a></li><li><a href="equipe-u15">U15 D2</a></li><li><a href="equipe-u14">U14 R3</a></li><li><a href="equipe-u14-2">U14 D2</a></li><li><a href="equipe-u14-3">U14 D3</a></li><li><a href="equipe-u14-4">U14 D5</a></li><li><a href="equipe-u15-feminines">U15 F · D1</a></li><li><a href="equipe-u13">U13 · Critérium régional</a></li><li><a href="equipe-u13-feminines">U13 F · Critérium</a></li>
           </ul>
         </div>
       </div>

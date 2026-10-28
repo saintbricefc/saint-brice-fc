@@ -290,6 +290,9 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.team-news{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px 20px;margin:0 0 22px}
+.team-news h2{font-family:var(--cond);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--forest);margin:0 0 8px}
+.team-news ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team-news li a{font-weight:700;color:var(--forest)}.team-news time{color:var(--muted);font-size:.9rem;margin-left:6px}
 .team-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
 .team-head h3{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--forest)}
 .team-head .lvl{font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -375,6 +378,7 @@ td.m.us{color:var(--forest)}
 .panelbox h3{font-size:1.4rem;color:var(--forest);margin-bottom:8px}
 .clubs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;padding:0;list-style:none}
 .clubs li{font-family:var(--cond);font-weight:600;background:#fff;border-radius:999px;padding:3px 12px;font-size:.95rem;border:1px solid var(--line)}
+.clubs li a{color:var(--forest);text-decoration:none}.clubs li:has(a:hover){border-color:var(--green)}
 .bandeira-hero{background:linear-gradient(160deg,#f4d877 0%,#e3be55 45%,#c99a2e 100%);color:#0b0b0b;border-radius:32px;padding:26px 28px;display:grid;gap:8px;margin-bottom:22px;box-shadow:0 10px 24px rgba(120,90,10,.3)}
 .bandeira-hero .eyebrow{color:#2a2008}
 .bandeira-hero h3{font-size:clamp(2rem,6vw,3.4rem)}
@@ -522,9 +526,9 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
   <section id="actus">
     <div class="wrap">
       <div class="news">
-        <article><span class="tag">Seniors R1</span><h3>Qualifiés en Coupe de Paris</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Victoire 2-0 à Gretz-Tournan au 3e tour de la Coupe de Paris Île-de-France. En championnat, nos seniors sont 4es de Régional 1 avec un match en moins. Prochain rendez-vous samedi 31 octobre à 18h aux Mureaux.</p></article>
-        <article><span class="tag">U18</span><h3>Fin du parcours en Gambardella</h3><time datetime="2026-10-25">25 octobre 2026</time><p>Battus 3-1 par la JA Drancy au 4e tour. Nos U18 restent 2es de leur poule de R3.</p></article>
-        <article><span class="tag">U16</span><h3>Victoire 2-0 contre Bagneux</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Première victoire de la saison en Régional 2 pour nos U16, au stade Léon Graffin.</p></article>
+        <article id="actu-r1-coupe-paris" data-team="seniors1"><span class="tag">Seniors R1</span><h3>Qualifiés en Coupe de Paris</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Victoire 2-0 à Gretz-Tournan au 3e tour de la Coupe de Paris Île-de-France. En championnat, nos seniors sont 4es de Régional 1 avec un match en moins. Prochain rendez-vous samedi 31 octobre à 18h aux Mureaux.</p><p><a href="equipe-seniors-r1">La page des Seniors R1 →</a></p></article>
+        <article id="actu-u18-gambardella" data-team="u18"><span class="tag">U18</span><h3>Fin du parcours en Gambardella</h3><time datetime="2026-10-25">25 octobre 2026</time><p>Au 4e tour de la Coupe Gambardella, nos U18 se sont inclinés 3-1 au stade Léon Graffin face à la JA Drancy, qui évolue deux divisions au-dessus.</p><p>Malgré l’écart, les garçons ont montré du caractère et se sont battus jusqu’au bout. Une prestation encourageante, dont il faudra garder le positif pour la suite.</p><p>Place maintenant au championnat de Régional 3, où nos U18 sont toujours invaincus et deuxièmes de leur poule. Prochain match dimanche 1er novembre à 13h à Villemomble.</p><p><a href="equipe-u18">La page des U18 →</a></p></article>
+        <article id="actu-u16-bagneux" data-team="u16"><span class="tag">U16</span><h3>Victoire 2-0 contre Bagneux</h3><time datetime="2026-10-24">24 octobre 2026</time><p>Première victoire de la saison en Régional 2 pour nos U16, au stade Léon Graffin.</p><p><a href="equipe-u16">La page des U16 →</a></p></article>
       </div>
     </div>
   </section>

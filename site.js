@@ -18,11 +18,11 @@ var MONTHS=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.",
 function fd(d){var p=d.split("-");return parseInt(p[2],10)+" "+MONTHS[parseInt(p[1],10)-1];}
 function us(n){return /^Saint-Brice/.test(n);}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
-var SQUAD={seniors1:{t:"Seniors R1",staff:[["Mohamed Hamma","Entraîneur","staff-hamma.webp"],["Benjamin Magnin Feysot","Entraîneur adjoint","staff-magnin.webp"],["Mikael Almeida","Entraîneur des gardiens","staff-almeida.webp"],["Azedine Hamdoune","Coordinateur Seniors R1","staff-hamdoune.webp"],["Manuel Maio Sampaio","Dirigeant","staff-maio.webp"]],
+var SQUAD={seniors1:{t:"Seniors R1",staff:[["Mohamed Hamma","Entraîneur","staff-hamma.webp"],["Benjamin Magnin Feysot","Entraîneur adjoint","staff-magnin.webp"],["Mikael Almeida","Entraîneur des gardiens","staff-almeida.webp"],["Azedine Hamdoune","Coordinateur Seniors R1","staff-hamdoune.webp"],["Manuel Maio Sampaio","Dirigeant","staff-maio.webp"],["Zeva","Médical","staff-celik.webp"]],
  g:[["Gardiens",[["Allan Momege","","joueur-momege.webp"],["Théo Guy","","joueur-guy.webp"]]],
     ["Défenseurs",[["Abdoulaye Sy","Axe","joueur-sy.webp"],["Ismaël Kumbi Lema","Axe","joueur-kumbi.webp"],["Mohammed Sangaré","Axe","joueur-sangare.webp"],["Billy Da Cruz Rocha","Axe","joueur-da-cruz.webp"],["Sofiane Boukhedimi","Gauche","joueur-boukhedimi.webp"],["Souleymane Fofana","Droit","joueur-fofana.webp"],["Siyar Lordini","Droit","joueur-lordini.webp"],["Sirina Doucouré","Droit","joueur-doucoure.webp"],["Nawfel Oumeddah","","joueur-oummeddah.webp"]]],
     ["Milieux",[["Emmanuel Mendes","Défensif","joueur-mendes.webp"],["Keryann Hocq","Défensif","joueur-hocq.webp"],["Luca Spurio","Central","joueur-spurio.webp"],["Arnaud Buisson","","joueur-buisson.webp"],["Kaïs Hamzaoui",""]]],
-    ["Attaquants",[["Sofiane Dris","Ailier"],["Yassine Skira","Ailier"],["Alpha Traoré","Ailier","joueur-traore-alpha.webp"],["Massil Ouali","Pointe","joueur-ouali.webp"],["Gilles Lepoittevin","Pointe","joueur-lepoittevin.webp"]]]]}};
+    ["Attaquants",[["Sofiane Dris","Ailier","joueur-dris.webp"],["Yassine Skira","Ailier","joueur-skira.webp"],["Alpha Traoré","Ailier","joueur-traore-alpha.webp"],["Massil Ouali","Pointe","joueur-ouali.webp"],["Gilles Lepoittevin","Pointe","joueur-lepoittevin.webp"]]]]}};
 function calendar(t){var el=document.getElementById("cal");if(!el)return;var C=window.CALS||{},c=C[t.k];if(!c||!c.length){el.hidden=true;el.innerHTML="";return;}
   var today=new Date().toISOString().slice(0,10);
   var played=t.m.filter(function(m){return m.hs!==undefined;}).map(function(m){return [m.d,"",m.c,m.h,m.a,m.hs,m.as_];});

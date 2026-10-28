@@ -449,6 +449,10 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
 .r1cal td.m small{display:block;color:var(--muted);font-size:.85rem}
 .r1cal td.s{font-family:var(--display);font-size:1.2rem;white-space:nowrap;text-align:right}
 .r1cal tr.nx td{background:var(--cream)}.r1cal tr.nx td.d::after{content:"Prochain";display:block;font-size:.7rem;color:#b81f1b;text-transform:uppercase;letter-spacing:.05em}
+.cal{align-items:start}
+.cal > details{min-width:0;background:var(--panel);border-radius:32px;padding:20px 24px;box-shadow:0 4px 14px rgba(29,96,55,.15)}
+.cal > details summary h3{margin:0}
+.sq-acc summary h3{font-size:1.45rem;color:var(--forest)}
 </style>
 
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -475,14 +479,14 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <div class="team-head"><h3 id="t-name">Seniors R1</h3><span class="lvl" id="t-lvl"></span></div>
       <div id="t-next"></div>
       <div class="cal">
-        <div>
-          <h3>Derniers résultats</h3>
+        <details class="sq-acc">
+          <summary><h3>Derniers résultats</h3><span class="sq-more">Voir les résultats</span></summary>
           <div class="tbl"><table id="t-res"></table></div>
-        </div>
-        <div>
-          <h3>Classement</h3>
+        </details>
+        <details class="sq-acc">
+          <summary><h3>Classement</h3><span class="sq-more">Voir le classement</span></summary>
           <div class="tbl"><table class="std" id="t-tab"></table></div>
-        </div>
+        </details>
       </div>
       <div class="squad" id="cal" hidden></div>
       <div class="squad" id="squad" hidden></div>

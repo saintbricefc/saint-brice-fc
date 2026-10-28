@@ -291,6 +291,12 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.nx-acc summary{list-style:none;cursor:pointer}.nx-acc summary::-webkit-details-marker{display:none}
+.nextbox.nx-acc{display:block}.nextbox.nx-acc summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.nx-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.9rem;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px}
+.nx-hint::after{content:"▾";transition:transform .2s}.nx-acc[open] .nx-hint::after{transform:rotate(180deg)}
+.nx-p{margin:12px 0 0;line-height:1.5;color:#fff;font-size:1rem}
+#hero-next .nx-p{color:#fff;opacity:1;font-family:var(--body,inherit);text-transform:none;letter-spacing:0}
 .news{grid-template-columns:1fr 1fr;align-items:start}
 .news article:first-child{background:var(--panel);color:inherit}
 .news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
@@ -301,6 +307,7 @@ main.page{min-height:60vh;padding-top:8px}
 .news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
 .news .art-body{display:grid;gap:8px;margin-top:12px}
 .news article{scroll-margin-top:96px}
+.b-news{margin:26px 0}.b-news-h{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--forest);font-size:1.5rem;margin:0 0 14px}
 .art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
 .news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
 @media(max-width:760px){.news{grid-template-columns:1fr}}
@@ -508,9 +515,18 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
         <div class="eyebrow">Tournoi international U11 · 6e édition</div>
         <h3>23 &amp; 24 octobre 2027</h3>
         <p>Le 1er week-end des vacances de la Toussaint, à l'Espace omnisport José Bandeira de Saint-Brice-sous-Forêt. Les inscriptions ouvriront prochainement : pré-inscrivez votre club pour être prévenu en premier.</p>
-        <p><a class="cta b-cta" href="https://bandeiracup.com/fr/reserver">Pré-inscription édition 2027</a></p>
+        <p><a class="cta b-cta" href="mailto:contact@saintbricefc.fr?subject=Pr%C3%A9-inscription%20Bandeira%20Cup%202027">Pré-inscription édition 2027</a></p>
         <p class="b-recap">Une question sur la pré-inscription ? Écrivez-nous à <a href="mailto:contact@saintbricefc.fr?subject=Pr%C3%A9-inscription%20Bandeira%20Cup%202027">contact@saintbricefc.fr</a></p>
-        <p class="b-recap">La 5e édition s'est jouée les 17 et 18 octobre 2026 : 42 équipes de 8 pays, dont 21 académies professionnelles et 21 clubs amateurs, à l'Espace omnisport José Bandeira de Saint-Brice-sous-Forêt. Un tournoi organisé par le Saint-Brice FC et My Elevent Sport · <a href="https://bandeiracup.com/fr">bandeiracup.com</a></p>
+        <p class="b-recap">La 5e édition s'est jouée les 17 et 18 octobre 2026 : 42 équipes de 8 pays, dont 21 académies professionnelles et 21 clubs amateurs, à l'Espace omnisport José Bandeira de Saint-Brice-sous-Forêt. Un tournoi organisé par le Saint-Brice FC et My Elevent Sport.</p>
+      </div>
+      <div class="b-news">
+        <h3 class="b-news-h">Retour sur l’édition 2026</h3>
+        <div class="news">
+          <article id="bc-2026-photos"><details class="art"><summary><span class="tag">Bandeira Cup 2026</span><h3>Merci à tous pour cette 5e édition</h3><time datetime="2026-10-20">Publié le 20 octobre 2026</time><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Des duels, des sourires, de la passion et des souvenirs plein la tête : la 5e Bandeira Cup restera gravée dans la mémoire de nos jeunes joueurs et de tous les clubs présents.</p><p>Un immense merci à Greg et à toute l’équipe de My Elevent pour ce plateau exceptionnel, une nouvelle fois à la hauteur de l’événement.</p></div></details></article>
+          <article id="bc-2026-juventus"><details class="art"><summary><span class="tag">Bandeira Cup 2026</span><h3>La Juventus remporte la 5e édition</h3><time datetime="2026-10-19">Publié le 19 octobre 2026</time><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>La 5e Bandeira Cup s’est achevée sur une victoire de la Juventus, qui devance le RSC Anderlecht et le KRC Genk. Le numéro 24 d’Anderlecht a été désigné meilleur joueur du tournoi, une distinction qui récompense un week-end de très haut niveau.</p><p>Deux jours de compétition, des rencontres disputées et des gestes de grande classe : un grand merci à nos éducateurs, dirigeants, partenaires, familles d’accueil, bénévoles et parents, aux clubs venus de toute l’Europe et aux supporters présents tout le week-end.</p></div></details></article>
+          <article id="bc-2026-poules"><details class="art"><summary><span class="tag">Bandeira Cup 2026</span><h3>Les poules sont connues</h3><time datetime="2026-10-02">Publié le 2 octobre 2026</time><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Le tirage au sort a livré les poules de la 5e édition, et elles sont tout simplement incroyables : du très lourd dans chaque groupe et des affiches qui promettent une compétition explosive.</p></div></details></article>
+          <article id="bc-2026-plateau"><details class="art"><summary><span class="tag">Bandeira Cup 2026</span><h3>Un plateau XXL pour la 5e édition</h3><time datetime="2026-09-29">Publié le 29 septembre 2026</time><span class="sq-more">Lire l’article</span></summary><div class="art-body"><p>Le plateau des 42 équipes est dévoilé, et il est monumental : des clubs venus de toute l’Europe, des académies reconnues et peut-être le plateau le plus relevé de l’histoire du tournoi.</p><p>Parmi les grands noms annoncés : Manchester United, la Juventus et l’Atlético de Madrid. Au-delà du football, ce week-end est avant tout placé sous le signe des sourires, du partage et des souvenirs.</p></div></details></article>
+        </div>
       </div>
       <div class="split">
         <div class="panelbox">

@@ -291,6 +291,12 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.nx-acc summary{list-style:none;cursor:pointer}.nx-acc summary::-webkit-details-marker{display:none}
+.nextbox.nx-acc{display:block}.nextbox.nx-acc summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.nx-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.9rem;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px}
+.nx-hint::after{content:"▾";transition:transform .2s}.nx-acc[open] .nx-hint::after{transform:rotate(180deg)}
+.nx-p{margin:12px 0 0;line-height:1.5;color:#fff;font-size:1rem}
+#hero-next .nx-p{color:#fff;opacity:1;font-family:var(--body,inherit);text-transform:none;letter-spacing:0}
 .news{grid-template-columns:1fr 1fr;align-items:start}
 .news article:first-child{background:var(--panel);color:inherit}
 .news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
@@ -301,6 +307,7 @@ main.page{min-height:60vh;padding-top:8px}
 .news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
 .news .art-body{display:grid;gap:8px;margin-top:12px}
 .news article{scroll-margin-top:96px}
+.b-news{margin:26px 0}.b-news-h{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--forest);font-size:1.5rem;margin:0 0 14px}
 .art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
 .news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
 @media(max-width:760px){.news{grid-template-columns:1fr}}

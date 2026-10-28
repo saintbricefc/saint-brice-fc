@@ -290,6 +290,12 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.nx-acc summary{list-style:none;cursor:pointer}.nx-acc summary::-webkit-details-marker{display:none}
+.nextbox.nx-acc{display:block}.nextbox.nx-acc summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.nx-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.9rem;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px}
+.nx-hint::after{content:"▾";transition:transform .2s}.nx-acc[open] .nx-hint::after{transform:rotate(180deg)}
+.nx-p{margin:12px 0 0;line-height:1.5;color:#fff;font-size:1rem}
+#hero-next .nx-p{color:#fff;opacity:1;font-family:var(--body,inherit);text-transform:none;letter-spacing:0}
 .news{grid-template-columns:1fr 1fr;align-items:start}
 .news article:first-child{background:var(--panel);color:inherit}
 .news article:first-child .tag{color:var(--green)}.news article:first-child time{color:var(--muted)}
@@ -300,6 +306,7 @@ main.page{min-height:60vh;padding-top:8px}
 .news .art summary .tag,.news .art summary h3,.news .art summary time,.news .art summary .m-date{justify-self:stretch}
 .news .art-body{display:grid;gap:8px;margin-top:12px}
 .news article{scroll-margin-top:96px}
+.b-news{margin:26px 0}.b-news-h{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--forest);font-size:1.5rem;margin:0 0 14px}
 .art[open] .sq-more{font-size:0;gap:0}.art[open] .sq-more::before{content:"Masquer";font-size:1rem;margin-right:8px}.art[open] .sq-more::after{transform:rotate(180deg)}
 .news .m-date{font-family:var(--cond);font-weight:700;font-size:.92rem;color:var(--forest);margin-top:-6px}
 @media(max-width:760px){.news{grid-template-columns:1fr}}
@@ -505,7 +512,7 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <div class="sec-head"><h1>Résultats &amp; classements</h1><span class="note">Toutes nos équipes · mis à jour le 25 octobre 2026</span></div>
       <div class="team-pick" id="chips"><label for="team-sel">Choisir une équipe</label><select id="team-sel"><optgroup label="Seniors"><option value="equipe-seniors-r1" data-k="seniors1" selected="">Seniors R1</option><option value="equipe-seniors-d1" data-k="seniors2">Seniors D1</option><option value="equipe-seniors-cdm-1" data-k="seniors5">CDM R2</option><option value="equipe-seniors-cdm-2" data-k="seniors6">CDM D2</option><option value="equipe-anciens" data-k="anciens">Anciens</option></optgroup><optgroup label="Jeunes"><option value="equipe-u18" data-k="u18">U18 R3</option><option value="equipe-u18-2" data-k="u18b">U18 D2</option><option value="equipe-u16" data-k="u16">U16 R2</option><option value="equipe-u16-2" data-k="u16b">U16 D1</option><option value="equipe-u16-3" data-k="u16c">U16 D4</option><option value="equipe-u15" data-k="u15">U15 D2</option><option value="equipe-u14" data-k="u14">U14 R3</option><option value="equipe-u14-2" data-k="u14b">U14 D2</option><option value="equipe-u14-3" data-k="u14c">U14 D3</option><option value="equipe-u14-4" data-k="u14d">U14 D5</option><option value="equipe-u13" data-k="u13">U13</option></optgroup><optgroup label="Féminines"><option value="equipe-seniors-feminines" data-k="seniorsf">Seniors féminines</option><option value="equipe-u18-feminines" data-k="u18f">U18 féminines</option><option value="equipe-u15-feminines" data-k="u15f">U15 féminines</option><option value="equipe-u13-feminines" data-k="u13f">U13 féminines</option></optgroup></select></div>
       <div class="team-head"><h3 id="t-name">Seniors R1</h3><span class="lvl" id="t-lvl">Régional 1 · Poule A</span></div>
-      <div id="t-next"><div class="nextbox"><span>Prochain match · 31 oct. · 18h00</span><b>Mureaux OFC – Saint-Brice FC</b><span>Régional 1</span></div></div>
+      <div id="t-next"><details class="nextbox nx-acc"><summary><span>Prochain match · 31 oct. · 18h00</span><b>Mureaux OFC – Saint-Brice FC</b><span>Régional 1</span><span class="nx-hint">L’avant-match</span></summary><p class="nx-p">Le 4e reçu par le 11e, mais méfiance : Les Mureaux sont toujours invaincus en championnat (3 matchs nuls en 3 rencontres, 2 buts marqués, 2 encaissés). Ils restent sur une qualification aux tirs au but (1-1, 4-3 t.a.b.) au 3e tour de la Coupe de Paris face à l’Olympique Adamois. De leur côté, nos Seniors R1 (6 points, un match en moins) se sont qualifiés 2-0 à Gretz-Tournan et peuvent viser le podium en cas de victoire.</p></details></div>
       <div class="cal">
         <details class="sq-acc">
           <summary><h3>Derniers résultats</h3><span class="sq-more">Voir les résultats</span></summary>

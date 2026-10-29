@@ -295,6 +295,9 @@ main.page{min-height:60vh;padding-top:8px}
 .team-intro img{width:100%;max-width:520px;height:auto;border-radius:14px}
 @media(min-width:760px){.team-intro.has-ph{grid-template-columns:1fr 1fr}}
 .team-pg .team-head{display:none}
+.kit-pics{grid-template-columns:1fr 1fr;gap:12px}
+.kit-pics .kit-photo,.kit-pics .kit-video{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:22px;box-shadow:0 10px 24px rgba(11,61,34,.25);display:block;background:#0b3d22}
+.kit-pics .kit-face{grid-column:1/-1}
 .app-wrap{margin-top:8px}
 .app-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:linear-gradient(135deg,#0b3d22,#1d6037 45%,#0a9a48);color:#fff;border-radius:22px;padding:16px 18px;margin:0 0 18px;box-shadow:0 6px 18px rgba(29,96,55,.2)}
 .app-cta[hidden]{display:none}.app-cta img{border-radius:14px;background:#fff;flex:none}
@@ -526,6 +529,8 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <div class="sec-head"><h1>Notre maillot</h1></div>
       <div class="kit">
         <div class="kit-pics">
+          <img class="kit-photo" src="maillot-photo.webp" alt="Le maillot collector 2026/2027 du Saint-Brice FC, avec les rues de Saint-Brice" width="900" height="1602" loading="lazy">
+          <video class="kit-video" src="maillot-video.mp4" poster="maillot-video.jpg" width="540" height="960" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du maillot collector et de l’écharpe du club"></video>
           <img class="kit-face" src="photo-seniors1.webp" alt="Les Seniors R1 du Saint-Brice FC portant le maillot officiel" width="520" height="336" loading="lazy">
         </div>
         <div class="kit-txt">

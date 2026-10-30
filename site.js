@@ -123,6 +123,30 @@ function render(k){
   document.getElementById("une-next").textContent=nx?"Prochain match : "+fd(nx.d)+" à "+nx.t+", "+(us(nx.h)?"contre "+nx.a:"à "+nx.h)+" ("+nx.c+")":"";
 })();
 (function(){function op(){var h=location.hash.slice(1);if(!h)return;var a=document.getElementById(h);if(!a)return;var d=a.querySelector("details.art");if(d){d.open=true;a.scrollIntoView();}}op();window.addEventListener("hashchange",op);})();
+(function(){
+  var hn=document.getElementById("hero-next");if(!hn||!window.fetch)return;
+  var orig=null,timer=null;
+  function parse(t){var o={buts:[]};t.split(/\r?\n/).forEach(function(l){var m=l.match(/^\s*([^:]+?)\s*:\s*(.*?)\s*$/);if(!m)return;var k=m[1].toLowerCase(),v=m[2];
+    if(/^but/.test(k)){var adv=/adv|mureaux|adverse/.test(k)||/^adv/i.test(v);var mm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|min)?\s*$/i);o.buts.push({adv:adv,n:mm?mm[1]:v,m:mm?mm[2].replace(/\s/g,""):""});}
+    else o[k]=v;});return o;}
+  function draw(o){var st=(o.statut||"").toLowerCase();
+    if(!/direct|mi|fin|termin/.test(st)){if(orig!==null)hn.innerHTML=orig;return false;}
+    if(orig===null)orig=hn.innerHTML;
+    var fin=/fin|termin/.test(st),mt=/^mi/.test(st);
+    var sc=(o.score||"0-0").split(/\s*[-–:]\s*/);
+    var h=o.domicile||"Mureaux OFC",a=o["extérieur"]||o.exterieur||"Saint-Brice FC";
+    var lab=fin?"Résultat final":(mt?"Mi-temps":"En direct");
+    var tag=fin?'<span class="lv-min fin">Terminé</span>':(mt?'<span class="lv-min">MT</span>':(o.minute?'<span class="lv-min">'+esc(o.minute)+'′</span>':''));
+    var bl=o.buts.filter(function(x){return x.n||x.m;}).sort(function(x,y){return (parseInt(x.m)||0)-(parseInt(y.m)||0);});
+    hn.innerHTML='<div class="eyebrow lv-eb">'+(fin?'':'<span class="lv-dot"></span>')+lab+' · Seniors R1'+tag+'</div>'
+      +'<div class="vs"><span>'+esc(h)+'</span><span class="lv-sc">'+esc(sc[0]||"0")+' – '+esc(sc[1]||"0")+'</span><span>'+esc(a)+'</span></div>'
+      +(bl.length?'<ul class="lv-buts">'+bl.map(function(x){return '<li class="'+(x.adv?'adv':'')+'">⚽ '+(x.m?x.m+'′ ':'')+esc(x.adv?(x.n&&!/^adv/i.test(x.n)?x.n+' ('+h+')':h):x.n)+'</li>';}).join("")+'</ul>':'')
+      +(o.maj?'<small class="lv-up">Mis à jour à '+esc(o.maj)+'</small>':'');
+    return !fin;}
+  function tick(){fetch("live.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():"";}).then(function(t){var go=t?draw(parse(t)):false;clearTimeout(timer);timer=setTimeout(tick,go?30000:300000);}).catch(function(){clearTimeout(timer);timer=setTimeout(tick,60000);});}
+  tick();
+  document.addEventListener("visibilitychange",function(){if(!document.hidden)tick();});
+})();
 function sbSend(subj,data,cb){var x={access_key:"58a5ba80-7014-4434-ac34-94226610a451",subject:subj,from_name:"Site saintbricefc.fr"};for(var k in data)if(data[k]!==undefined)x[k]=data[k];if(x._replyto){x.replyto=x._replyto;delete x._replyto;}
   var done=false,c=window.AbortController?new AbortController():null,t=setTimeout(function(){if(!done){done=true;if(c)c.abort();cb(false);}},15000);
   fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(x),signal:c?c.signal:undefined}).then(function(r){return r.json();}).then(function(j){if(!done){done=true;clearTimeout(t);cb(j&&j.success===true);}}).catch(function(){if(!done){done=true;clearTimeout(t);cb(false);}});}

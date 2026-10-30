@@ -122,6 +122,7 @@ function render(k){
   var nx=t.m.filter(function(m){return m.t;})[0];
   document.getElementById("une-next").textContent=nx?"Prochain match : "+fd(nx.d)+" à "+nx.t+", "+(us(nx.h)?"contre "+nx.a:"à "+nx.h)+" ("+nx.c+")":"";
 })();
+(function(){function op(){var h=location.hash.slice(1);if(!h)return;var a=document.getElementById(h);if(!a)return;var d=a.querySelector("details.art");if(d){d.open=true;a.scrollIntoView();}}op();window.addEventListener("hashchange",op);})();
 function sbSend(subj,data,cb){var x={access_key:"58a5ba80-7014-4434-ac34-94226610a451",subject:subj,from_name:"Site saintbricefc.fr"};for(var k in data)if(data[k]!==undefined)x[k]=data[k];if(x._replyto){x.replyto=x._replyto;delete x._replyto;}
   var done=false,c=window.AbortController?new AbortController():null,t=setTimeout(function(){if(!done){done=true;if(c)c.abort();cb(false);}},15000);
   fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(x),signal:c?c.signal:undefined}).then(function(r){return r.json();}).then(function(j){if(!done){done=true;clearTimeout(t);cb(j&&j.success===true);}}).catch(function(){if(!done){done=true;clearTimeout(t);cb(false);}});}

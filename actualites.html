@@ -210,7 +210,7 @@ nav a[aria-current]{background:rgba(255,255,255,.22);box-shadow:inset 0 -3px 0 v
 nav a:last-child[aria-current]{box-shadow:inset 0 -3px 0 var(--green)}
 main.page{min-height:60vh;padding-top:8px}
 .une-teaser{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);text-decoration:none;color:inherit;align-items:center}
-.une-teaser img{width:100%;height:100%;object-fit:cover;display:block}
+.une-teaser img{width:100%;height:100%;object-fit:cover;display:block}.une-teaser .une-poster{object-fit:contain;background:#0b3d22;max-height:520px}
 .une-teaser .une-head{padding:28px 32px}
 .une .une-teaser .cta{background:var(--pill);color:#fff;margin-top:6px}
 .une-teaser:hover h2{text-decoration:underline}
@@ -526,11 +526,25 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
 </header>
 
 <main class="page" id="contenu">  <section class="page-top"><div class="wrap"><div class="sec-head"><h1>Actualités</h1></div></div></section>
+  <section class="une" aria-labelledby="une-r1-title">
+    <div class="wrap">
+      <a class="une-card une-teaser" href="#actu-r1-mureaux">
+        <img class="une-poster" src="affiche-r1-mureaux.jpg" alt="Affiche du match OFC Les Mureaux – Saint-Brice FC, samedi 31 octobre à 18h" width="720" height="900">
+        <div class="une-head">
+          <span class="une-tag">À la une</span>
+          <span class="une-kicker">Seniors R1 · 4e journée</span>
+          <h2 id="une-r1-title">Retour du championnat aux Mureaux</h2>
+          <p class="une-lead">Après près d’un mois sans championnat, nos Seniors R1 se déplacent samedi 31 octobre à 18h au stade Léo Lagrange des Mureaux, forts de leur victoire en Coupe de Paris.</p>
+          <span class="cta">Lire l'article →</span>
+        </div>
+      </a>
+    </div>
+  </section>
   <section class="une" id="une" aria-labelledby="une-title">
     <div class="wrap">
       <article class="une-card">
         <div class="une-head">
-          <span class="une-tag">À la une</span>
+          <span class="une-tag">Interview</span>
           <span class="une-kicker">U18 · Régional 3 · Poule C</span>
           <h2 id="une-title">Les U18 R3 invaincus et sur le podium</h2>
           <p class="une-lead">Deuxièmes de leur poule, toujours invaincus en championnat et allés jusqu'au 4e tour de la Coupe Gambardella : les U18 d'Adrien et de son adjoint Paky signent un très beau début de saison.</p>

@@ -251,6 +251,7 @@ main.page{min-height:60vh;padding-top:8px}
 
 /* Maillot */
 .kit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+.kit-alt{margin:12px 0 0;font-size:.9rem;opacity:.85}.kit-alt a{color:inherit;font-weight:700}
 .kit-pics{display:grid;grid-template-columns:1fr;gap:10px}
 .kit-pics img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:22px;box-shadow:0 10px 24px rgba(11,61,34,.25)}
 .kit-tag{display:inline-block;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;background:var(--pine);color:#d4ec5a;padding:5px 12px;border-radius:999px}
@@ -539,13 +540,14 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
           <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
           <div class="kit-price"><b>49 €</b><span>Maillot · toutes tailles</span></div>
           <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
-          <a class="cta" href="#commande">Commander</a>
+          <a class="cta" href="https://www.helloasso.com/associations/saint-brice-football-club/boutiques/boutique" target="_blank" rel="noopener">Commander et payer en ligne</a>
+          <p class="kit-alt">Paiement sécurisé par carte bancaire via HelloAsso. Vous préférez payer au club ? <a href="#commande">Réservez ici</a>.</p>
         </div>
       </div>
 
       <form class="order" id="commande" novalidate><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
-        <h3>Commander en ligne</h3>
-        <p class="note">Remplissez la commande : elle est envoyée directement au club, qui vous recontacte pour le paiement et le retrait. Pour les tailles, aidez-vous du pack remis par le club à l'inscription.</p>
+        <h3>Réserver et payer au club</h3>
+        <p class="note">Vous ne voulez pas payer en ligne ? Remplissez la réservation : elle est envoyée directement au club, qui vous recontacte pour le paiement et le retrait. Pour les tailles, aidez-vous du pack remis par le club à l'inscription.</p>
         <div class="o-lines" id="o-lines"></div>
         <button type="button" class="o-add" id="o-add">+ Ajouter un maillot</button>
         <fieldset class="o-who">

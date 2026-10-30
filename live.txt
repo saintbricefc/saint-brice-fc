@@ -1,4 +1,4 @@
-statut: avant
+statut: direct
 minute: 
 score: 0-0
 maj: 

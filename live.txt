@@ -1,4 +1,4 @@
-statut: en direct
+statut: fin
 score: 1-0
 groupe: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Billy Da Cruz Rocha, Sofiane Boukhedimi, Souleymane Fofana, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Sofiane Dris, Yassine Skira, Alpha Traoré, Massil Ouali, Gilles Lepoittevin
 titulaires: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Sofiane Boukhedimi, Souleymane Fofana, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Sofiane Dris, Yassine Skira, Massil Ouali
@@ -6,7 +6,8 @@ remplaçants: Billy Da Cruz Rocha, Alpha Traoré, Gilles Lepoittevin
 debut: 2026-10-31T17:02:01.112Z
 reprise: 2026-10-31T18:02:54.798Z
 but adv: 90
-maj: 19h47
+maj: 19h53
+
 
 
 

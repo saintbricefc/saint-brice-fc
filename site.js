@@ -125,23 +125,29 @@ function render(k){
 (function(){function op(){var h=location.hash.slice(1);if(!h)return;var a=document.getElementById(h);if(!a)return;var d=a.querySelector("details.art");if(d){d.open=true;a.scrollIntoView();}}op();window.addEventListener("hashchange",op);})();
 (function(){
   var hn=document.getElementById("hero-next");if(!hn||!window.fetch)return;
-  var orig=null,timer=null;
+  var orig=null,timer=null,clk=null;
+  function tm(v){if(!v)return 0;if(/\d{4}-\d\d-\d\dT/.test(v)){var x=Date.parse(v);return isNaN(x)?0:x;}var m=v.match(/(\d{1,2})\s*[h:]\s*(\d{2})(?:\s*[:m]\s*(\d{2}))?/i);if(!m)return 0;var d=new Date();d.setHours(+m[1],+m[2],+(m[3]||0),0);return d.getTime();}
+  function clock(o){var r=tm(o.reprise),d=tm(o.debut),base=r?45:0,t0=r||d;if(!t0)return o.minute?esc(o.minute)+'′':'';
+    var s=Math.max(0,Math.floor((Date.now()-t0)/1000)),m=Math.floor(s/60),cap=r?45:45;
+    if(m>=cap)return (base+cap)+'+'+(m-cap+1)+'′';
+    var mm=base+m,ss=s%60;return mm+':'+(ss<10?'0':'')+ss;}
   function parse(t){var o={buts:[]};t.split(/\r?\n/).forEach(function(l){var m=l.match(/^\s*([^:]+?)\s*:\s*(.*?)\s*$/);if(!m)return;var k=m[1].toLowerCase(),v=m[2];
     if(/^but/.test(k)){var adv=/adv|mureaux|adverse/.test(k)||/^adv/i.test(v);var mm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|min)?\s*$/i);o.buts.push({adv:adv,n:mm?mm[1]:v,m:mm?mm[2].replace(/\s/g,""):""});}
     else o[k]=v;});return o;}
   function draw(o){var st=(o.statut||"").toLowerCase();
-    if(!/direct|mi|fin|termin/.test(st)){if(orig!==null)hn.innerHTML=orig;return false;}
+    if(!/direct|mi|fin|termin/.test(st)){clearInterval(clk);if(orig!==null)hn.innerHTML=orig;return false;}
     if(orig===null)orig=hn.innerHTML;
     var fin=/fin|termin/.test(st),mt=/^mi/.test(st);
     var sc=(o.score||"0-0").split(/\s*[-–:]\s*/);
     var h=o.domicile||"Mureaux OFC",a=o["extérieur"]||o.exterieur||"Saint-Brice FC";
     var lab=fin?"Résultat final":(mt?"Mi-temps":"En direct");
-    var tag=fin?'<span class="lv-min fin">Terminé</span>':(mt?'<span class="lv-min">MT</span>':(o.minute?'<span class="lv-min">'+esc(o.minute)+'′</span>':''));
+    var tag=fin?'<span class="lv-min fin">Terminé</span>':(mt?'<span class="lv-min">MT</span>':((o.debut||o.minute)?'<span class="lv-min" id="lv-clock">'+clock(o)+'</span>':''));
     var bl=o.buts.filter(function(x){return x.n||x.m;}).sort(function(x,y){return (parseInt(x.m)||0)-(parseInt(y.m)||0);});
     hn.innerHTML='<div class="eyebrow lv-eb">'+(fin?'':'<span class="lv-dot"></span>')+lab+' · Seniors R1'+tag+'</div>'
       +'<div class="vs"><span>'+esc(h)+'</span><span class="lv-sc">'+esc(sc[0]||"0")+' – '+esc(sc[1]||"0")+'</span><span>'+esc(a)+'</span></div>'
       +(bl.length?'<ul class="lv-buts">'+bl.map(function(x){return '<li class="'+(x.adv?'adv':'')+'">⚽ '+(x.m?x.m+'′ ':'')+esc(x.adv?(x.n&&!/^adv/i.test(x.n)?x.n+' ('+h+')':h):x.n)+'</li>';}).join("")+'</ul>':'')
       +(o.maj?'<small class="lv-up">Mis à jour à '+esc(o.maj)+'</small>':'');
+    clearInterval(clk);if(!fin&&!mt&&(o.debut||o.reprise))clk=setInterval(function(){var c=document.getElementById("lv-clock");if(c)c.innerHTML=clock(o);},1000);
     return !fin;}
   function tick(){fetch("live.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():"";}).then(function(t){var go=t?draw(parse(t)):false;clearTimeout(timer);timer=setTimeout(tick,go?30000:300000);}).catch(function(){clearTimeout(timer);timer=setTimeout(tick,60000);});}
   tick();

@@ -1,4 +1,6 @@
-statut: groupe
+statut: compo
 score: 0-0
 groupe: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Billy Da Cruz Rocha, Sofiane Boukhedimi, Souleymane Fofana, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Sofiane Dris, Yassine Skira, Alpha Traoré, Massil Ouali, Gilles Lepoittevin
-maj: 17h35
+titulaires: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Sofiane Boukhedimi, Souleymane Fofana, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Sofiane Dris, Yassine Skira, Massil Ouali
+remplaçants: Billy Da Cruz Rocha, Alpha Traoré, Gilles Lepoittevin
+maj: 17h49

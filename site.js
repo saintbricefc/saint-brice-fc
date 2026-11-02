@@ -127,36 +127,39 @@ function render(k){
   var hn=document.getElementById("hero-next");if(!hn||!window.fetch)return;
   var orig=null,timer=null,clk=null;
   function tm(v){if(!v)return 0;if(/\d{4}-\d\d-\d\dT/.test(v)){var x=Date.parse(v);return isNaN(x)?0:x;}var m=v.match(/(\d{1,2})\s*[h:]\s*(\d{2})(?:\s*[:m]\s*(\d{2}))?/i);if(!m)return 0;var d=new Date();d.setHours(+m[1],+m[2],+(m[3]||0),0);return d.getTime();}
-  function clock(o){var r=tm(o.reprise),d=tm(o.debut),base=r?45:0,t0=r||d;if(!t0)return o.minute?esc(o.minute)+'′':'';
-    var s=Math.max(0,Math.floor((Date.now()-t0)/1000)),m=Math.floor(s/60),cap=r?45:45;
+  function clock(o){var HL=parseInt(o.duree,10)||45,r=tm(o.reprise),d=tm(o.debut),base=r?HL:0,t0=r||d;if(!t0)return o.minute?esc(o.minute)+'′':'';
+    var s=Math.max(0,Math.floor((Date.now()-t0)/1000)),m=Math.floor(s/60),cap=HL;
     if(m>=cap)return (base+cap)+'+'+(m-cap+1)+'′';
     var mm=base+m,ss=s%60;return mm+':'+(ss<10?'0':'')+ss;}
   function ann(){if(hn.querySelector(".lv-ann"))return;var s1=TEAMS.filter(function(x){return x.k==="seniors1";})[0],nx=s1&&s1.m.filter(function(m){return m.t;})[0];if(!nx)return;
     var d=new Date(),td=d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);if(nx.d!==td||d.getHours()<15)return;
     var p=document.createElement("div");p.className="lv-ann";p.innerHTML='<span class="lv-dot"></span>Live ici dès '+esc(nx.t);hn.insertBefore(p,hn.firstChild);}
-  function parse(t){var o={buts:[]};t.split(/\r?\n/).forEach(function(l){var m=l.match(/^\s*([^:]+?)\s*:\s*(.*?)\s*$/);if(!m)return;var k=m[1].toLowerCase(),v=m[2];
-    if(/^but/.test(k)){var adv=/adv|mureaux|adverse/.test(k)||/^adv/i.test(v);var mm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|min)?\s*$/i);o.buts.push({adv:adv,n:mm?mm[1]:v,m:mm?mm[2].replace(/\s/g,""):""});}
+  function parse(t){var o={buts:[],chg:[]};t.split(/\r?\n/).forEach(function(l){var m=l.match(/^\s*([^:]+?)\s*:\s*(.*?)\s*$/);if(!m)return;var k=m[1].toLowerCase(),v=m[2];
+    if(/^changement/.test(k)){var cm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|′|min)?\s*$/i),cn=cm?cm[1]:v,pp=cn.split(/\s+pour\s+/i);o.chg.push({ch:1,inn:pp[0]||"",out:pp[1]||"",m:cm?cm[2].replace(/\s/g,""):""});}
+    else if(/^but/.test(k)){var adv=/adv/.test(k)||/^adv/i.test(v);var mm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|min)?\s*$/i);o.buts.push({adv:adv,n:mm?mm[1]:v,m:mm?mm[2].replace(/\s/g,""):""});}
     else o[k]=v;});return o;}
-  function draw(o){var st=(o.statut||"").toLowerCase();
+  function draw(o){var st=(o.statut||"").toLowerCase(),EQ=esc(o.equipe||"Seniors R1"),dd=new Date(),td=dd.getFullYear()+"-"+("0"+(dd.getMonth()+1)).slice(-2)+"-"+("0"+dd.getDate()).slice(-2);
+    if(o.date&&o.date!==td)st="avant";
+    var R1=EQ==="Seniors R1";if(!R1){o.chg=[];o.buts.forEach(function(x){if(!x.adv)x.n="";});if(/groupe|compo/.test(st))st="avant";}
     if(/groupe|compo/.test(st)){clearInterval(clk);if(orig===null)orig=hn.innerHTML;var s1=TEAMS.filter(function(x){return x.k==="seniors1";})[0],nx=s1&&s1.m.filter(function(m){return m.t;})[0];
       var L=function(v){return (v||"").split(/\s*[,;]\s*/).filter(Boolean);},cp=/compo/.test(st),ti=L(o.titulaires),gr=L(o.groupe),rp=L(o["remplaçants"]||o.remplacants);
       if(cp&&!rp.length)rp=gr.filter(function(n){return ti.indexOf(n)<0;});
       var li=function(a){return '<ul class="lv-team">'+a.map(function(n){return '<li>'+esc(n)+'</li>';}).join("")+'</ul>';};
-      hn.innerHTML='<div class="eyebrow lv-eb">'+(cp?'Les titulaires':'Le groupe')+' · Seniors R1</div>'
-        +'<div class="vs"><span>'+esc(o.domicile||"Mureaux OFC")+'</span><span>'+(nx?esc(nx.t):'vs')+'</span><span>'+esc(o["extérieur"]||o.exterieur||"Saint-Brice FC")+'</span></div>'
+      hn.innerHTML='<div class="eyebrow lv-eb">'+(cp?'Les titulaires':'Le groupe')+' · '+EQ+'</div>'
+        +'<div class="vs"><span>'+esc(o.domicile||"Saint-Brice FC")+'</span><span>'+(o.heure?esc(o.heure):(nx?esc(nx.t):'vs'))+'</span><span>'+esc(o["extérieur"]||o.exterieur||"Saint-Brice FC")+'</span></div>'
         +(cp?li(ti)+(rp.length?'<p class="lv-sub">Remplaçants</p>'+li(rp):''):li(gr))
         +'<small class="lv-up">Live ici dès le coup d’envoi</small>';return true;}
     if(!/direct|mi|fin|termin/.test(st)){clearInterval(clk);if(orig!==null)hn.innerHTML=orig;ann();return false;}
     if(orig===null)orig=hn.innerHTML;
     var fin=/fin|termin/.test(st),mt=/^mi/.test(st);
     var sc=(o.score||"0-0").split(/\s*[-–:]\s*/);
-    var h=o.domicile||"Mureaux OFC",a=o["extérieur"]||o.exterieur||"Saint-Brice FC";
+    var h=o.domicile||"Saint-Brice FC",a=o["extérieur"]||o.exterieur||"Saint-Brice FC",av=us(h)?a:h;
     var lab=fin?"Résultat final":(mt?"Mi-temps":"En direct");
     var tag=fin?'<span class="lv-min fin">Terminé</span>':(mt?'<span class="lv-min">MT</span>':((o.debut||o.minute)?'<span class="lv-min" id="lv-clock">'+clock(o)+'</span>':''));
-    var bl=o.buts.filter(function(x){return x.n||x.m;}).sort(function(x,y){return (parseInt(x.m)||0)-(parseInt(y.m)||0);});
-    hn.innerHTML='<div class="eyebrow lv-eb">'+(fin?'':'<span class="lv-dot"></span>')+lab+' · Seniors R1'+tag+'</div>'
+    var bl=o.buts.filter(function(x){return x.n||x.m||!x.adv;}).concat(o.chg).sort(function(x,y){return (parseInt(x.m)||0)-(parseInt(y.m)||0);});
+    hn.innerHTML='<div class="eyebrow lv-eb">'+(fin?'':'<span class="lv-dot"></span>')+lab+' · '+EQ+tag+'</div>'
       +'<div class="vs"><span>'+esc(h)+'</span><span class="lv-sc">'+esc(sc[0]||"0")+' – '+esc(sc[1]||"0")+'</span><span>'+esc(a)+'</span></div>'
-      +(bl.length?'<ul class="lv-buts">'+bl.map(function(x){return '<li class="'+(x.adv?'adv':'')+'">⚽ '+(x.m?x.m+'′ ':'')+esc(x.adv?(x.n&&!/^adv/i.test(x.n)?x.n+' ('+h+')':h):x.n)+'</li>';}).join("")+'</ul>':'')
+      +(bl.length?'<ul class="lv-buts">'+bl.map(function(x){if(x.ch)return '<li class="chg">🔄 '+(x.m?x.m+'′ ':'')+esc(x.inn)+(x.out?' remplace '+esc(x.out):' entre en jeu')+'</li>';return '<li class="'+(x.adv?'adv':'')+'">⚽ '+(x.m?x.m+'′ ':'')+esc(x.adv?(x.n&&!/^adv/i.test(x.n)?x.n+' ('+av+')':av):(x.n||(us(h)?h:a)))+'</li>';}).join("")+'</ul>':'')
       +(o.maj?'<small class="lv-up">Mis à jour à '+esc(o.maj)+'</small>':'');
     clearInterval(clk);if(!fin&&!mt&&(o.debut||o.reprise))clk=setInterval(function(){var c=document.getElementById("lv-clock");if(c)c.innerHTML=clock(o);},1000);
     return !fin;}

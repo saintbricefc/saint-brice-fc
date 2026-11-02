@@ -252,6 +252,7 @@ main.page{min-height:60vh;padding-top:8px}
 /* Maillot */
 .kit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
 .kit-alt{margin:12px 0 0;font-size:.9rem;opacity:.85}.kit-alt a{color:inherit;font-weight:700}
+.shop{scroll-margin-top:96px;margin-top:30px;color:var(--ink);background:#fff;border-radius:28px;padding:24px;box-shadow:0 8px 22px rgba(11,61,34,.12)}.shop h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.5rem,3.5vw,2rem);color:var(--pine);margin:0 0 8px}.shop .note{margin:0 0 14px}.ha-frame{display:block;width:100%;height:760px;border:0;border-radius:14px;background:#fff}
 .kit-pics{display:grid;grid-template-columns:1fr;gap:10px}
 .kit-pics img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:22px;box-shadow:0 10px 24px rgba(11,61,34,.25)}
 .kit-tag{display:inline-block;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;background:var(--pine);color:#d4ec5a;padding:5px 12px;border-radius:999px}
@@ -262,7 +263,7 @@ main.page{min-height:60vh;padding-top:8px}
 .kit-price span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 .kit-opts{list-style:none;padding:0;margin:10px 0 16px;display:grid;gap:4px;max-width:300px;font-family:var(--cond);font-weight:600;font-size:1.08rem}
 .kit-opts li{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:3px 0}
-.order{margin-top:30px;color:var(--ink);background:#fff;border-radius:28px;padding:24px;box-shadow:0 8px 22px rgba(11,61,34,.12)}
+.order{scroll-margin-top:96px;margin-top:30px;color:var(--ink);background:#fff;border-radius:28px;padding:24px;box-shadow:0 8px 22px rgba(11,61,34,.12)}
 .order h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.9rem;margin:0 0 4px;color:var(--pine)}
 .o-lines{display:grid;gap:10px;margin:16px 0 10px}
 .o-line{display:grid;grid-template-columns:110px 180px minmax(0,1fr) 80px 90px 44px;gap:10px;align-items:end;background:var(--cream);border-radius:18px;padding:12px}
@@ -552,28 +553,17 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
           <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
           <div class="kit-price"><b>49 €</b><span>Maillot · toutes tailles</span></div>
           <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
-          <a class="cta" href="https://www.helloasso.com/associations/saint-brice-football-club/boutiques/boutique" target="_blank" rel="noopener">Commander et payer en ligne</a>
-          <p class="kit-alt">Paiement sécurisé par carte bancaire via HelloAsso. Vous préférez payer au club ? <a href="#commande">Réservez ici</a>.</p>
+          <a class="cta" href="#boutique">Commander et payer en ligne</a>
+          <p class="kit-alt">Commande et paiement par carte directement sur cette page. Vous préférez payer sur place ? Le maillot est aussi en vente au club, au stade Léon Graffin.</p>
         </div>
       </div>
 
-      <form class="order" id="commande" novalidate><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
-        <h3>Réserver et payer au club</h3>
-        <p class="note">Vous ne voulez pas payer en ligne ? Remplissez la réservation : elle est envoyée directement au club, qui vous recontacte pour le paiement et le retrait. Pour les tailles, aidez-vous du pack remis par le club à l'inscription.</p>
-        <div class="o-lines" id="o-lines"></div>
-        <button type="button" class="o-add" id="o-add">+ Ajouter un maillot</button>
-        <fieldset class="o-who">
-          <legend>Vos coordonnées</legend>
-          <label>Nom et prénom du parent (ou du licencié majeur)<input id="o-parent" autocomplete="name" required></label>
-          <label>Nom et prénom du licencié<input id="o-lic"></label>
-          <label>Catégorie<select id="o-cat"><option value="">Choisir…</option><option value="U6 – U7">U6 – U7</option><option value="U8 – U9">U8 – U9</option><option value="U10 – U11">U10 – U11</option><option value="U12 – U13">U12 – U13</option><option value="U14 – U15">U14 – U15</option><option value="U16 – U18">U16 – U18</option><option value="Féminines">Féminines</option><option value="Seniors">Seniors</option><option value="Anciens / Vétérans">Anciens / Vétérans</option><option value="Dirigeant / éducateur">Dirigeant / éducateur</option><option value="Supporter (non licencié)">Supporter (non licencié)</option></select></label>
-          <label>Téléphone<input id="o-tel" type="tel" autocomplete="tel" required></label>
-          <label>E-mail<input id="o-mail" type="email" autocomplete="email"></label>
-        </fieldset>
-        <div class="o-foot"><div class="o-total">Total : <b id="o-total">49 €</b></div><button type="submit" class="cta">Envoyer la commande</button></div>
-        <p class="rgpd">Vos données servent uniquement à traiter votre commande. Pour un licencié mineur, la commande est passée par un parent. <a href="mentions-legales#confidentialite">Politique de confidentialité</a></p>
-        <p class="o-msg" id="o-msg" role="status" hidden></p>
-      </form>
+      <div class="shop" id="boutique">
+        <h3>Commander et payer en ligne</h3>
+        <p class="note">Choisissez votre maillot ci-dessous : la commande et le paiement par carte se font sans quitter le site. Le paiement est sécurisé par <b>HelloAsso</b>, la plateforme de paiement des associations utilisée par le club. À la fin, HelloAsso propose une contribution facultative à son fonctionnement : vous pouvez la mettre à 0 €.</p>
+        <iframe id="haWidget" class="ha-frame" title="Boutique du Saint-Brice FC (paiement sécurisé HelloAsso)" allowtransparency="true" scrolling="auto" loading="lazy" src="https://www.helloasso.com/associations/saint-brice-football-club/boutiques/boutique/widget"></iframe>
+      </div>
+
     </div>
   </section>
 </main>

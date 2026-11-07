@@ -5,7 +5,7 @@ domicile: Saint-Brice FC
 extérieur: Montrouge FC 92
 heure: 18h00
 duree: 45
-score: 2-0
+score: 2-1
 groupe: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Sofiane Boukhedimi, Souleymane Fofana, Siyar Lordini, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Kaïs Hamzaoui, Sofiane Dris, Alpha Traoré, Massil Ouali, Gilles Lepoittevin
 titulaires: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Sofiane Boukhedimi, Souleymane Fofana, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Sofiane Dris, Massil Ouali, Gilles Lepoittevin
 remplaçants: Siyar Lordini, Kaïs Hamzaoui, Alpha Traoré
@@ -13,7 +13,9 @@ debut: 2026-11-07T17:01:55.628Z
 reprise: 2026-11-07T18:02:59.835Z
 but: Massil Ouali 8
 but: Sofiane Dris 29
-maj: 19h03
+but adv: 64
+maj: 19h21
+
 
 
 

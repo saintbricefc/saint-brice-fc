@@ -550,17 +550,17 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
       <p class="crumb"><a href="resultats">Résultats</a> › U18 féminines</p>
       <div class="sec-head"><h1>U18 féminines</h1><span class="note">U18F Départemental 1 · saison 2026/2027</span></div>
       <div class="team-intro"><p>L’équipe <b>U18 féminines</b> du Saint-Brice FC joue en <b>U18F Départemental 1</b> cette saison. Retrouvez ici ses derniers résultats, son prochain match, son calendrier complet et le classement, mis à jour d’après les résultats officiels de la FFF.</p></div>
-      <div class="team-pick" id="chips"></div>
-      <div class="team-head"><h3 id="t-name">Seniors R1</h3><span class="lvl" id="t-lvl"></span></div>
-      <div id="t-next"></div>
+      <div class="team-pick" id="chips"><label for="team-sel">Choisir une équipe</label><select id="team-sel"><optgroup label="Seniors"><option value="equipe-seniors-r1" data-k="seniors1">Seniors R1</option><option value="equipe-seniors-d1" data-k="seniors2">Seniors D1</option><option value="equipe-seniors-cdm-1" data-k="seniors5">CDM R2</option><option value="equipe-seniors-cdm-2" data-k="seniors6">CDM D2</option><option value="equipe-anciens" data-k="anciens">Anciens</option></optgroup><optgroup label="Jeunes"><option value="equipe-u18" data-k="u18">U18 R3</option><option value="equipe-u18-2" data-k="u18b">U18 D2</option><option value="equipe-u16" data-k="u16">U16 R2</option><option value="equipe-u16-2" data-k="u16b">U16 D1</option><option value="equipe-u16-3" data-k="u16c">U16 D4</option><option value="equipe-u15" data-k="u15">U15 D2</option><option value="equipe-u14" data-k="u14">U14 R3</option><option value="equipe-u14-2" data-k="u14b">U14 D2</option><option value="equipe-u14-3" data-k="u14c">U14 D3</option><option value="equipe-u14-4" data-k="u14d">U14 D5</option><option value="equipe-u13" data-k="u13">U13</option></optgroup><optgroup label="Féminines"><option value="equipe-seniors-feminines" data-k="seniorsf">Seniors féminines</option><option value="equipe-u18-feminines" data-k="u18f" selected="">U18 féminines</option><option value="equipe-u15-feminines" data-k="u15f">U15 féminines</option><option value="equipe-u13-feminines" data-k="u13f">U13 féminines</option></optgroup></select></div>
+      <div class="team-head"><h3 id="t-name">Seniors R1</h3><span class="lvl" id="t-lvl">U18F Départemental 1</span></div>
+      <div id="t-next"><div class="nextbox"><span>Prochain match · 7 nov. · 16h00</span><b>Saint-Brice FC – Cergy-Pontoise FC 2</b><span>U18F D1</span></div></div>
       <div class="cal">
         <details class="sq-acc">
           <summary><h3>Derniers résultats</h3><span class="sq-more">Voir les résultats</span></summary>
-          <div class="tbl"><table id="t-res"></table></div>
+          <div class="tbl"><table id="t-res"><caption class="sr">Résultats U18 féminines</caption><tbody><tr><td class="d">17 oct.</td><td class="m">St Ouen l'Aumône AS – Saint-Brice FC<small>Coupe Nike U18F · 3e tour</small></td><td class="s">8 – 1<span class="pill D" title="Défaite">D</span></td></tr><tr><td class="d">10 oct.</td><td class="m">Gonesse RC – Saint-Brice FC<small>U18F D1</small></td><td class="s">0 – 2<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">3 oct.</td><td class="m">Ent. FCF/GAFEPB – Saint-Brice FC<small>Coupe Nike U18F · 2e tour</small></td><td class="s">1 – 6<span class="pill V" title="Victoire">V</span></td></tr><tr><td class="d">19 sept.</td><td class="m">Saint-Brice FC – Noisy-le-Sec Banlieue<small>Coupe Nike U18F · 1er tour</small><span class="res-note">Gagné par forfait</span></td><td class="s">3 – 0<span class="pill V" title="Victoire">V</span></td></tr></tbody></table></div>
         </details>
         <details class="sq-acc">
           <summary><h3>Classement</h3><span class="sq-more">Voir le classement</span></summary>
-          <div class="tbl"><table class="std" id="t-tab"></table></div>
+          <div class="tbl"><table class="std" id="t-tab"><caption class="sr">Classement U18 féminines</caption><tbody><tr><th scope="col">#</th><th scope="col">Équipe</th><th scope="col">J</th><th scope="col">Diff.</th><th scope="col">Pts</th></tr><tr><td>1</td><td>Adamois Ol.</td><td>1</td><td>+4</td><td>3</td></tr><tr class="us"><td>2</td><td>Saint-Brice FC</td><td>1</td><td>+2</td><td>3</td></tr><tr><td>3</td><td>Cosmo Taverny</td><td>1</td><td>+1</td><td>3</td></tr><tr><td>4</td><td>Cergy-Pontoise FC 2</td><td>1</td><td>−4</td><td>0</td></tr><tr><td>5</td><td>Fosses FU</td><td>1</td><td>−1</td><td>0</td></tr><tr><td>6</td><td>Gonesse RC</td><td>1</td><td>−2</td><td>0</td></tr></tbody></table></div>
         </details>
       </div>
       <div class="squad" id="cal" hidden></div>
@@ -577,7 +577,7 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
 
 <script>window.SB_TEAM="u18f";</script>
 <script src="calendriers.js"></script>
-<script src="site.js"></script>
+<script src="site.js?v=f51eeeb8"></script>
 <script data-goatcounter="https://saintbricefc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>(function(){var h=document.querySelector("header"),bt=h&&h.querySelector(".burger");if(!bt)return;function set(o){h.classList.toggle("open",o);bt.setAttribute("aria-expanded",o);bt.setAttribute("aria-label",o?"Fermer le menu":"Ouvrir le menu");}
 bt.addEventListener("click",function(){set(!h.classList.contains("open"));});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&h.classList.contains("open")){set(false);bt.focus();}});document.addEventListener("click",function(e){if(!h.contains(e.target))set(false);});})();</script>

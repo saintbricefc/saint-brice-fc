@@ -1,4 +1,4 @@
-statut: en direct
+statut: mi-temps
 equipe: Seniors R1
 date: 2026-11-07
 domicile: Saint-Brice FC
@@ -12,5 +12,6 @@ remplaçants: Siyar Lordini, Kaïs Hamzaoui, Alpha Traoré
 debut: 2026-11-07T17:01:55.628Z
 but: Massil Ouali 8
 but: Sofiane Dris 29
-maj: 18h31
+maj: 18h48
+
 

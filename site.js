@@ -159,7 +159,7 @@ function render(k){
     var bl=o.buts.filter(function(x){return x.n||x.m||!x.adv;}).concat(o.chg).sort(function(x,y){return (parseInt(x.m)||0)-(parseInt(y.m)||0);});
     hn.hidden=false;hn.innerHTML='<div class="eyebrow lv-eb">'+(fin?'':'<span class="lv-dot"></span>')+lab+' · '+EQ+tag+'</div>'
       +'<div class="vs"><span>'+esc(h)+'</span><span class="lv-sc">'+esc(sc[0]||"0")+' – '+esc(sc[1]||"0")+'</span><span>'+esc(a)+'</span></div>'
-      +(bl.length?'<ul class="lv-buts">'+bl.map(function(x){if(x.ch)return '<li class="chg">🔄 '+(x.m?x.m+'′ ':'')+esc(x.inn)+(x.out?' remplace '+esc(x.out):' entre en jeu')+'</li>';return '<li class="'+(x.adv?'adv':'')+'">⚽ '+(x.m?x.m+'′ ':'')+esc(x.adv?(x.n&&!/^adv/i.test(x.n)?x.n+' ('+av+')':av):(x.n||(us(h)?h:a)))+'</li>';}).join("")+'</ul>':'')
+      +(bl.length?(function(){var li=function(x){if(x.ch)return '<li class="chg">🔄 '+(x.m?x.m+'′ ':'')+esc(x.inn)+(x.out?' remplace '+esc(x.out):' entre en jeu')+'</li>';return '<li class="'+(x.adv?'adv':'')+'">⚽ '+(x.m?x.m+'′':'')+((x.adv?(x.n&&!/^adv/i.test(x.n)?x.n:''):x.n)?' '+esc(x.adv?x.n:x.n):'')+'</li>';},sb=bl.filter(function(x){return !x.adv;}),ad=bl.filter(function(x){return x.adv;}),L=us(h)?sb:ad,R=us(h)?ad:sb;return '<div class="lv-buts"><ul>'+L.map(li).join("")+'</ul><ul class="r">'+R.map(li).join("")+'</ul></div>';})():'')
       +(o.commentaire?'<p class="lv-com">'+esc(o.commentaire)+'</p>':'')+(o.maj?'<small class="lv-up">Mis à jour à '+esc(o.maj)+'</small>':'');
     clearInterval(clk);if(!fin&&!mt&&(o.debut||o.reprise))clk=setInterval(function(){var c=document.getElementById("lv-clock");if(c)c.innerHTML=clock(o);},1000);
     return !fin;}

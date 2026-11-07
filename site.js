@@ -81,6 +81,7 @@ function render(k){
   if(!hn)return;
   if(nx){var card='<div class="eyebrow">Prochain match · Seniors R1</div><div class="vs"><span>'+esc(nx.h)+'</span><span>vs</span><span>'+esc(nx.a)+'</span></div><dl><dt>Date</dt><dd>'+fd(nx.d)+' · '+esc(nx.t)+'</dd><dt>Compét.</dt><dd>'+esc(nx.c)+(tb?' · '+tb[0]+'e':'')+'</dd></dl>';
     hn.innerHTML=nx.p?'<details class="nx-acc"><summary>'+card+'<span class="nx-hint">L\u2019avant-match</span></summary><p class="nx-p">'+esc(nx.p)+'</p></details>':card;}else{hn.remove();}
+  if(!document.getElementById("wk"))return;
   var all=[];TEAMS.forEach(function(t){t.m.forEach(function(m){if(m.hs!==undefined)all.push({t:t,m:m});});});
   var last=all.reduce(function(a,x){return x.m.d>a?x.m.d:a;},"");
   var lim=new Date(last);lim.setDate(lim.getDate()-2);var ls=lim.toISOString().slice(0,10);
@@ -133,7 +134,7 @@ function render(k){
     var mm=base+m,ss=s%60;return mm+':'+(ss<10?'0':'')+ss;}
   function ann(){if(hn.querySelector(".lv-ann"))return;var s1=TEAMS.filter(function(x){return x.k==="seniors1";})[0],nx=s1&&s1.m.filter(function(m){return m.t;})[0];if(!nx)return;
     var d=new Date(),td=d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);if(nx.d!==td)return;
-    var p=document.createElement("div");p.className="lv-ann";p.innerHTML='<span class="lv-dot"></span>Match en direct sur le site aujourd’hui dès '+esc(nx.t);hn.insertBefore(p,hn.firstChild);}
+    var p=document.createElement("div");p.className="lv-ann";p.innerHTML='<span class="lv-dot"></span>Live en direct sur le site aujourd’hui dès '+esc(nx.t);hn.insertBefore(p,hn.firstChild);}
   function parse(t){var o={buts:[],chg:[]};t.split(/\r?\n/).forEach(function(l){var m=l.match(/^\s*([^:]+?)\s*:\s*(.*?)\s*$/);if(!m)return;var k=m[1].toLowerCase(),v=m[2];
     if(/^changement/.test(k)){var cm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|′|min)?\s*$/i),cn=cm?cm[1]:v,pp=cn.split(/\s+pour\s+/i);o.chg.push({ch:1,inn:pp[0]||"",out:pp[1]||"",m:cm?cm[2].replace(/\s/g,""):""});}
     else if(/^but/.test(k)){var adv=/adv/.test(k)||/^adv/i.test(v);var mm=v.match(/^(.*?)\s*(\d+(?:\s*\+\s*\d+)?)\s*(?:e|'|min)?\s*$/i);o.buts.push({adv:adv,n:mm?mm[1]:v,m:mm?mm[2].replace(/\s/g,""):""});}
@@ -145,10 +146,9 @@ function render(k){
       var L=function(v){return (v||"").split(/\s*[,;]\s*/).filter(Boolean);},cp=/compo/.test(st),ti=L(o.titulaires),gr=L(o.groupe),rp=L(o["remplaçants"]||o.remplacants);
       if(cp&&!rp.length)rp=gr.filter(function(n){return ti.indexOf(n)<0;});
       var li=function(a){return '<ul class="lv-team">'+a.map(function(n){return '<li>'+esc(n)+'</li>';}).join("")+'</ul>';};
-      hn.innerHTML='<div class="eyebrow lv-eb">'+(cp?'Les titulaires':'Le groupe')+' · '+EQ+'</div>'
+      var hh=o.heure?esc(o.heure):(nx?esc(nx.t):'');hn.innerHTML=(hh?'<div class="lv-ann"><span class="lv-dot"></span>Live en direct sur le site aujourd’hui dès '+hh+'</div>':'')+'<div class="eyebrow lv-eb">'+(cp?'Les titulaires':'Le groupe')+' · '+EQ+'</div>'
         +'<div class="vs"><span>'+esc(o.domicile||"Saint-Brice FC")+'</span><span>'+(o.heure?esc(o.heure):(nx?esc(nx.t):'vs'))+'</span><span>'+esc(o["extérieur"]||o.exterieur||"Saint-Brice FC")+'</span></div>'
-        +(cp?li(ti)+(rp.length?'<p class="lv-sub">Remplaçants</p>'+li(rp):''):li(gr))
-        +'<small class="lv-up">Live ici dès le coup d’envoi</small>';return true;}
+        +(cp?li(ti)+(rp.length?'<p class="lv-sub">Remplaçants</p>'+li(rp):''):li(gr));return true;}
     if(!/direct|mi|fin|termin/.test(st)){clearInterval(clk);if(orig!==null)hn.innerHTML=orig;ann();return false;}
     if(orig===null)orig=hn.innerHTML;
     var fin=/fin|termin/.test(st),mt=/^mi/.test(st);

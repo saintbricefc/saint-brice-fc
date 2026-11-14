@@ -2,10 +2,10 @@ statut: en direct
 equipe: Seniors R1
 date: 2026-11-14
 domicile: Saint-Brice FC
-extérieur: Montrouge FC 92
+extérieur: Montreuil FC
 heure: 18h00
 duree: 45
-score: 1-0
+score: 1-1
 debut: 2026-11-14T17:02:25.026Z
 but: Sofiane Dris 20
 maj: 18h22

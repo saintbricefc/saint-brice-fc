@@ -1,4 +1,4 @@
-statut: mi-temps
+statut: en direct
 equipe: Seniors R1
 date: 2026-11-14
 domicile: Saint-Brice FC
@@ -7,9 +7,11 @@ heure: 18h00
 duree: 45
 score: 2-1
 debut: 2026-11-14T17:02:25.026Z
+reprise: 19h05
 but: Sofiane Dris 20
-but :Massile Ouali 37
-maj: 18h50
+but: Massil Ouali 37
+maj: 19h05
+
 
 
 

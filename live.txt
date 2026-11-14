@@ -1,4 +1,4 @@
-statut: compo
+statut: en direct
 equipe: Seniors R1
 date: 2026-11-14
 domicile: Saint-Brice FC
@@ -6,9 +6,8 @@ extérieur: Montrouge FC 92
 heure: 18h00
 duree: 45
 score: 0-0
-groupe: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Billy Da Cruz Rocha, Souleymane Fofana, Siyar Lordini, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Kaïs Hamzaoui, Sofiane Dris, Alpha Traoré, Massil Ouali
-titulaires: Allan Momege, Abdoulaye Sy, Mohammed Sangaré, Souleymane Fofana, Siyar Lordini, Emmanuel Mendes, Keryann Hocq, Luca Spurio, Sofiane Dris, Alpha Traoré, Massil Ouali
-remplaçants: Billy Da Cruz Rocha, Kaïs Hamzaoui
-maj: 17h37
+debut: 2026-11-14T17:02:25.026Z
+maj: 18h02
+
 
 

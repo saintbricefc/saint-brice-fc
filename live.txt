@@ -1,4 +1,4 @@
-statut: en direct
+statut: fin
 equipe: Seniors R1
 date: 2026-11-14
 domicile: Saint-Brice FC
@@ -12,5 +12,5 @@ but: Sofiane Dris 20
 but: Massil Ouali 37
 but: Luca Spurio 53
 but adv: 90
-maj: 19h54
+maj: 20:02
 

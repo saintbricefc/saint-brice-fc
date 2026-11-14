@@ -5,14 +5,10 @@ domicile: Saint-Brice FC
 extérieur: Montreuil FC
 heure: 18h00
 duree: 45
-score: 2-1
+score: 3-1
 debut: 2026-11-14T17:02:25.026Z
 reprise: 19h05
 but: Sofiane Dris 20
 but: Massil Ouali 37
-maj: 19h05
-
-
-
-
-
+but: Luca Spurio 53
+maj: 19h15

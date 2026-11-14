@@ -5,9 +5,11 @@ domicile: Saint-Brice FC
 extérieur: Montrouge FC 92
 heure: 18h00
 duree: 45
-score: 0-0
+score: 1-0
 debut: 2026-11-14T17:02:25.026Z
-maj: 18h02
+but: Sofiane Dris 20
+maj: 18h22
+
 
 
 

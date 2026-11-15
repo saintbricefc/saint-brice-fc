@@ -259,6 +259,7 @@ main.page{min-height:60vh;padding-top:8px}
 .kit-txt h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.02;margin:12px 0 8px;color:var(--pine)}
 .kit-txt p{margin:0 0 14px}
 .sk{margin-top:40px}.sk-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.05;margin:8px 0}.sk-head p{max-width:60ch}.sk-grid{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}.sk-card{background:#fff;color:var(--ink);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 16px rgba(11,61,34,.12)}.sk-card img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#fff;display:block}.sk-info{padding:10px 12px 14px;display:flex;flex-direction:column;gap:4px;flex:1}.sk-info h4{margin:0;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;line-height:1.15;color:var(--pine)}.sk-col{font-size:.85rem;color:#5d6e62}.sk-price{margin:auto 0 0;display:flex;align-items:baseline;gap:8px;padding-top:6px}.sk-price s{color:#8a978e;font-size:.95rem}.sk-price b{font-family:var(--display);font-weight:400;font-size:1.7rem;color:var(--green);line-height:1}.sk-btn{margin-top:8px;display:block;text-align:center;background:var(--pine);color:#fff;text-decoration:none;border-radius:999px;padding:9px 10px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.88rem}.sk-btn:hover{background:var(--green)}.sk-note{margin-top:16px;font-size:.95rem;opacity:.9}
+.kit-more{margin:10px 0 0}.kit-more summary{cursor:pointer;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;color:var(--pine);list-style:none;padding:6px 0}.kit-more summary::-webkit-details-marker{display:none}.kit-more summary::after{content:" +";color:var(--green)}.kit-more[open] summary::after{content:" –"}
 .kit-price{display:flex;align-items:baseline;gap:12px}
 .kit-price b{font-family:var(--display);font-weight:400;font-size:3rem;color:var(--green);line-height:1}
 .kit-price span{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
@@ -559,24 +560,18 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
           <h3>Notre histoire, notre ville, notre maillot</h3>
           <p>Un maillot collector qui raconte Saint-Brice et l'histoire du club : les monuments et les rues de la ville sur le devant, les présidents du club sur le col… le tout dans nos couleurs historiques. Un maillot unique, à l'image de notre identité.</p>
           <div class="kit-price"><b>49 €</b><span>Maillot · toutes tailles</span></div>
-          <p class="kit-promo"><span>🎁 Offre spéciale</span>Pour chaque maillot commandé, <b>une écharpe du club offerte</b> !<small>Dans la limite des stocks disponibles · en ligne comme au club.</small></p>
-          <ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul>
+          <p class="kit-promo"><span>🎁 Offre spéciale</span>Pour toute commande, <b>une écharpe du club offerte</b> !<small>Dans la limite des stocks disponibles · en ligne comme au club.</small></p>
+          <details class="kit-more"><summary>Flocage nom et numéro (en option)</summary><ul class="kit-opts"><li><span>+ Numéro</span><b>10 €</b></li><li><span>+ Nom</span><b>10 €</b></li><li><span>+ Nom et numéro</span><b>15 €</b></li></ul></details>
           <a class="cta" href="#boutique">Commander et payer en ligne</a>
           <p class="kit-alt">Commande et paiement par carte directement sur cette page. Vous préférez payer sur place ? Le maillot est aussi en vente au club, au stade Léon Graffin.</p>
         </div>
-      </div>
-
-      <div class="shop" id="boutique">
-        <h3>Commander et payer en ligne</h3>
-        <p class="note">Choisissez votre maillot ci-dessous : la commande et le paiement par carte se font sans quitter le site. Le paiement est sécurisé par <b>HelloAsso</b>, la plateforme de paiement des associations utilisée par le club. <b>🎁 Offre en cours : une écharpe du club offerte pour chaque maillot commandé</b>, remise avec votre maillot. À la fin, HelloAsso propose une contribution facultative à son fonctionnement : vous pouvez la mettre à 0 €.</p>
-        <iframe id="haWidget" class="ha-frame" title="Boutique du Saint-Brice FC (paiement sécurisé HelloAsso)" allowtransparency="true" scrolling="auto" loading="lazy" src="https://www.helloasso.com/associations/saint-brice-football-club/boutiques/boutique/widget"></iframe>
       </div>
 
       <div class="sk" id="collection">
         <div class="sk-head">
           <span class="kit-tag">Collection officielle Skita</span>
           <h3>Toute la collection du club</h3>
-          <p>Survêtements, doudounes, sacs… toute la tenue Saint-Brice FC, siglée du logo du club. <b>Prix club</b> : moins cher que le prix catalogue Skita (barré), logo du club compris.</p>
+          <p>Survêtements, doudounes, sacs… toute la tenue Saint-Brice FC, siglée du logo du club. <b>Prix club</b> : moins cher que le prix catalogue Skita (barré), logo du club compris. <b>🎁 Une écharpe du club offerte pour toute commande !</b></p>
         </div>
         <ul class="sk-grid">
           <li class="sk-card"><img src="skita-2211.webp" alt="Survêtement ALBA noir / vert fluo – Saint-Brice FC" width="800" height="800" loading="lazy"><div class="sk-info"><h4>Survêtement ALBA</h4><span class="sk-col">noir / vert fluo</span><p class="sk-price"><s>89 €</s><b>55 €</b></p><a class="sk-btn" href="mailto:contact@saintbricefc.fr?subject=Commande%20boutique%20%3A%20Surv%C3%AAtement%20ALBA&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20commander%20%3A%20Surv%C3%AAtement%20ALBA%20%2855%20%E2%82%AC%29%0ATaille%20%3A%0AQuantit%C3%A9%20%3A%0ANom%20et%20pr%C3%A9nom%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0A%0AMerci%20%21">Commander</a></div></li>
@@ -596,6 +591,13 @@ footer .legal-l{display:inline-block;padding:8px 4px;margin:-8px 0}
         </ul>
         <p class="sk-note">Pour commander : touchez « Commander » pour nous écrire (taille et quantité), ou passez directement au club, au stade Léon Graffin. Prix barré = prix catalogue Skita.</p>
       </div>
+
+      <div class="shop" id="boutique">
+        <h3>Commander et payer en ligne</h3>
+        <p class="note">Choisissez votre maillot ci-dessous : la commande et le paiement par carte se font sans quitter le site. Le paiement est sécurisé par <b>HelloAsso</b>, la plateforme de paiement des associations utilisée par le club. <b>🎁 Offre en cours : une écharpe du club offerte pour toute commande</b>, remise avec votre maillot. À la fin, HelloAsso propose une contribution facultative à son fonctionnement : vous pouvez la mettre à 0 €.</p>
+        <iframe id="haWidget" class="ha-frame" title="Boutique du Saint-Brice FC (paiement sécurisé HelloAsso)" allowtransparency="true" scrolling="auto" loading="lazy" src="https://www.helloasso.com/associations/saint-brice-football-club/boutiques/boutique/widget"></iframe>
+      </div>
+
 
     </div>
   </section>

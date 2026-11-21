@@ -1,6 +1,10 @@
-statut: groupe
+statut: fin
 equipe: Seniors R1
 date: 2026-11-21
 domicile: Mitry Compans Goelly
 extérieur: Saint-Brice FC
-groupe: Allan Momege, Souleymane Fofana, Sofiane Boukhedimi, Sofiane Dris, Mohammed Sangaré, Abdoulaye Sy, Keryann Hocq, Luca Spurio, Emmanuel Mendes, Massil Ouali, Gilles Lepoittevin, Siyar Lordini, Kaïs Hamzaoui, Billy Da Cruz Rocha
+score: 2-2
+but adv: 28
+but adv: 46
+but: Massil Ouali 49
+but: Kaïs Hamzaoui 55

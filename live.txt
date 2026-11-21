@@ -1,7 +1,16 @@
-statut: groupe
+statut: fin
 equipe: Seniors R1
-date: 2026-11-21
+date: 2026-11-14
+domicile: Saint-Brice FC
+extérieur: Montreuil FC
 heure: 18h00
-domicile: Mitry Compans Goelly
-extérieur: Saint-Brice FC
-groupe: Allan Momege, Souleymane Fofana, Sofiane Boukhedimi, Sofiane Dris, Mohammed Sangaré, Abdoulaye Sy, Keryann Hocq, Luca Spurio, Emmanuel Mendes, Massil Ouali, Gilles Lepoittevin, Siyar Lordini, Kaïs Hamzaoui, Billy Da Cruz Rocha
+duree: 45
+score: 3-2
+debut: 2026-11-14T17:02:25.026Z
+reprise: 19h05
+but: Sofiane Dris 20
+but: Massil Ouali 37
+but: Luca Spurio 53
+but adv: 90
+maj: 20:02
+

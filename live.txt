@@ -5,4 +5,4 @@ domicile: Saint-Brice FC
 extérieur: St Leu 95 FC
 debut: 18:03:32
 score: 0-1
-but adv: 
+but adv: 43

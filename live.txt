@@ -8,3 +8,4 @@ reprise: 19:08:00
 score: 0-1
 but adv: 43
 changement: Kaïs Hamzaoui pour Sofiane Dris 60
+changement: Sirina Doucouré pour Keryann Hocq 66

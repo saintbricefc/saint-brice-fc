@@ -7,4 +7,4 @@ debut: 18:03:32
 reprise: 19:08:00
 score: 0-1
 but adv: 43
-changement: Kaïs Hamzaoui 60
+changement: Kaïs Hamzaoui pour Sofiane Dris 60

@@ -1,6 +1,8 @@
-statut: avant
+statut: groupe
 equipe: Seniors R1
 date: 2026-11-28
+heure: 18h00
 domicile: Saint-Brice FC
 extérieur: St Leu 95 FC
+groupe: Allan Momege, Siyar Lordini, Sofiane Boukhedimi, Mohammed Sangaré, Abdoulaye Sy, Keryann Hocq, Luca Spurio, Alpha Traoré, Massil Ouali, Sofiane Dris, Gilles Lepoittevin, Kaïs Hamzaoui, Sirina Doucouré, Billy Da Cruz Rocha
 score: 0-0

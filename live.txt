@@ -1,4 +1,4 @@
-statut: direct
+statut: mi-temps
 equipe: Seniors R1
 date: 2026-11-28
 domicile: Saint-Brice FC

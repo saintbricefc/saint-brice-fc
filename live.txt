@@ -4,4 +4,5 @@ date: 2026-11-28
 domicile: Saint-Brice FC
 extérieur: St Leu 95 FC
 debut: 18:03:32
-score: 0-0
+score: 0-1
+but adv: 

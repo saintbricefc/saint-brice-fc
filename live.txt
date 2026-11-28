@@ -5,8 +5,9 @@ domicile: Saint-Brice FC
 extérieur: St Leu 95 FC
 debut: 18:03:32
 reprise: 19:08:00
-score: 0-1
+score: 0-2
 but adv: 43
+but adv: 
 changement: Kaïs Hamzaoui pour Sofiane Dris 60
 changement: Sirina Doucouré pour Keryann Hocq 66
 changement: Billy Da Cruz Rocha pour Abdoulaye Sy 77
